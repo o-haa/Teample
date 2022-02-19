@@ -7,6 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>게시판페이지</h1>    
+    <h1>게시판페이지</h1>  
+    <table>
+        {% for item in result %}
+        <tr>
+            <td>{{item.idx}}</td>
+            <td>{{item.title}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p></p>
+    {% for num in pageNum %}  
+    [<a href="/board/list/{{num+1}}">{{num+1}}</a>]
+    {% endfor %}
 </body>
 </html>
