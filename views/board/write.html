@@ -1,0 +1,57 @@
+{% extends "layout_board.html" %}
+
+{% block content %}
+<div id="write_content">
+    <div class="write">
+        <form method="post" action="/board/write">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="write_title">제목</td>
+                        <td><input class="write_input1" type="text" name="subject" placeholder="제목..."></td>
+                    </tr>
+                    <tr>
+                        <td class="write_title">옵션</td>
+                        <td id= "write_input2"><input class="write_input2" type="checkbox" name="option">
+                            <span>비밀글</span></td>
+                    </tr>
+                    <tr>
+                        <td class="write_title">카테고리1</td>
+                        <td>
+                            <select class="write_categori">
+                                <option value>카테고리 선택</option>
+                                <option value>vintage</option>
+                                <option value>homedeco</option>
+                                <option value>acc</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  class="write_title">작성자</td>
+                        <td ><input class="write_input" type="text" placeholder="작성자..."></td>
+                    </tr>
+                    <tr>
+                        <td class="write_title">비밀번호</td>
+                        <td ><input class="write_input" type="password" placeholder="비밀번호..."></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text_1">
+                <textarea></textarea>
+            </div>
+            <div class="left">
+                <button class="box1_r" onclick="goBack()">돌아가기</button>
+                <script>
+                    function goBack(){
+                        window.history.back();
+                    }
+                </script>
+            </div>
+            <div class="right"></div>
+            <input type="submit" value="글등록">
+            <button class="box1" type="button"><a href="#">글수정</a></button>
+            <button class="box1" type="button"><a href="#">글삭제</a></button>
+        </form>
+    </div>
+</div>
+{% endblock %}
