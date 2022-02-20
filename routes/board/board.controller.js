@@ -7,8 +7,9 @@ const {paging} = require('../../util/paging.js')
 const list = async (req, res)=>{
     try{
         const page = req.params.num
-        const count = 15
-        const [rows, fields] = await promisePool.query('SELECT * FROM page ORDER BY idx DESC')
+        const count = 5
+        let sql = 'SELECT idx, title, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view FROM board ORDER BY idx DESC'
+        const [rows, fields] = await promisePool.query(sql)
         const pageNum = []
         for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}
         const result = paging(page, count, rows)
@@ -22,6 +23,11 @@ const list = async (req, res)=>{
     }
 }
 
+const getWrite = (req, res) => {
+    res.render('./board/write.html')
+}
+
 module.exports = {
-    list
+    list,
+    getWrite
 }
