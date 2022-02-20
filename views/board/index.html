@@ -5,20 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="/Teample/public/index.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <h1>게시판페이지</h1>  
     <table>
-        {% for item in result %}
-        <tr>
-            <td>{{item.idx}}</td>
-            <td>{{item.title}}</td>
-        </tr>
-        {% endfor %}
+        <thead id="board_head">
+            <tr>
+                <td class="board_idx">번호</td>
+                <td class="board_title">제목</td>
+                <td class="board_username">작성자</td>
+                <td class="board_date">작성일</td>
+                <td class="board_recommend">좋아요</td>
+                <td class="board_view">조회</td>
+            </tr>
+        </thead>
+        <tbody id="board_body">
+            {% for item in result %}
+            <tr>
+                <td>{{item.idx}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.recommend}}</td>
+                <td>{{item.view}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
     </table>
     <p></p>
     {% for num in pageNum %}  
     [<a href="/board/list/{{num+1}}">{{num+1}}</a>]
     {% endfor %}
+    <div id="box">
+        <button class="box1"><a href="./write_.html">글쓰기</a></button>
+    </div>
 </body>
 </html>
