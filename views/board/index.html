@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="/Teample/public/index.css" type="text/css" rel="stylesheet">
-</head>
-<body>
-    <h1>게시판페이지</h1>  
+{% extends "layout_board.html" %}
+
+{% block content %}
+<h1>게시판페이지</h1> 
+<div id="content">
     <table>
         <thead id="board_head">
             <tr>
@@ -21,6 +15,14 @@
             </tr>
         </thead>
         <tbody id="board_body">
+            <tr>
+                <td>1</td>
+                <td><a href="./view.html">sample</a></td>
+                <td>오하</td>
+                <td>2022-02-20</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
             {% for item in result %}
             <tr>
                 <td>{{item.idx}}</td>
@@ -32,7 +34,6 @@
             </tr>
             {% endfor %}
         </tbody>
-        
     </table>
     <p></p>
     {% for num in pageNum %}  
@@ -40,6 +41,6 @@
     {% endfor %}
     <div id="box">
         <button class="box1"><a href="./write_.html">글쓰기</a></button>
-    </div>
-</body>
-</html>
+    </div>    
+</div> 
+{% endblock %}
