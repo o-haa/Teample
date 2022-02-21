@@ -25,8 +25,14 @@ router.post('/login', async (req,res)=>{
     }
 })
 
+router.get('/join',(req,res)=>{
+    res.render('./user/join.html')
+})
 
-
+router.post('/join',(req,res)=>{
+    let {userid, userpw, username, nickname, birth, gender, phone, mobile, level} = req.body
+    
+})
 
 router.get('/profile', (req, res)=>{
     const {user} = req.session
@@ -43,3 +49,4 @@ router.get('/logout', (req, res)=>{
 })
 
 module.exports = router;
+
