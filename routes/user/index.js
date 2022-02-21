@@ -33,4 +33,18 @@ router.get('/logout', (req, res)=>{
     res.send(alertMove('로그아웃 되었습니다.', '/'))
 })
 
+router.get('/join',(req,res)=>{
+    res.render('./user/join.html')
+})
+
+router.post('/join',(req,res)=>{
+    let {userid, userpw, username, nickname, birth, gender, phone, mobile, level} = req.body
+    
+})
+    
+
+
+
+
+
 module.exports = router;
