@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/b_update.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1><a href="/">logo</a></h1>
+    <h1 id="pagename">수정페이지</h1>
+    <form method="post" action="/board/update">
+        <input type="hidden" name="userid" value="{{userid}}">
+        <ul>
+            <li>
+                <strong>글 제목</strong>
+                : <input type="text" name="title" value="{{data.title}}">
+            </li>
+            <li>
+                <strong>내용</strong>
+                : <input type="text" name="content" value="{{data.content}}">
+            </li>
+        </ul>
+        <input type="submit" value="수정하기">
+    </form>
+    <div class="left">
+        <button class="box1" type="button"><a href="/board/list">목록가기</a></button>
+    </div>
+</body>
+</html>

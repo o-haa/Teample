@@ -42,16 +42,14 @@
     </div>
     <div class="blue_boxes">
         <div class="left">
-            <button class="box1_r" onclick="goBack()">목록보기</button>
-            <script>
-                function goBack(){
-                    window.history.back();
-                }
-            </script>
+            <button class="box1" type="button"><a href="/board/list">목록가기</a></button>
         </div>
-        <div class="right"></div>
-            <button class="box1" type="button"><a href="#">글수정</a></button>
-            <button class="box1" type="button"><a href="#">글삭제</a></button>
+        <div class="right">
+            <a href="/board/update?index={{idx}}">수정하기</a>
+            <form method="post" action="/board/delete">
+                <input type="hidden" name="idx" value="{{idx}}">
+                <input type="submit" value="글삭제">
+            </form>
         </div>
     </div>
 </div>
