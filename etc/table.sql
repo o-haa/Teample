@@ -11,11 +11,11 @@ CREATE TABLE board (
 
 CREATE TABLE comment (
     cid INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    content TEXT NOT NULL,
-    nickname VARCHAR(20) NOT NULL,
-    date TIMESTAMP NOT NULL,
+    comment TEXT NOT NULL,
+    c_nickname VARCHAR(20) NOT NULL,
+    c_date TIMESTAMP NOT NULL,
     bid INT NOT NULL,
-    userid VARCHAR(20) NOT NULL
+    c_userid VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE user (
@@ -30,3 +30,8 @@ CREATE TABLE user (
     level INT NOT NULL DEFAULT 3
 );
 
+CREATE TABLE scrap (
+    s_idx INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    s_userid VARCHAR(20) NOT NULL,
+    bid INT NOT NULL
+);

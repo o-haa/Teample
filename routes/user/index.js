@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const {alertMove} = require('../../util/alert.js')
-const {promisePool, insert, update, del} = require('../../db2.js')
+const {promisePool} = require('../../db2.js')
 
 router.get('/login', (req, res)=>{
     res.render('./user/login.html')
@@ -21,7 +21,8 @@ router.post('/login', async (req,res)=>{
             res.send(alertMove('회원정보가 일치하지 않습니다.', '/user/login'))
         }
     } catch(err){
-        res.send('Internal Server Error')
+        console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
     }
 })
 

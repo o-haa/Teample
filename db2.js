@@ -11,7 +11,7 @@ const pool = mysql.createPool(config)
 
 const promisePool = pool.promise()
 
-async function insert(query, arr) {
+async function insert(query, arr, res) {
     try {
         await promisePool.query(query, arr)
     } catch(err) {
@@ -20,7 +20,7 @@ async function insert(query, arr) {
     }
 }
 
-async function del(query, arr) {
+async function del(query, arr, res) {
     try {
         await promisePool.query(query, arr)
     } catch(err) {
@@ -29,7 +29,7 @@ async function del(query, arr) {
     }
 }
 
-async function update(query, arr) {
+async function update(query, arr, res) {
     try {
         await promisePool.query(query, arr)
     } catch(err) {

@@ -12,17 +12,21 @@ const Auth = (req, res, next) => {
     }
 }
 
+router.get('/list', Auth, boardController.list)
+
 router.get('/list/:num', Auth, boardController.list)
 
-router.get('/write', boardController.getWrite)
+router.get('/write', Auth, boardController.getWrite)
 
 router.post('/write', boardController.postWrite)
 
-router.get('/view', boardController.getView)
+router.get('/view', Auth, boardController.getView)
 
-// router.post('/view', boardController.postView)
+router.post('/view', boardController.postView)
 
-router.get('/update', boardController.getUpdate)
+router.post('/comment', boardController.deleteComment)
+
+router.get('/update', Auth, boardController.getUpdate)
 
 router.post('/update', boardController.postUpdate)
 

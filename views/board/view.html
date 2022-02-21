@@ -12,21 +12,55 @@
     <h1 id="pagename">글보기 페이지</h1>
     <div class="view_content">
         <ul>
-            <li>제목 : {{rows.title}}</li>
-            <li>내용 : {{rows.content}}</li>
-            <li>작성자 : {{rows.nickname}}</li>
-            <li>작성일 : {{rows.date}}</li>
-            <li>좋아요 : {{rows.likes}}</li>
-            <li>조회수 : {{rows.view}}</li>
+            <li>제목 : {{rows[0].title}}</li>
+            <li>내용 : {{rows[0].content}}</li>
+            <li>작성자 : {{rows[0].nickname}}</li>
+            <li>작성일 : {{rows[0].date}}</li>
+            <li>좋아요 : {{rows[0].likes}}</li>
+            <li>조회수 : {{rows[0].view}}</li>
         </ul>
     </div>
+    <p></p>
+    <p></p>
+    <h2>댓글</h2>
+    <div class="comment_content">
+    {% if rows[0].c_userid %}
+    {% for data in rows %}
+    <ul>
+        <li>
+            {{data.comment}}  작성자: {{data.c_nickname}}  작성일: {{data.c_date}}
+            {% if user.level == 1 %}
+            <form method="post" action="/board/comment" style="display: inline-block;">
+                <input type="hidden" name="bid" value="{{data.idx}}">
+                <input type="hidden" name='cid' value="{{data.cid}}">
+                <button type="submit">삭제</button>
+            </form>
+            {% elif user.level == 2 %}
+            <form method="post" action="/board/comment" style="display: inline-block;">
+                <input type="hidden" name="bid" value="{{data.idx}}">
+                <input type="hidden" name='cid' value="{{data.cid}}">
+                <button type="submit">삭제</button>
+            </form>
+            {% elif user.userid == data.c_userid %}
+            <form method="post" action="/board/comment" style="display: inline-block;">
+                <input type="hidden" name="bid" value="{{data.idx}}">
+                <input type="hidden" name='cid' value="{{data.cid}}">
+                <button type="submit">삭제</button>
+            </form>
+            {% else %}
+            {% endif %}
+        </li>
+    </ul>
+    {% endfor %}
+    {% endif %}
+    </div>
+    <p></p>
+    <p></p>
     <div class="comment_content">
         <form method="post" action="/board/view">
-            <input type="hidden" name="bid" value="{{bid}}">
-            <textarea type="text" name="content" placeholder="댓글입력"></textarea>
-            <div class="button">
-                <input type="submit" value="작성완료">
-            </div>
+            <input type="hidden" name="bid" value="{{rows[0].idx}}">
+            <input type="text" name="comment" placeholder="댓글입력">
+            <input type="submit" value="작성완료">
         </form>
     </div>
     <div class="button">
@@ -34,28 +68,27 @@
         <a href="/board/list/1">목록가기</a>
         <p></p>
         {% if user.level == 1 %}
-        <a href="/board/update/?idx={{rows.idx}}">수정하기</a>
+        <a href="/board/update/?idx={{rows[0].idx}}">수정하기</a>
         <p></p>
         <form method="post" action="/board/delete">
-            <input type="hidden" name='idx' value="{{rows.idx}}">
+            <input type="hidden" name='idx' value="{{rows[0].idx}}">
             <button type="submit">삭제하기</button>
         </form>
-        {% elseif user.level == 2 %}
-        <a href="/board/update/?idx={{rows.idx}}">수정하기</a>
+        {% elif user.level == 2 %}
+        <a href="/board/update/?idx={{rows[0].idx}}">수정하기</a>
         <p></p>
         <form method="post" action="/board/delete">
-            <input type="hidden" name='idx' value="{{rows.idx}}">
+            <input type="hidden" name='idx' value="{{rows[0].idx}}">
             <button type="submit">삭제하기</button>
         </form>
-        {% elseif user.nickname == rows.nickname %}
-        <a href="/board/update/?idx={{rows.idx}}">수정하기</a>
+        {% elif user.userid == rows[0].userid %}
+        <a href="/board/update/?idx={{rows[0].idx}}">수정하기</a>
         <p></p>
         <form method="post" action="/board/delete">
-            <input type="hidden" name='idx' value="{{rows.idx}}">
+            <input type="hidden" name='idx' value="{{rows[0].idx}}">
             <button type="submit">삭제하기</button>
         </form>
         {% else %}
-
         {% endif %}
     </div>    
 </body>
