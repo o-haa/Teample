@@ -24,37 +24,39 @@
         <form method="post" action="/board/view">
             <input type="hidden" name="bid" value="{{bid}}">
             <textarea type="text" name="content" placeholder="댓글입력"></textarea>
-            <input type="submit" value="작성완료">
+            <div class="button">
+                <input type="submit" value="작성완료">
+            </div>
         </form>
     </div>
-    <p></p>
-    <a href="/board/list/1">목록가기</a>
-    <p></p>
-    {% if user.level == 1 %}
-    <a href="/board/update/?idx={{rows.idx}}">수정하기</a>
-    <p></p>
-    <form method="post" action="/board/delete">
-        <input type="hidden" name='idx' value="{{rows.idx}}">
-        <button type="submit">삭제하기</button>
-    </form>
-    {% elseif user.level == 2 %}
-    <a href="/board/update/?idx={{rows.idx}}">수정하기</a>
-    <p></p>
-    <form method="post" action="/board/delete">
-        <input type="hidden" name='idx' value="{{rows.idx}}">
-        <button type="submit">삭제하기</button>
-    </form>
-    {% elseif user.nickname == rows.nickname %}
-    <a href="/board/update/?idx={{rows.idx}}">수정하기</a>
-    <p></p>
-    <form method="post" action="/board/delete">
-        <input type="hidden" name='idx' value="{{rows.idx}}">
-        <button type="submit">삭제하기</button>
-    </form>
-    {% else %}
+    <div class="button">
+        <p></p>
+        <a href="/board/list/1">목록가기</a>
+        <p></p>
+        {% if user.level == 1 %}
+        <a href="/board/update/?idx={{rows.idx}}">수정하기</a>
+        <p></p>
+        <form method="post" action="/board/delete">
+            <input type="hidden" name='idx' value="{{rows.idx}}">
+            <button type="submit">삭제하기</button>
+        </form>
+        {% elseif user.level == 2 %}
+        <a href="/board/update/?idx={{rows.idx}}">수정하기</a>
+        <p></p>
+        <form method="post" action="/board/delete">
+            <input type="hidden" name='idx' value="{{rows.idx}}">
+            <button type="submit">삭제하기</button>
+        </form>
+        {% elseif user.nickname == rows.nickname %}
+        <a href="/board/update/?idx={{rows.idx}}">수정하기</a>
+        <p></p>
+        <form method="post" action="/board/delete">
+            <input type="hidden" name='idx' value="{{rows.idx}}">
+            <button type="submit">삭제하기</button>
+        </form>
+        {% else %}
 
-    {% endif %}
+        {% endif %}
+    </div>    
 </body>
 </html>
-
-

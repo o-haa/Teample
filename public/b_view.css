@@ -19,6 +19,7 @@ h1 > a{
 .view_content {
     width:960px;
     margin:0 auto;
+    margin-top: 20px;
 }
 
 .comment_content{
