@@ -6,6 +6,7 @@ const {paging} = require('../../util/paging.js')
 
 const list = async (req, res)=>{
     try{
+        const {user} = req.session
         const page = req.params.num
         const count = 10
         let sql = 'SELECT idx, title, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view FROM board ORDER BY idx DESC'
@@ -16,7 +17,8 @@ const list = async (req, res)=>{
         res.render('./board/index.html', {
             page,
             result,
-            pageNum
+            pageNum,
+            user
         })
     } catch (err) {
         res.status(500).send('Internal Server Error')

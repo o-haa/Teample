@@ -10,7 +10,10 @@
     <h1><a href="/">logo</a></h1>
     <h1 id="pagename">로그인페이지</h1>
     <p></p>
-    아이디 : <input type="text" placeholder="아이디">
-    패스워드 : <input type="text" placeholder="패스워드">
+    <form method="post" action="/user/login">
+        아이디 : <input type="text" name='userid' placeholder="아이디">
+        패스워드 : <input type="text" name='userpw' placeholder="패스워드">
+        <button type="submit">로그인</button>
+    </form>
 </body>
 </html>

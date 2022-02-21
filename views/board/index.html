@@ -1,5 +1,8 @@
 <h1><a href="/">logo</a></h1>
 <h1>게시판페이지</h1> 
+{% if user %}
+<h2>{{user.nickname}}님 환영합니다.</h2>
+{% endif %}
 <div id="content">
     <table>
         <thead id="board_head">
