@@ -27,7 +27,53 @@ const getWrite = (req, res) => {
     res.render('./board/write.html')
 }
 
+const postWrite = (req, res) => {
+    const {title, content} = req.body
+    const {nickname, userid} = req.session.user 
+    let sql = "INSERT INTO board (title, content, nickname, date, userid) VALUES (?, ?, ?, CURRENT_TIMESTAMP, ?)"
+    let sqlArr = [title, content, nickname, userid]
+    insert(sql, sqlArr)
+    res.send(alertMove('게시글이 작성되었습니다.', '/board/list/1'))
+}
+
+const getView = async (req, res) => {
+    const {user} = req.session
+    const {idx} = req.query
+    // console.log(idx)
+    let sql = 'SELECT idx, title, content, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view, userid FROM board WHERE idx=?'
+    const [rows, fields] = await promisePool.query(sql, [idx])
+    res.render('./board/view.html', {
+        rows: rows[0],
+        user
+    })
+}
+
+const getUpdate = async (req, res) => {
+    let sql = 'SELECT title, content FROM board'
+    const [rows, fields] = await promisePool.query(sql)
+    res.render('/board/update.html', {
+        rows
+    })
+}
+
+const postUpdate = (req, res) => {
+    let sql = 'UPDATE board SET '
+}
+
+
+const _delete = (req, res) => {
+    const {user} = req.session
+    const {idx} = req.body
+    let sql = "DELETE FROM board WHERE idx=?"
+    del(sql, [idx])
+    res.send(alertMove('게시글이 삭제되었습니다.', '/board/list/1'))
+}
+
 module.exports = {
     list,
-    getWrite
+    getWrite,
+    postWrite,
+    getView,
+    getUpdate,
+    _delete
 }
