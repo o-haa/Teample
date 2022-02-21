@@ -28,6 +28,12 @@ router.post('/login', async (req,res)=>{
 
 
 
+router.get('/profile', (req, res)=>{
+    const {user} = req.session
+    res.render('./user/profile.html', {
+        user
+    })
+})
 
 router.get('/logout', (req, res)=>{
     req.session.destroy(()=>{

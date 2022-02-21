@@ -12,11 +12,15 @@
     <h1><a href="/">logo</a></h1>
     <h1 id="pagename">프로필페이지</h1>
     <div>
-        <p>{{userid}}님 반갑습니다.</p>
-        <p>이름: {{username}}</p>
-        <p>성별: {{gender}}</p>
-        <p>전화번호: {{phone}}</p>
-        <p>핸드폰번호: {{mobile}}</p>        
+        <p>{{user.nickname}}님 반갑습니다.</p>
+        <p>이름: {{user.username}}</p>
+        <p>성별: {{user.gender}}</p>
+        {% if user.phone %}
+        <p>전화번호: 0{{user.phone}}</p>
+        {% else %}
+        <p>전화번호: 없음</p>
+        {% endif %}
+        <p>핸드폰번호: 0{{user.mobile}}</p>        
     </div>
     <div class="button">
         <a href="/">home</a>
