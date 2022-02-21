@@ -30,11 +30,3 @@ CREATE TABLE user (
     level INT NOT NULL DEFAULT 3
 );
 
-CREATE TABLE profile (
-    userid VARCHAR(20) NOT NULL PRIMARY KEY,
-    username VARCHAR(20) NOT NULL,
-    gender VARCHAR(10) NOT NULL,
-    phone INT NULL,
-    mobile INT NOT NULL
-);
-
