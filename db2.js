@@ -16,6 +16,7 @@ async function insert(query, arr) {
         await promisePool.query(query, arr)
     } catch(err) {
         console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
     }
 }
 
@@ -24,6 +25,7 @@ async function del(query, arr) {
         await promisePool.query(query, arr)
     } catch(err) {
         console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
     }
 }
 
@@ -32,6 +34,7 @@ async function update(query, arr) {
         await promisePool.query(query, arr)
     } catch(err) {
         console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
     }
 }
 

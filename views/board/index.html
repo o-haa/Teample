@@ -18,7 +18,7 @@
             {% for item in result %}
             <tr>
                 <td>{{item.idx}}</td>
-                <td>{{item.title}}</td>
+                <td><a href="/board/view/?idx={{item.idx}}">{{item.title}}</a></td>
                 <td>{{item.nickname}}</td>
                 <td>{{item.date}}</td>
                 <td>{{item.likes}}</td>

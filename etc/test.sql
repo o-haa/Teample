@@ -1,0 +1,1 @@
+INSERT INTO user VALUES ('admin', 'admin', '홍길동', '관리자', 940701, '남자', NULL, 01023711843, 1);
