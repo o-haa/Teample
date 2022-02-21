@@ -37,12 +37,14 @@ const postWrite = (req, res) => {
 }
 
 const getView = async (req, res) => {
+    const {user} = req.session
     const {idx} = req.query
-    console.log(idx)
-    let sql = 'SELECT idx, title, content, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view FROM board WHERE idx=?'
+    // console.log(idx)
+    let sql = 'SELECT idx, title, content, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view, userid FROM board WHERE idx=?'
     const [rows, fields] = await promisePool.query(sql, [idx])
     res.render('./board/view.html', {
-        rows: rows[0]
+        rows: rows[0],
+        user
     })
 }
 
