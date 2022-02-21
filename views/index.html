@@ -16,13 +16,16 @@
         </li>
         {% if user %}
         <li>
-            {{user.username}}님 환영합니다.
+            {{user.nickname}}님 환영합니다.
         </li>
         <li>
             <a href="/user/profile">PROFILE</a>
         </li>
         <li>
             <a href="/user/logout">LOGOUT</a>
+        </li>
+        <li>
+            <a href="/board/list/1">BOARD</a>
         </li>
         {% else %}
         <li>
@@ -35,9 +38,6 @@
             <a href="/board/list/1">BOARD</a>
         </li>
         {% endif %}
-        <li>
-            <a href="/user/admin">ADMIN</a>
-        </li>
     </ul>
 </body>
 </html>

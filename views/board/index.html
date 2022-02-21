@@ -28,11 +28,14 @@
             {% endfor %}
         </tbody>
     </table>
-    <p></p>
-    {% for num in pageNum %}  
-    [<a href="/board/list/{{num+1}}">{{num+1}}</a>]
-    {% endfor %}
+    <div class="list_num">
+        {% for num in pageNum %}  
+        [<a href="/board/list/{{num+1}}">{{num+1}}</a>]
+        {% endfor %}
+    </div>
     <div id="box">
         <button class="box1"><a href="/board/write">글쓰기</a></button>
     </div>    
 </div> 
+
+

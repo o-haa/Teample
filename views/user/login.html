@@ -5,15 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="/u_join.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <h1><a href="/">logo</a></h1>
     <h1 id="pagename">로그인페이지</h1>
-    <p></p>
     <form method="post" action="/user/login">
-        아이디 : <input type="text" name='userid' placeholder="아이디">
-        패스워드 : <input type="text" name='userpw' placeholder="패스워드">
-        <button type="submit">로그인</button>
+        <div>
+            <p>ID : <input type="text" name="userid"></p>
+            <p>PW : <input type="text" name="userpw"></p>
+        </div>
+        <div class="join_login">
+            <input type="submit" value="login">
+        </div>
     </form>
+    <div class = "home">
+        <a  href="/">home</a>
+    </div>
 </body>
 </html>

@@ -20,32 +20,17 @@ router.post('/login', async (req,res)=>{
         } else {
             res.send(alertMove('회원정보가 일치하지 않습니다.', '/user/login'))
         }
-        
-
     } catch(err){
         res.send('Internal Server Error')
     }
-
-})
-
-router.get('/join',(req,res)=>{
-    res.render('./user/join.html')
-})
-
-router.post('/join',(req,res)=>{
-    let {
-            userid,
-            userpw,
-            username,
-            nickname,
-            birth,
-            gender,
-            phone,
-            mobile,
-            level
-        } = req.body
-        let sql = "INSERT INTO user(userid,userpw,username,nickname,birth,gender,phone,mobile,level) values(?,?,?,?,?,?,?,?,?)"
 })
 
 
-module.exports = router
+router.get('/logout', (req, res)=>{
+    req.session.destroy(()=>{
+        req.session
+    })
+    res.send(alertMove('로그아웃 되었습니다.', '/'))
+})
+
+module.exports = router;
