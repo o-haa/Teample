@@ -28,9 +28,24 @@ router.post('/login', async (req,res)=>{
 
 })
 
+router.get('/join',(req,res)=>{
+    res.render('./user/join.html')
+})
+
+router.post('/join',(req,res)=>{
+    let {
+            userid,
+            userpw,
+            username,
+            nickname,
+            birth,
+            gender,
+            phone,
+            mobile,
+            level
+        } = req.body
+        let sql = "INSERT INTO user(userid,userpw,username,nickname,birth,gender,phone,mobile,level) values(?,?,?,?,?,?,?,?,?)"
+})
 
 
-
-
-
-module.exports = router;
+module.exports = router
