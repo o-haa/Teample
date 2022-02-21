@@ -28,9 +28,6 @@ router.post('/login', async (req,res)=>{
 
 })
 
-router.get('/join',(req,res)=>{
-    res.render('./user/join.html')
-})
 
 
 
