@@ -1,0 +1,287 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+h1{
+    margin-top:30px;
+    text-align: center;
+}
+
+#main_page{
+    text-align: center;
+}
+
+#content {
+    width:960px;
+    margin:0 auto;
+}
+
+table {
+    width:960px;
+    margin:20px auto;
+    font-size:13px;
+}
+
+#board_head {
+    font-weight: bold;
+    color:#545861;
+    text-align: center;
+}
+
+#board_head tr td {
+    padding:10px 0;
+    box-sizing: border-box;
+    border-bottom: 2px #f1f1f1 solid;
+}
+
+.board_idx {
+    width:72px;
+}
+.board_title {
+    width:auto;
+}
+.board_username {
+    width:80px;
+}
+.board_date {
+    width:75px;
+}
+.board_recommend {
+    width:55px;
+}
+.board_view {
+    width: 55px;
+}
+
+#board_body{
+    font-weight: bold;
+    color:#545861;
+    text-align: center;
+}
+
+#board_body tr td {
+    padding:10px 0;
+    box-sizing: border-box;
+}
+
+#box {
+    padding: 15px 0;
+    width:100%;
+    box-sizing: border-box;
+}
+.box1 {
+    margin-left: 5px;
+    margin-top:20px;
+    height: 28px;
+    padding: 0 10px;
+    border: none;
+    float:right;
+    background: #00a8e7;
+    color: #fff;
+}
+
+.box1>a{
+    color:#fff;
+}
+
+/* view.html */
+
+#content >.name {
+    padding: 12px 22px;
+    color: #545861;
+    font-weight: bold;
+    font-size: 22px;
+    box-sizing: border-box;
+}
+
+.content1 {
+    width:960px;
+    height:33px;
+    font-size:13px;
+    background: #f9f9f9;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    color: #545861;
+}
+
+.content1 .bold {
+    font-weight: bold;
+}
+
+.content2 {
+    width: 100%;
+    height:200px;
+    font-size: 12px;
+}
+
+.content2 > p {
+    float:left;
+    padding:22px;
+    box-sizing: border-box;
+    color:#3b3b3b;
+}
+
+.re {
+    width: 100%;
+    background: #f9f9f9;
+    padding:15px 15px 0 0;
+    box-sizing: border-box;
+}
+
+.re_header {
+    padding-left:15px;
+    box-sizing: border-box;
+}
+.whole {
+    float:left;
+    font-size:13px;
+    font-weight: 300;
+    color:#8a8a8a;
+}
+
+.recommend {
+    float:right;
+    width:34px;
+    font-size:12px;
+    color:#545861;
+}
+hr {
+    padding-top:5px;
+    box-sizing: border-box;
+    clear:both;
+    border:none;
+    border-bottom: 1px dashed #8a8a8a;
+}
+
+.re_body{
+    padding:15px 0 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.opertum {
+    float:left;
+    font-size: 13px;
+    color:#3b3b3b;
+    padding-right:10px;
+    box-sizing: border-box;
+}
+
+.re_body > p {
+    clear:both;
+    padding:1px;
+    box-sizing: border-box;
+    color:#3b3b3b;
+    font-size: 12px;
+}
+
+.empty {
+    height: 25px;
+}
+
+.re > p {
+    padding:15px 0 15px 15px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+}
+
+.blue_boxes{
+
+    padding: 15px 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.box1_r {
+    float:left;
+    height: 28px;
+    padding:0 10px;
+    border: none;
+    background: #00a8e7;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#write_content{
+    width:100%;
+    margin: 0 auto;
+    padding: 101px 20px 0 20px;
+    box-sizing: border-box;
+
+}
+.write{
+    width:928px;
+    margin: 0 auto;
+}
+
+#write_content > .write > form > table > tbody > tr{
+    height: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+.write_title {
+    width: 150px;
+    padding:0 10px 0 20px;
+    box-sizing: border-box;
+    font-size:13px;
+    color:#545861;
+    font-weight: 500;
+}
+
+.write_input1 {
+    width:70%;
+    height: 29px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    font-size: 13px;
+    border:none;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+#write_input2 > span {
+    font-size: 12px;
+    margin-left: 5px;
+    margin: 0 auto;
+    color:#545861;
+}
+
+
+.write_categori {
+    width: 240px;
+    padding:0 5px;
+    box-sizing: border-box;
+    border:none;
+    border-bottom: 1px solid #dcdcdc;
+    font-size: 13px;
+    line-height: 28px;
+    color:#545861;
+    
+}
+
+.write_input {
+    height: 29px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    font-size: 13px;
+    border:none;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.text_1 {
+    width: 928px;
+    height: 250px;
+    
+    
+}
+
+.text_1 > textarea {
+    width: 928px;
+    height: 250px;
+    
+    background: #fdfdfd;
+    border: 1px solid #e3e3e3;
+    color:#545861;
+}

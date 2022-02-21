@@ -1,6 +1,43 @@
-{% extends "layout_board.html" %}
-
-{% block content %}
-    <h1>메인페이지</h1>
-    <a href="/board/list/1">게시판목록가기</a>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1><a href="/">logo</a></h1>
+    <h1 id="pagename">메인페이지</h1>
+    <ul id="main_page">
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        {% if user %}
+        <li>
+            {{user.username}}님 환영합니다.
+        </li>
+        <li>
+            <a href="/user/profile">PROFILE</a>
+        </li>
+        <li>
+            <a href="/user/logout">LOGOUT</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="/user/join">JOIN</a>
+        </li>
+        <li>
+            <a href="/user/login">LOGIN</a>
+        </li>
+        <li>
+            <a href="/board/list/1">BOARD</a>
+        </li>
+        {% endif %}
+        <li>
+            <a href="/user/admin">ADMIN</a>
+        </li>
+    </ul>
+</body>
+</html>
