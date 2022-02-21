@@ -11,19 +11,26 @@
     <h1><a href="/">logo</a></h1>
     <h1 id="pagename">회원가입페이지</h1>
     <form type="post" action="/user/join">
-        ID : <input type="text" name="userid">
-        PW : <input type="text" name="userpw">
-        Name : <input type="text" name="username">
-        Nickname : <input type="text" name="nickname">
-        Birth : <input type="number" name="birth" placeholder="6자리입력">
-        Gender : 
-        <select name="gender">
-            <option>남성</option>
-            <option>여성</option>
-        </select>
-        Phone : <input type="number" name="phone" placeholder="숫자만입력">
-        H-Phone : <input type="number" name="mobile" placeholder="숫자만입력">
-        <input type="submit" value="Join">
+        <div class="join_info">
+            <p>ID : <input type="text" name="userid"></p>
+            <p>PW : <input type="text" name="userpw"></p>
+            <p>Name : <input type="text" name="username"></p>
+            <p>Nickname : <input type="text" name="nickname"></p>
+            <p>Birth : <input type="number" name="birth" placeholder="6자리입력"></p>
+            <p>Gender : 
+                <select name="gender">
+                    <option>남성</option>
+                    <option>여성</option>
+                </select></p>
+            <p>Phone : <input type="number" name="phone" placeholder="숫자만입력"></p>
+            <p>H-Phone : <input type="number" name="mobile" placeholder="숫자만입력"></p>
+        </div>
+        <div class="join_login">
+            <input type="submit" value="Join">
+        </div>
     </form>
+    <div class = "home">
+        <a  href="/">home</a>
+    </div>
 </body>
 </html>

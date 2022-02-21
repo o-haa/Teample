@@ -32,23 +32,7 @@
         <input type="hidden" name='idx' value="{{rows.idx}}">
         <button type="submit">삭제하기</button>
     </form>
+</body>
+</html>
 
-<ul>
-    <li>제목 : {{rows.title}}</li>
-    <li>내용 : {{rows.content}}</li>
-    <li>작성자 : {{rows.nickname}}</li>
-    <li>작성일 : {{rows.date}}</li>
-    <li>좋아요 : {{rows.likes}}</li>
-    <li>조회수 : {{rows.view}}</li>
-</ul>
-<p></p>
-<a href="/board/list/1">목록가기</a>
-<p></p>
-
-<a href="/board/update/?idx={{rows.idx}}">수정하기</a>
-<p></p>
-<form method="post" action="/board/delete">
-    <input type="hidden" name='idx' value="{{rows.idx}}">
-    <button type="submit">삭제하기</button>
-</form>
 
