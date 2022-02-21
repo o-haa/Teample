@@ -15,7 +15,7 @@ router.get('/view', boardController.getView)
 
 router.get('/update', boardController.getUpdate)
 
-// router.post('/update', boardController.postUpdate)
+router.post('/update', boardController.postUpdate)
 
 router.post('/delete', boardController._delete)
 

@@ -1,6 +1,3 @@
-{% extends "layout_board.html" %}
-
-{% block content %}
 <h1>글보기 페이지</h1>
 
 <ul>
@@ -15,10 +12,10 @@
 <a href="/board/list/1">목록가기</a>
 <p></p>
 
-<a href="/board/update/?id={{rows.idx}}">수정하기</a>
+<a href="/board/update/?idx={{rows.idx}}">수정하기</a>
 <p></p>
 <form method="post" action="/board/delete">
     <input type="hidden" name='idx' value="{{rows.idx}}">
     <button type="submit">삭제하기</button>
 </form>
-{% endblock %}
+

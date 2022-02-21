@@ -7,7 +7,7 @@ const {paging} = require('../../util/paging.js')
 const list = async (req, res)=>{
     try{
         const page = req.params.num
-        const count = 5
+        const count = 10
         let sql = 'SELECT idx, title, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view FROM board ORDER BY idx DESC'
         const [rows, fields] = await promisePool.query(sql)
         const pageNum = []
@@ -39,9 +39,11 @@ const postWrite = (req, res) => {
 const getView = async (req, res) => {
     const {user} = req.session
     const {idx} = req.query
+    let sql1 = 'UPDATE board SET view=board.view+1 WHERE idx=?'
+    await promisePool.query(sql1, [idx])
     // console.log(idx)
-    let sql = 'SELECT idx, title, content, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view, userid FROM board WHERE idx=?'
-    const [rows, fields] = await promisePool.query(sql, [idx])
+    let sql2 = 'SELECT idx, title, content, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view, userid FROM board WHERE idx=?'
+    const [rows, fields] = await promisePool.query(sql2, [idx])
     res.render('./board/view.html', {
         rows: rows[0],
         user
@@ -49,15 +51,25 @@ const getView = async (req, res) => {
 }
 
 const getUpdate = async (req, res) => {
-    let sql = 'SELECT title, content FROM board'
-    const [rows, fields] = await promisePool.query(sql)
-    res.render('/board/update.html', {
-        rows
+    const {idx} = req.query
+    // console.log(req.query)
+    let sql = 'SELECT idx, title, content FROM board WHERE idx=?'
+    const [rows, fields] = await promisePool.query(sql, [idx])
+    // console.log(rows)
+    res.render('./board/update.html', {
+        rows: rows[0]
     })
 }
 
 const postUpdate = (req, res) => {
-    let sql = 'UPDATE board SET '
+    const {idx} = req.query
+    const {title, content} = req.body
+    console.log(req.query)
+    console.log(idx, title, content)
+    let sql = 'UPDATE board SET title=?, content=? WHERE idx=?'
+    update(sql, [title, content, idx])
+    res.send(alertMove('글이 수정되었습니다.', '/board/list/1'))
+
 }
 
 
@@ -75,5 +87,6 @@ module.exports = {
     postWrite,
     getView,
     getUpdate,
+    postUpdate,
     _delete
 }
