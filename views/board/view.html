@@ -1,4 +1,37 @@
-<h1>글보기 페이지</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/b_view.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1><a href="/">logo</a></h1>
+    <h1 id="pagename">글보기 페이지</h1>
+    <ul>
+        <li>제목 : {{rows.title}}</li>
+        <li>내용 : {{rows.content}}</li>
+        <li>작성자 : {{rows.nickname}}</li>
+        <li>작성일 : {{rows.date}}</li>
+        <li>좋아요 : {{rows.likes}}</li>
+        <li>조회수 : {{rows.view}}</li>
+    </ul>
+    <form method="post" action="/board/view">
+        <input type="hidden" name="bid" value="{{bid}}">
+        <textarea type="text" name="content" placeholder="댓글입력"></textarea>
+        <input type="submit" value="작성완료">
+    </form>
+    <p></p>
+    <a href="/board/list/1">목록가기</a>
+    <p></p>
+    <a href="/board/update/?idx={{rows.idx}}">수정하기</a>
+    <p></p>
+    <form method="post" action="/board/delete">
+        <input type="hidden" name='idx' value="{{rows.idx}}">
+        <button type="submit">삭제하기</button>
+    </form>
 
 <ul>
     <li>제목 : {{rows.title}}</li>

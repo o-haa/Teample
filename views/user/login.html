@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="/u_login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <h1><a href="/">logo</a></h1>
     <h1 id="pagename">로그인페이지</h1>
-    <p></p>
-    아이디 : <input type="text" placeholder="아이디">
-    패스워드 : <input type="text" placeholder="패스워드">
+    <form type="post" action="/user/login">
+        ID : <input type="text" name="userid">
+        PW : <input type="text" name="userpw">
+        <input type="submit" value="login">
+    </form>
 </body>
 </html>
