@@ -26,11 +26,16 @@
                 <td>{{item.view}}</td>
             </tr>
             {% endfor %}
-        </div>
-        <div id="box">
-            <button class="box1"><a href="/board/write">글쓰기</a></button>
-        </div>    
-    </div> 
-</body>
-</html>
+        </tbody>
+    </table>
+    <div class="list_num">
+        {% for num in pageNum %}  
+        [<a href="/board/list/{{num+1}}">{{num+1}}</a>]
+        {% endfor %}
+    </div>
+    <div id="box">
+        <button class="box1"><a href="/board/write">글쓰기</a></button>
+    </div>    
+</div> 
+
 

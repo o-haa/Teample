@@ -8,7 +8,7 @@ const list = async (req, res)=>{
     try{
         const {user} = req.session
         const page = req.params.num
-        const count = 10
+        const count = 5
         let sql = 'SELECT idx, title, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view FROM board ORDER BY idx DESC'
         const [rows, fields] = await promisePool.query(sql)
         const pageNum = []
