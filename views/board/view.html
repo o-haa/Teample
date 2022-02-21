@@ -3,7 +3,6 @@
 {% block content %}
 <h1>글보기 페이지</h1>
 
-<<<<<<< HEAD
 <ul>
     <li>제목 : {{rows.title}}</li>
     <li>내용 : {{rows.content}}</li>
@@ -24,55 +23,3 @@
 </form>
 
 {% endblock %}
-=======
-<div id="content">
-    <h1 class="name">문의</h1>
-    <table class="content1">
-        <tr>
-            <td class="bold">homedeco</td>
-            <td class="bold">작성자</td>
-            <td class="light">우징</td>
-            <td class="bold">작성일</td>
-            <td class="light">2021-12-22 14:23</td>
-            <td class="bold">조회</td>
-            <td class="light">7</td>
-        </tr>
-    </table>
-    <div class="content2">
-        <p>깅엄 체크 패브릭 레드 커튼 재입고 안되나요?</p>
-    </div>
-    <div class="re">
-        <div class="re_header">
-            <h6 class="whole">전체 1</h6>
-            <h6 class="recommend">추천순</h6>
-            <hr>
-        </div>
-        <div class="re_body">
-            <h3 class="opertum">오페르툼</h3>
-            <h6 class="whole">2021-12-22 14:28</h6>
-            <p>안녕하세요 :) 더이상 재입고 하지 않는 상품입니다.</p>
-            <p>감사합니다!</p>
-            <div class="empty"></div>
-            <hr>
-        </div>
-        <form method="post" action="/board/view">
-            <div class="re_coment">
-                <input type="text" placeholder="댓글등록">
-            </div>
-            <input type="submit" vlaue="댓글등록">
-        </form>
-    </div>
-    <div class="blue_boxes">
-        <div class="left">
-            <button class="box1" type="button"><a href="/board/list">목록가기</a></button>
-        </div>
-        <div class="right">
-            <a href="/board/update?index={{idx}}">수정하기</a>
-            <form method="post" action="/board/delete">
-                <input type="hidden" name="idx" value="{{idx}}">
-                <input type="submit" value="글삭제">
-            </form>
-        </div>
-    </div>
-</div>
->>>>>>> oha
