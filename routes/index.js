@@ -4,7 +4,10 @@ const userRouter = require('./user/index.js')
 const boardRouter = require('./board/index.js')
 
 router.get('/', (req, res)=>{
-    res.render('./index.html')
+    const {user} = req.session
+    res.render('./index.html', {
+        user
+    })
 })
 
 /* User */
