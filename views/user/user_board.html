@@ -13,11 +13,11 @@
             <td>제목</td>
             <td>날짜</td>
             <td>조회수</td>
-            <td>좋아요</td요
+            <td>좋아요</td>
         </tr>
         {% for item in result %}
         <tr>
-            <td>{{item.idx}}</td>
+            <td>{{loop.index}}</td>
             <td><a href="/board/view/?idx={{item.idx}}">{{item.title}}</a></td>
             <td>{{item.date}}</td>
             <td>{{item.view}}</td>

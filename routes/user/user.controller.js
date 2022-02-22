@@ -26,7 +26,24 @@ const getBoard = async (req, res) => {
 }
 
 const getComment = async (req, res) => {
-
+    try {
+        const {userid} = req.session.user
+        const page = req.params.num
+        const count = 10
+        let sql = 'SELECT cid, comment, DATE_FORMAT(c_date, "%Y-%m-%d %r") AS date, bid FROM user LEFT JOIN comment ON user.userid=comment.c_userid WHERE user.userid=?'
+        const [rows, fields] = await promisePool.query(sql, [userid])
+        pageNum = []
+        for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}
+        const result = paging(page, count, rows)
+        res.render('./user/user_comment.html', {
+            result,
+            page,
+            pageNum
+        })
+    } catch {
+        console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
+    }
 }
 
 const getScrap = async (req, res) => {
