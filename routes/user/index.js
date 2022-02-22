@@ -15,8 +15,12 @@ router.post('/login', async (req,res)=>{
         let arr = [userid, userpw]
         const [rows,fields] = await promisePool.query(sql, arr)
         if (rows[0] != undefined) {
-            req.session.user = rows[0]
-            res.redirect('/')
+            if (rows[0].access == 'true') {
+                req.session.user = rows[0]
+                res.redirect('/')
+            } else {
+                res.send(alertMove('관리자로부터 이용 정지된 계정입니다.', '/'))
+            }
         } else {
             res.send(alertMove('회원정보가 일치하지 않습니다.', '/user/login'))
         }

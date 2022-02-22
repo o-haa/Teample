@@ -77,10 +77,9 @@ const adminInfo = async (req, res) => {
 
 const postAdminInfo = async (req, res) => {
     try {
-        const {level, userid} = req.body
-        console.log(req.body)
-        let sql = 'UPDATE user SET level=? WHERE userid=?'
-        await promisePool.query(sql, [level, userid])
+        const {level, access, userid} = req.body
+        let sql = 'UPDATE user SET level=?, access=? WHERE userid=?'
+        await promisePool.query(sql, [level, access, userid])
         res.send(alertMove('회원 정보가 수정되었습니다.', '/admin/list'))
     } catch {
         console.log(err)

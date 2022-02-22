@@ -23,26 +23,30 @@
         <p>전화번호: 없음</p>
         {% endif %}
         <p>핸드폰번호: +82) {{rows.mobile}}</p>
-        <p>등급: {{rows.level}}</p>        
+        <p>등급: {{rows.level}}</p>
+        <p>이용가능: {{rows.access}}</p>        
     </div>
     <div>
-    {% if rows.userid != 'admin' %}
+    {% if rows.level != 1 %}
     <form method="post" action="/admin/info">
         <p>등급변경 : 
             <select name="level">
                 <option>2</option>
                 <option>3</option>
             </select>
-            <input type="hidden" name="userid" value="{{rows.userid}}">
-            <button type="submit">변경하기</button>
         </p>
+        <p>이용가능여부 : 
+            <select name="access">
+                <option>true</option>
+                <option>false</option>
+            </select>
+        </p>
+        <input type="hidden" name="userid" value="{{rows.userid}}">
+        <button type="submit">변경하기</button>
     </form>
     {% endif %}
     </div>
     <div class="button">
-        {% if rows.userid != 'admin' %}
-        <a href="/">회원 이용중지</a>
-        {% endif %}
         <p></p>
         <a href="/admin/list">목록가기</a>
     </div>
