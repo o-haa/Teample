@@ -11,38 +11,8 @@ const pool = mysql.createPool(config)
 
 const promisePool = pool.promise()
 
-async function insert(query, arr, res) {
-    try {
-        await promisePool.query(query, arr)
-    } catch(err) {
-        console.log(err)
-        res.status(500).send('<h1>Internal Server Error</h1>')
-    }
-}
-
-async function del(query, arr, res) {
-    try {
-        await promisePool.query(query, arr)
-    } catch(err) {
-        console.log(err)
-        res.status(500).send('<h1>Internal Server Error</h1>')
-    }
-}
-
-async function update(query, arr, res) {
-    try {
-        await promisePool.query(query, arr)
-    } catch(err) {
-        console.log(err)
-        res.status(500).send('<h1>Internal Server Error</h1>')
-    }
-}
-
 module.exports = {
-    promisePool,
-    insert,
-    del,
-    update
+    promisePool
 }
 
 

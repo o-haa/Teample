@@ -30,10 +30,31 @@ router.get('/join',(req,res)=>{
     res.render('./user/join.html')
 })
 
-router.post('/join',(req,res)=>{
-    let {userid, userpw, username, nickname, birth, gender, phone, mobile, level} = req.body
-    
-})
+router.post('/join', async (req,res)=>{
+    try{
+        let {userid, userpw, username, nickname, birth, gender, phone, mobile, level} = req.body
+        console.log(userid)
+        let sql1 = "SELECT nickname FROM user WHERE nickname=?"
+        const [rows, fields] = await promisePool.query(sql1, [nickname])
+        if (rows[0] != undefined) {
+            res.send(alertMove('중복된 닉네임입니다.', '/user/join'))
+        } else {
+            let sql2 = "INSERT INTO user (userid, userpw, username, nickname, birth, gender, phone, mobile) VALUES (?,?,?,?,?,?,?,?)"
+            let sqlArr = [userid, userpw, username, nickname, birth, gender, phone, mobile, level]
+            const [rows,fields] = await promisePool.query(sql2,sqlArr)
+            console.log(rows)
+            res.send(alertMove('회원가입을 환영합니다!', '/user/login'))
+        }
+    } catch(err){
+        console.log(err)
+        if (err.errno == 1062) {
+            res.send(alertMove('중복된 아이디입니다.', '/user/join'))
+        } else {
+            res.status(500).send('<h1>Internal Server Error</h1>')
+        }
+    }
+}) 
+
 
 router.get('/profile', (req, res)=>{
     const {user} = req.session
