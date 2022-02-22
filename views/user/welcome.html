@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,32 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="/u_join.css" rel="stylesheet" type="text/css">
+    <link href="/u_welcome.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <h1><a href="/">logo</a></h1>
-    <h1 id="pagename">프로필페이지</h1>
+    <h1 id="pagename">welcome</h1>
     <div>
         <p>{{user.nickname}}님 반갑습니다.</p>
+        <p>아이디: {{user.userid}}</p>
         <p>이름: {{user.username}}</p>
         <p>성별: {{user.gender}}</p>
         {% if user.phone %}
-        <p>전화번호: 0{{user.phone}}</p>
+        <p>전화번호: {{user.phone}}</p>
         {% else %}
         <p>전화번호: 없음</p>
         {% endif %}
-        <p>핸드폰번호: 0{{user.mobile}}</p>        
+        <p>핸드폰번호: {{user.mobile}}</p>        
     </div>
     <div class="button">
         <a href="/">home</a>
-        <a href="/board/list/1">board</a>
-        <a href="/user/profile/update">Profile Edit</a>
-        <form method="post" action="/user/profile">
-            <input type="hidden" name="userid" value="{{user.userid}}">
-            <button type="submit">탈퇴하기</button>
-        </form>
+        <a href="/user/login">login</a>
     </div>
 </body>
 </html>
-    
     

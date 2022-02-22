@@ -43,7 +43,9 @@ router.post('/join', async (req,res)=>{
             let sqlArr = [userid, userpw, username, nickname, birth, gender, phone, mobile, level]
             const [rows,fields] = await promisePool.query(sql2,sqlArr)
             console.log(rows)
-            res.send(alertMove('회원가입을 환영합니다!', '/user/login'))
+            res.render('./user/welcome.html',{
+                user:req.body
+            })
         }
     } catch(err){
         console.log(err)
@@ -54,15 +56,6 @@ router.post('/join', async (req,res)=>{
         }
     }
 }) 
-
-
-router.get('/welcome',async (req,res)=>{
-    const {user} = req.session
-    let sql = "SELECT userid, username, gender, phone, mobile FROM user WHERE userid=?"
-    const [rows, fields] = await promisePool.query(sql,[user.userid])
-    res.send(rows[0])
-
-})
 
 
 router.get('/profile', (req, res)=>{
