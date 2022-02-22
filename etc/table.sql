@@ -4,7 +4,6 @@ CREATE TABLE board (
     content TEXT NULL,
     nickname VARCHAR(20) NOT NULL,
     date TIMESTAMP NOT NULL,
-    likes INT NOT NULL DEFAULT 0,
     view INT NOT NULL DEFAULT 0,
     userid VARCHAR(20) NOT NULL
 );
