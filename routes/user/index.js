@@ -3,6 +3,7 @@ const router = express.Router()
 const {alertMove} = require('../../util/alert.js')
 const {promisePool} = require('../../db2.js')
 const {Auth} = require('../../util/auth.js')
+const userController = require('./user.controller.js')
 
 router.get('/login', (req, res)=>{
     res.render('./user/login.html')
@@ -74,6 +75,15 @@ router.get('/logout', (req, res)=>{
     })
     res.send(alertMove('로그아웃 되었습니다.', '/'))
 })
+
+/* data router */
+router.get('/board/:num', Auth, userController.getBoard)
+
+router.get('/comment/:num', Auth, userController.getComment)
+
+router.get('/scrap/:num', Auth, userController.getScrap)
+
+router.post('/scrap', userController.postScrap)
 
 
 module.exports = router;

@@ -119,9 +119,16 @@ const postUpdate = async (req, res) => {
 const postScrap = async (req, res) => {
     try {
         const {idx, userid} = req.body
-        let sql = "INSERT INTO scrap (s_userid, bid) VALUES (?, ?)"
-        await promisePool.query(sql, [userid, idx])
-        res.send(alertMove('해당 게시글이 스크랩되었습니다. 프로필 페이지에서 확인 가능합니다.', `/board/view/?idx=${idx}`))
+        let sql1 = "SELECT * from scrap WHERE s_userid=? AND bid=?"
+        const [rows, fields] = await promisePool.query(sql1, [userid, idx])
+        console.log(rows)
+        if (rows[0] == undefined) {
+            let sql2 = "INSERT INTO scrap (s_userid, bid) VALUES (?, ?)"
+            await promisePool.query(sql2, [userid, idx])
+            res.send(alertMove('해당 게시글이 스크랩되었습니다. 프로필 페이지에서 확인 가능합니다.', `/board/view/?idx=${idx}`))
+        } else {
+            res.send(alertMove('이미 스크랩된 게시글입니다.', `/board/view/?idx=${idx}`))
+        }
     } catch {
         console.log(err)
         res.status(500).send('<h1>Internal Server Error</h1>')
