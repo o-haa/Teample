@@ -5,7 +5,24 @@ const {alertMove} = require('../../util/alert.js')
 const {paging} = require('../../util/paging.js')
 
 const getBoard = async (req, res) => {
-
+    try {
+        const {userid} = req.session.user
+        const page = req.params.num
+        const count = 10
+        let sql = 'SELECT idx, title, DATE_FORMAT(date, "%Y-%m-%d") AS date, view, likes FROM user LEFT JOIN board ON user.userid=board.userid WHERE user.userid=?'
+        const [rows, fields] = await promisePool.query(sql, [userid])
+        pageNum = []
+        for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}
+        const result = paging(page, count, rows)
+        res.render('./user/user_board.html', {
+            result,
+            page,
+            pageNum
+        })
+    } catch (err) {
+        console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
+    }
 }
 
 const getComment = async (req, res) => {
@@ -41,7 +58,7 @@ const postScrap = async (req, res) => {
         let sql = 'DELETE FROM scrap WHERE s_userid=? AND bid=?'
         await promisePool.query(sql, [userid, idx])
         res.send(alertMove('해당 스크랩이 삭제되었습니다.', '/user/scrap/1'))
-    } catch {
+    } catch (err) {
         console.log(err)
         res.status(500).send('<h1>Internal Server Error</h1>')
     }

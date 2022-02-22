@@ -5,6 +5,7 @@ CREATE TABLE board (
     nickname VARCHAR(20) NOT NULL,
     date TIMESTAMP NOT NULL,
     view INT NOT NULL DEFAULT 0,
+    likes INT NOT NULL DEFAULT 0,
     userid VARCHAR(20) NOT NULL
 );
 
@@ -24,8 +25,8 @@ CREATE TABLE user (
     nickname VARCHAR(20) NOT NULL,
     birth INT NOT NULL,
     gender VARCHAR(10) NOT NULL,
-    phone INT NULL,
-    mobile INT NOT NULL,
+    phone VARCHAR(20) NULL,
+    mobile VARCHAR(20) NOT NULL,
     level INT NOT NULL DEFAULT 3
     access VARCHAR(10) NOT NULL DEFAULT 'true'
 );
@@ -33,5 +34,11 @@ CREATE TABLE user (
 CREATE TABLE scrap (
     s_idx INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     s_userid VARCHAR(20) NOT NULL,
+    bid INT NOT NULL
+);
+
+CREATE TABLE likes (
+    likes_idx INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    likes_userid VARCHAR(20) NOT NULL,
     bid INT NOT NULL
 );
