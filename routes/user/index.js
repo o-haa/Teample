@@ -56,6 +56,15 @@ router.post('/join', async (req,res)=>{
 }) 
 
 
+router.get('/welcome',async (req,res)=>{
+    const {user} = req.session
+    let sql = "SELECT userid, username, gender, phone, mobile FROM user WHERE userid=?"
+    const [rows, fields] = await promisePool.query(sql,[user.userid])
+    res.send(rows[0])
+
+})
+
+
 router.get('/profile', (req, res)=>{
     const {user} = req.session
     res.render('./user/profile.html', {
@@ -69,6 +78,7 @@ router.get('/logout', (req, res)=>{
     })
     res.send(alertMove('로그아웃 되었습니다.', '/'))
 })
+
 
 module.exports = router;
 
