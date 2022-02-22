@@ -1,5 +1,5 @@
 
-/* middlewares */
+/* board middlewares */
 const {promisePool} = require('../../db2.js')
 const {alertMove} = require('../../util/alert.js')
 const {paging} = require('../../util/paging.js')

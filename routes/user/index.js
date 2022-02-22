@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const {alertMove} = require('../../util/alert.js')
 const {promisePool} = require('../../db2.js')
+const {Auth} = require('../../util/auth.js')
 
 router.get('/login', (req, res)=>{
     res.render('./user/login.html')
@@ -11,7 +12,6 @@ router.post('/login', async (req,res)=>{
     try{
         let {userid, userpw} = req.body
         let sql = "SELECT * FROM user WHERE userid=? AND userpw=?"
-        // let sql = "SELECT * FROM user"
         let arr = [userid, userpw]
         const [rows,fields] = await promisePool.query(sql, arr)
         if (rows[0] != undefined) {
@@ -42,7 +42,6 @@ router.post('/join', async (req,res)=>{
             let sql2 = "INSERT INTO user (userid, userpw, username, nickname, birth, gender, phone, mobile) VALUES (?,?,?,?,?,?,?,?)"
             let sqlArr = [userid, userpw, username, nickname, birth, gender, phone, mobile, level]
             const [rows,fields] = await promisePool.query(sql2,sqlArr)
-            console.log(rows)
             res.send(alertMove('회원가입을 환영합니다!', '/user/login'))
         }
     } catch(err){
@@ -56,7 +55,7 @@ router.post('/join', async (req,res)=>{
 }) 
 
 
-router.get('/profile', (req, res)=>{
+router.get('/profile', Auth, (req, res)=>{
     const {user} = req.session
     res.render('./user/profile.html', {
         user

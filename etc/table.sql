@@ -28,6 +28,7 @@ CREATE TABLE user (
     phone INT NULL,
     mobile INT NOT NULL,
     level INT NOT NULL DEFAULT 3
+    access VARCHAR(10) NOT NULL DEFAULT 'true'
 );
 
 CREATE TABLE scrap (
