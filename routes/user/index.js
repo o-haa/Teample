@@ -70,5 +70,10 @@ router.get('/logout', (req, res)=>{
     res.send(alertMove('로그아웃 되었습니다.', '/'))
 })
 
+
+router.get('/welcome',(req,res)=>{
+    res.render('./user/welcome.html')
+})
+
 module.exports = router;
 
