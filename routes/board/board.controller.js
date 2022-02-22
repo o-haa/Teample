@@ -116,6 +116,17 @@ const postUpdate = async (req, res) => {
     }
 }
 
+const postScrap = async (req, res) => {
+    try {
+        const {idx, userid} = req.body
+        let sql = "INSERT INTO scrap (s_userid, bid) VALUES (?, ?)"
+        await promisePool.query(sql, [userid, idx])
+        res.send(alertMove('해당 게시글이 스크랩되었습니다. 프로필 페이지에서 확인 가능합니다.', `/board/view/?idx=${idx}`))
+    } catch {
+        console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
+    }
+}
 
 const _delete = async (req, res) => {
     try {
@@ -140,5 +151,6 @@ module.exports = {
     deleteComment,
     getUpdate,
     postUpdate,
+    postScrap,
     _delete
 }

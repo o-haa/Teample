@@ -23,6 +23,8 @@ router.get('/update', Auth, boardController.getUpdate)
 
 router.post('/update', boardController.postUpdate)
 
+router.post('/scrap', boardController.postScrap)
+
 router.post('/delete', boardController._delete)
 
 module.exports = router
