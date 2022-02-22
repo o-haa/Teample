@@ -42,7 +42,10 @@ router.post('/join', async (req,res)=>{
             let sql2 = "INSERT INTO user (userid, userpw, username, nickname, birth, gender, phone, mobile) VALUES (?,?,?,?,?,?,?,?)"
             let sqlArr = [userid, userpw, username, nickname, birth, gender, phone, mobile, level]
             const [rows,fields] = await promisePool.query(sql2,sqlArr)
-            res.send(alertMove('회원가입을 환영합니다!', '/user/login'))
+            console.log(rows)
+            res.render('./user/welcome.html',{
+                user:req.body
+            })
         }
     } catch(err){
         console.log(err)
@@ -69,10 +72,6 @@ router.get('/logout', (req, res)=>{
     res.send(alertMove('로그아웃 되었습니다.', '/'))
 })
 
-
-router.get('/welcome',(req,res)=>{
-    res.render('./user/welcome.html')
-})
 
 module.exports = router;
 

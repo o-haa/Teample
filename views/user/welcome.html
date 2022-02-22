@@ -16,16 +16,15 @@
         <p>이름: {{user.username}}</p>
         <p>성별: {{user.gender}}</p>
         {% if user.phone %}
-        <p>전화번호: 0{{user.phone}}</p>
+        <p>전화번호: {{user.phone}}</p>
         {% else %}
         <p>전화번호: 없음</p>
         {% endif %}
-        <p>핸드폰번호: 0{{user.mobile}}</p>        
+        <p>핸드폰번호: {{user.mobile}}</p>        
     </div>
     <div class="button">
         <a href="/">home</a>
-        <a href="/board/list/1">board</a>
-        <a href="/user/profile/update">Profile Edit</a>
+        <a href="/user/login">login</a>
     </div>
 </body>
 </html>
