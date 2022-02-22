@@ -9,8 +9,8 @@ const admin = (req, res) => {
 
 const adminCheck = (req, res) => {
     const {user} = req.session
-    if (user.userid != 'admin') {
-        res.send(alertMove('관리자로 접속해주세요.', '/'))
+    if (user.level != 1) {
+        res.send(alertMove('최고관리자로 접속해주세요.', '/'))
     } else {
         res.render('./admin/admin_login.html', {
             user
@@ -31,7 +31,7 @@ const login = async (req, res) => {
                 user
             })
         } else {
-            res.send(alertMove('관리자만 접속 가능합니다.', '/'))
+            res.send(alertMove('최고관리자만 접속 가능합니다.', '/'))
         }
     } catch {
         console.log(err)
@@ -43,22 +43,49 @@ const logout = (req, res) => {
     req.session.destroy(()=>{
         res.session
     })
-    res.send(alertMove('관리자 로그아웃 되었습니다.', '/'))
+    res.send(alertMove('최고관리자 로그아웃 되었습니다.', '/'))
 }
 
 const adminList = async (req, res) => {
-    const {user} = req.session
-    let sql = "SELECT * FROM user"
-    const [rows, fields] = await promisePool.query(sql)
-    res.render('./admin/admin_list.html', {
-        user,
-        rows
-    })
+    try {
+        const {user} = req.session
+        let sql = "SELECT * FROM user"
+        const [rows, fields] = await promisePool.query(sql)
+        res.render('./admin/admin_list.html', {
+            user,
+            rows
+        })
+    } catch {
+        console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
+    }
 }
 
 const adminInfo = async (req, res) => {
-    const {userid} = req.query
-    
+    try {
+        const {id} = req.query
+        let sql = "SELECT * FROM user WHERE userid=?"
+        const [rows, fields] = await promisePool.query(sql, [id])
+        res.render('./admin/admin_info.html', {
+            rows: rows[0]
+        })
+    } catch {
+        console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
+    }
+}
+
+const postAdminInfo = async (req, res) => {
+    try {
+        const {level, userid} = req.body
+        console.log(req.body)
+        let sql = 'UPDATE user SET level=? WHERE userid=?'
+        await promisePool.query(sql, [level, userid])
+        res.send(alertMove('회원 정보가 수정되었습니다.', '/admin/list'))
+    } catch {
+        console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
+    }
 }
 
 // const getUpdate = (req, res) => {
@@ -80,7 +107,8 @@ module.exports = {
     adminCheck,
     logout,
     adminList,
-    adminInfo
+    adminInfo,
+    postAdminInfo
 }
 
 
