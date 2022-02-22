@@ -11,11 +11,10 @@ h1{
 div{
     margin-top: 20px;
     margin-left: 40%;
-    width: 250px;
+    width: 300px;
 }
 
-div>p {
-    
+div>p {  
     margin-bottom:10px;
 }
 

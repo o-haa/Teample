@@ -20,14 +20,100 @@ h1 > a{
     width:960px;
     margin:0 auto;
     margin-top: 20px;
+    border:0.5px grey solid;
 }
+
+.v_c_head{
+    height: 30px;
+    border-bottom: 0.5px grey dotted;
+    color: grey;
+    text-align: center;
+}
+
+.v_c_body{
+    height: 20px;
+    color: grey;
+    text-align: center;
+}
+
+.idx{
+    width:20px;
+}
+
+.title{
+    width: 600px;
+    text-align: center;
+}
+
+.nickname{
+    width: 150px;
+}
+
+.date{
+    width:150px;
+}
+
+.like{
+    width: 50px;
+}
+
+.view{
+    width: 50px;
+}
+
+.content_table{
+    width:960px;
+    height: 200px;
+    border-top: 0.5px grey dotted;
+}
+
+.scrap{
+    width:960px;
+    margin:10px auto;
+    text-align: end;
+}
+
+
 
 .comment_content{
     width: 960px;
     margin: 0 auto;
 }
 
+.comment_view{
+    width:960px;
+    margin:10px auto;
+    border-bottom: 0.5px grey solid;
+}
+
+.view_comment{
+    color:grey;
+    font-stretch:12px;
+
+}
+
+.view_end{
+    color:grey;
+    font-size:12px;
+    font-weight: 400;
+}
+
+.view_date{
+    color:grey;
+    font-size:12px;
+    font-weight: 400;
+    text-align: end;
+}
+
+.comment_style{
+    width:500px;
+    height: 50px;
+    margin:20px auto;
+    border:none;
+    border-bottom: 0.5px grey solid;
+}
+
 .button{
-    margin: 0 auto;
+    margin: 40px auto;
     text-align: center;
 }
