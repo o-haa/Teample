@@ -23,22 +23,24 @@
         <p>핸드폰번호: 0{{user.mobile}}</p>        
     </div>
     <div class="button">
-        <a href="/">home</a>
-        <a href="/board/list/1">board</a>
-        <a href="/user/profile/update">Profile Edit</a>
+        <button><a href="/">home</a></button>
+        <button><a href="/board/list/1">board</a></button>
+        <button><a href="/user/profile/update">Edit</a></button>
         <form method="post" action="/user/profile">
             <input type="hidden" name="userid" value="{{user.userid}}">
             <button type="submit">탈퇴하기</button>
         </form>
     </div>
-    <div class="p_list">
-        내가 작성한 글목록
-    </div>
-    <div class="p_comment">
-        내가 작성한 댓글
-    </div>
-    <div class="p_scrap">
-        스크랩
+    <div id="profile_my_history">
+        <div class="history1">
+            <h3>내가 작성한 글목록</h3>
+        </div>
+        <div class="history2">
+            <h3>내가 작성한 댓글</h3>
+        </div>
+        <div class="history3">
+            <h3>Scrap</h3>
+        </div>
     </div>
 </body>
 </html>

@@ -40,7 +40,32 @@ a{text-decoration: none;}
 }
 
 .button{
-    margin-top:10px;
+    margin-top:20px;
     text-align: center;
 }
+
+.button > button{
+    display: block;
+}
+
+#profile_my_history{
+    text-align: center;
+    display: flex;
+    width:1000px;
+    height: 400px;
+    margin:0 auto;
+    margin-top:10px;
+    justify-content: space-between;
+}
+
+#profile_my_history > div {
+    width:300px;
+    border:0.5px dotted rgb(56,56,205);
+}
+
+
+#profile_my_history > div > h3{
+    margin-top:10px;
+}
+
 
