@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="/u_join.css" rel="stylesheet" type="text/css">
+    <link href="/user.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1><a href="/">logo</a></h1>
-    <h1 id="pagename">회원가입페이지</h1>
+    {% include "../nunjucks/header.html" %}
+    <img src="/public/img/welcome.jpg">
+    <h3 id="pagename">Welcome to "Join"</h3>
     <form method="post" action="/user/join">
-        <div class="join_info">
+        <div class="user_info">
             <p> !! *는 필수사항입니다. !!</p>
             <p>ID * : <input type="text" name="userid"></p>
             <p>PW * : <input type="text" name="userpw"></p>
@@ -20,13 +21,14 @@
             <p>Birth * : <input type="text" name="birth" placeholder="6자리입력"></p>
             <p>Gender * : 
                 <select name="gender">
+                    <option>선택</option>
                     <option>남성</option>
                     <option>여성</option>
                 </select></p>
             <p>Phone : <input type="text" name="phone" placeholder="숫자만입력"></p>
             <p>H-Phone * : <input type="text" name="mobile" placeholder="숫자만입력"></p>
         </div>
-        <div class="join_login">
+        <div class="user_join_login">
             <input type="submit" value="Join">
         </div>
     </form>

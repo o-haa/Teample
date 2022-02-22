@@ -8,14 +8,14 @@
     <link href="/b_view.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1><a href="/">logo</a></h1>
+    {% include "../nunjucks/header.html" %}
     <h1 id="pagename">글보기 페이지</h1>
     <div class="view_content">
         <table class="v_c_head">
             <tr >
                 <td class="idx">num</td>
                 <td class="title">Title</td>
-                <td class="nickname">username</td>
+                <td class="nickname">Nickname</td>
                 <td class="date">date</td>
                 <td class="likes">likes</td>
                 <td class="view">views</td>

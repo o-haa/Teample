@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="/u_join.css" rel="stylesheet" type="text/css">
+    <link href="/user.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1><a href="/">logo</a></h1>
-    <h1 id="pagename">로그인페이지</h1>
+    {% include "../nunjucks/header.html" %}
+    <h3 id="pagename">로그인페이지</h3>
     <form method="post" action="/user/login">
-        <div>
+        <div class="user_info">
             <p>ID : <input type="text" name="userid"></p>
             <p>PW : <input type="text" name="userpw"></p>
         </div>
-        <div class="join_login">
+        <div class="user_join_login">
             <input type="submit" value="login">
         </div>
     </form>

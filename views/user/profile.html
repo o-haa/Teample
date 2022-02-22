@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="/u_join.css" rel="stylesheet" type="text/css">
+    <link href="/user.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1><a href="/">logo</a></h1>
-    <h1 id="pagename">프로필페이지</h1>
-    <div>
+    {% include "../nunjucks/header.html" %}
+    <h3 id="pagename">My Profile</h3>
+    <div class="user_join_login">
         <p>{{user.nickname}}님 반갑습니다.</p>
         <p>이름: {{user.username}}</p>
         <p>성별: {{user.gender}}</p>

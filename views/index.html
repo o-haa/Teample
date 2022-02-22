@@ -8,33 +8,9 @@
     <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1><a href="/">logo</a></h1>
-    <h1 id="pagename">메인페이지</h1>
-    <ul id="main_page">
-        <li>
-            <a href="/">HOME</a>
-        </li>
-        {% if user %}
-        <li>
-            <a href="/user/profile">PROFILE</a>
-        </li>
-        <li>
-            <a href="/user/logout">LOGOUT</a>
-        </li>
-        <li>
-            <a href="/board/list/1">BOARD</a>
-        </li>
-        {% else %}
-        <li>
-            <a href="/user/join">JOIN</a>
-        </li>
-        <li>
-            <a href="/user/login">LOGIN</a>
-        </li>
-        <li>
-            <a href="/board/list/1">BOARD</a>
-        </li>
-        {% endif %}
-    </ul>
+    {% include "./nunjucks/header.html" %}
+    <div id="slide">
+
+    </div>
 </body>
 </html>

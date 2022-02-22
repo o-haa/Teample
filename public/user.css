@@ -1,25 +1,38 @@
 *{
     margin:0;
     padding:0;
+    background-color:#000000;
+    color:whitesmoke
 }
 
-h1{
+
+ul,li{list-style: none;}
+a{text-decoration: none;}
+
+
+#pagename{
     margin-top:30px;
     text-align: center;
 }
 
-div{
+
+
+.user_info{
     margin-top: 20px;
     margin-left: 40%;
     width: 300px;
 }
 
-div>p {  
+.user_info>p {  
     margin-bottom:10px;
 }
 
-.join_login {
+.user_join_login {
     text-align: center;
+}
+
+.user_join_login>p{
+    margin-top:10px;
 }
 
 .home {
@@ -27,5 +40,7 @@ div>p {
 }
 
 .button{
+    margin-top:10px;
     text-align: center;
 }
+

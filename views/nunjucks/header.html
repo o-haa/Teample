@@ -1,0 +1,153 @@
+<style>
+*{
+    margin:0;
+    padding:0;
+    background-color:#000000;
+    color:whitesmoke
+}
+
+ul,li{list-style: none;}
+a{text-decoration: none;}
+
+#main_header{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5px;
+}
+
+h1{
+   text-align: center;
+}
+
+
+.menu{
+    width:30px;
+    height: 20px;
+}
+
+
+input[id="menu"]{
+    display: none;
+}
+
+input[id="menu"]+label{
+    position: relative;
+    display: block;
+    width:30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+input[id="menu"]+label>span{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 30px;
+    background: #fff;
+    transition: all 0.35s;
+    z-index: 2;
+}
+
+input[id="menu"] + label > span:nth-child(1){
+    top:0px;
+}
+
+input[id="menu"] + label > span:nth-child(2){
+    top:50%;
+    transform: translateY(-50%);
+}
+
+input[id="menu"] + label > span:nth-child(3){
+    bottom:0px;
+}
+
+input[id="menu"]:checked + label > span:nth-child(1){
+    top:50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="menu"]:checked + label > span:nth-child(2){
+    opacity: 0;
+}
+
+input[id="menu"]:checked + label > span:nth-child(3){
+    bottom:50%;
+    transform: translateY(50%) rotate(-45deg);
+    
+}
+
+
+#menu + label + .main_menu{
+    position:fixed;
+    right:-40%;
+    top:0;
+    width:40%;
+    height: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+#menu:checked + label + .main_menu {
+    right:0;
+}
+
+
+
+#main_page{
+    margin-top:200px;
+    text-align: center;
+}
+
+#main_page > li {
+    margin-top: 30px;
+}
+
+#main_page > li > a{
+    color: white;
+    font-size: 20px;
+}
+</style>
+
+
+<div id="main_header">
+    <h1><a href="/">logo</a></h1>
+    <div class="menu">
+        <input type="checkbox" id="menu">
+        <label for="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="main_menu">
+            <ul id="main_page">
+                <li>
+                    <a href="/">HOME .</a>
+                </li>
+                {% if user %}
+                <li>
+                    <a href="/user/profile">PROFILE .</a>
+                </li>
+                <li>
+                    <a href="/user/logout">LOGOUT .</a>
+                </li>
+                <li>
+                    <a href="/board/list/1">BOARD .</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="/user/join">JOIN .</a>
+                </li>
+                <li>
+                    <a href="/user/login">LOGIN .</a>
+                </li>
+                <li>
+                    <a href="/board/list/1">BOARD .</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>

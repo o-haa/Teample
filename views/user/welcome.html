@@ -8,8 +8,8 @@
     <link href="/u_welcome.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1><a href="/">logo</a></h1>
-    <h1 id="pagename">welcome</h1>
+    {% include "../nunjucks/header.html" %}
+    <h3 id="pagename">welcome</h3>
     <div>
         <p>{{user.nickname}}님 반갑습니다.</p>
         <p>아이디: {{user.userid}}</p>
