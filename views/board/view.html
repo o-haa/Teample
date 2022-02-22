@@ -38,8 +38,10 @@
         </table>
     </div>
     <div class="scrap">
-        <form method ="post" action="/board/view">
-            <input type="submit" value="scrap"></input>
+        <form method ="post" action="/board/scrap">
+            <input type="hidden" name="idx" value="{{rows[0].idx}}">
+            <input type="hidden" name="userid" value="{{user.userid}}">
+            <button type="submit">스크랩</button>
         </form>
     </div>
     <p></p>
