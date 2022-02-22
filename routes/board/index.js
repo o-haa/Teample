@@ -1,16 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const boardController = require('./board.controller.js')
-const {alertMove} = require('../../util/alert.js')
+const {Auth} = require('../../util/auth.js')
 
-const Auth = (req, res, next) => {
-    const {user} = req.session
-    if (user != undefined) {
-        next()
-    } else {
-        res.send(alertMove('접근 권한이 없습니다. 로그인 후 이용해주세요', '/user/login'))
-    }
-}
+
 
 router.get('/list', Auth, boardController.list)
 

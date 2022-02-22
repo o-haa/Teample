@@ -1,5 +1,5 @@
 
-/* middlewares */
+/* board middlewares */
 const {promisePool} = require('../../db2.js')
 const {alertMove} = require('../../util/alert.js')
 const {paging} = require('../../util/paging.js')
@@ -9,7 +9,7 @@ const list = async (req, res)=>{
         const {user} = req.session
         const page = req.params.num
         const count = 5
-        let sql = 'SELECT idx, title, nickname, DATE_FORMAT(date, "%Y-%m-%d. %r") AS date, likes, view FROM board ORDER BY idx DESC'
+        let sql = 'SELECT idx, title, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view FROM board ORDER BY idx DESC'
         const [rows, fields] = await promisePool.query(sql)
         const pageNum = []
         for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}
@@ -50,7 +50,7 @@ const getView = async (req, res) => {
         const {idx} = req.query
         let sql1 = 'UPDATE board SET view=board.view+1 WHERE idx=?'
         await promisePool.query(sql1, [idx])
-        let sql2 = `SELECT idx, title, content, nickname, DATE_FORMAT(date, "%Y-%m-%d %r") AS date, likes, view, userid, comment, DATE_FORMAT(c_date, "%Y-%m-%d %r") AS c_date, c_nickname, cid, c_userid 
+        let sql2 = `SELECT idx, title, content, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view, userid, comment, DATE_FORMAT(c_date, "%Y-%m-%d %r") AS c_date, c_nickname, cid, c_userid 
                     FROM board LEFT JOIN comment ON board.idx=comment.bid WHERE board.idx=?;`
         const [rows, fields] = await promisePool.query(sql2, [idx])
         res.render('./board/view.html', {

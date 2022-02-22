@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/u_join.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1><a href="/">logo</a></h1>
+    <h1 id="pagename">회원 리스트</h1>
+    <p></p>
+    <div>
+        <h2>최고관리자 (level 1)</h2>
+        <ul>
+            {% for data in rows %}
+            {% if data.level == 1 %}
+            <li><a href='/admin/info/?id={{data.userid}}'>{{data.userid}}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>     
+    </div>
+    <div>
+        <h2>관리자 (level 2)</h2>
+        <ul>
+            {% for data in rows %}
+            {% if data.level == 2 %}
+            <li><a href='/admin/info/?id={{data.userid}}'>{{data.userid}}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>     
+    </div>
+    <div>
+        <h2>사용자 (level 3)</h2>
+        <ul>
+            {% for data in rows %}
+            {% if data.level == 3 %}
+            <li><a href='/admin/info/?id={{data.userid}}'>{{data.userid}}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>     
+    </div>
+    <p></p>
+    <div>
+        <a href="/admin/login">관리자 페이지</a>
+    </div>
+</body>
+</html>

@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const {alertMove} = require('../../util/alert.js')
 const {promisePool} = require('../../db2.js')
+const {Auth} = require('../../util/auth.js')
 
 router.get('/login', (req, res)=>{
     res.render('./user/login.html')
@@ -11,12 +12,15 @@ router.post('/login', async (req,res)=>{
     try{
         let {userid, userpw} = req.body
         let sql = "SELECT * FROM user WHERE userid=? AND userpw=?"
-        // let sql = "SELECT * FROM user"
         let arr = [userid, userpw]
         const [rows,fields] = await promisePool.query(sql, arr)
         if (rows[0] != undefined) {
-            req.session.user = rows[0]
-            res.redirect('/')
+            if (rows[0].access == 'true') {
+                req.session.user = rows[0]
+                res.redirect('/')
+            } else {
+                res.send(alertMove('관리자로부터 이용 정지된 계정입니다.', '/'))
+            }
         } else {
             res.send(alertMove('회원정보가 일치하지 않습니다.', '/user/login'))
         }
@@ -43,7 +47,9 @@ router.post('/join', async (req,res)=>{
             let sqlArr = [userid, userpw, username, nickname, birth, gender, phone, mobile, level]
             const [rows,fields] = await promisePool.query(sql2,sqlArr)
             console.log(rows)
-            res.send(alertMove('회원가입을 환영합니다!', '/user/login'))
+            res.render('./user/welcome.html',{
+                user:req.body
+            })
         }
     } catch(err){
         console.log(err)
@@ -56,7 +62,7 @@ router.post('/join', async (req,res)=>{
 }) 
 
 
-router.get('/profile', (req, res)=>{
+router.get('/profile', Auth, (req, res)=>{
     const {user} = req.session
     res.render('./user/profile.html', {
         user
@@ -70,10 +76,6 @@ router.get('/logout', (req, res)=>{
     res.send(alertMove('로그아웃 되었습니다.', '/'))
 })
 
-
-router.get('/welcome',(req,res)=>{
-    res.render('./user/welcome.html')
-})
 
 module.exports = router;
 

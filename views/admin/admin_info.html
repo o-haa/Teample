@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/u_join.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1><a href="/">logo</a></h1>
+    <h1 id="pagename">회원 정보 페이지</h1>
+    <div>
+        <p>아이디: {{rows.userid}}</p>
+        <p>비밀번호: {{rows.userpw}}</p>
+        <p>이름: {{rows.username}}</p>
+        <p>닉네임: {{rows.nickname}}</p>
+        <p>생년월일: {{rows.birth}}</p>
+        <p>성별: {{rows.gender}}</p>
+        {% if user.phone %}
+        <p>전화번호: 0{{rows.phone}}</p>
+        {% else %}
+        <p>전화번호: 없음</p>
+        {% endif %}
+        <p>핸드폰번호: +82) {{rows.mobile}}</p>
+        <p>등급: {{rows.level}}</p>
+        <p>이용가능: {{rows.access}}</p>        
+    </div>
+    <div>
+    {% if rows.level != 1 %}
+    <form method="post" action="/admin/info">
+        <p>등급변경 : 
+            <select name="level">
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </p>
+        <p>이용가능여부 : 
+            <select name="access">
+                <option>true</option>
+                <option>false</option>
+            </select>
+        </p>
+        <input type="hidden" name="userid" value="{{rows.userid}}">
+        <button type="submit">변경하기</button>
+    </form>
+    {% endif %}
+    </div>
+    <div class="button">
+        <p></p>
+        <a href="/admin/list">목록가기</a>
+    </div>
+</body>
+</html>
