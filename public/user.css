@@ -11,50 +11,187 @@ a{text-decoration: none;}
 
 
 #pagename{
-    margin-top:30px;
+    width: auto;
+    height: fit-content;
     text-align: center;
+    z-index: 1;
+    position:absolute;
+    left:44vw;
+    top:30vh;
+    background-color: transparent;
+}
+
+#pagename_join{
+    width: auto;
+    height: fit-content;
+    text-align: center;
+    z-index: 1;
+    position:absolute;
+    left:44vw;
+    top:20vh;
+    background-color: transparent;
+}
+
+#pagename_profile{
+    width: auto;
+    height: fit-content;
+    text-align: center;
+    z-index: 1;
+    position:absolute;
+    left:46vw;
+    top:20%;
+    background-color: transparent;
 }
 
 
+#loginimg{
+    position: relative;
+    background-image: url("./img/login.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    opacity: 50%;
+    top:0;
+    z-index:0;
+    width: 100vw;
+    height: 100vh;
+    margin:0 auto;
+}
+
+#joinimg{
+    position: relative;
+    background-image: url("./img/join.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    opacity: 50%;
+    top:0;
+    z-index:0;
+    width: 100vw;
+    height: 100vh;
+    margin:0 auto;
+}
+
 
 .user_info{
-    margin-top: 20px;
-    margin-left: 40%;
+    position:absolute;
+    top:40vh;
+    left:39vw;
     width: 300px;
+    background-color: transparent;
 }
 
 .user_info>p {  
     margin-bottom:10px;
+    background-color: transparent;
+    font-size: 21px;
+}
+
+.user_info>p>input{
+    border:none;
+    border-bottom: 0.5px red dotted;
+    background-color: transparent;
+    font-size: 21px;
+}
+
+.join_info{
+    position:absolute;
+    top:27vh;
+    left:40vw;
+    width: 300px;
+    background-color: transparent;
+}
+
+.join_info>p{
+    margin-bottom:10px;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.join_info>p>input{
+    border:none;
+    border-bottom: 0.5px red dotted;
+    background-color: transparent;
+    font-size: 16px;
 }
 
 .user_join_login {
-    text-align: center;
+    position: absolute;
+    left:48vw;
+    top:58%;
+    height: auto;
+}
+
+.user_join_login > input {
+    font-size: 18px;
 }
 
 .user_join_login>p{
     margin-top:10px;
 }
 
+.user_join {
+    position: absolute;
+    left:48vw;
+    top: 68%;
+    height: auto;
+}
+
+.user_join > input {
+    font-size: 18px;
+    background-color: white;
+    color:black
+}
+
+.profile_info {
+    position: absolute;
+    left:45vw;
+    top:30%;
+    height: auto;
+}
+
+.profile_info > input {
+    font-size: 18px;
+}
+
+.profile_info>p{
+    margin-top:10px;
+}
+
 .home {
+    position: absolute;
+    bottom:200px;
     text-align: center;
 }
 
 .button{
-    margin-top:20px;
+    position: absolute;
+    left: 46%;
+    top: 54%;
     text-align: center;
 }
 
 .button > button{
-    display: block;
+    position:flex;
+}
+
+.button > button:nth-child(2){
+    margin:0 8px;
+}
+
+.button > form {
+    display:inline;
 }
 
 #profile_my_history{
+    position: absolute;
     text-align: center;
     display: flex;
     width:1000px;
-    height: 400px;
+    height: 50px;
     margin:0 auto;
-    margin-top:10px;
+    top:70%;
+    left: 12%;
     justify-content: space-between;
 }
 

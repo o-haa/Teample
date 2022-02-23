@@ -10,8 +10,8 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h3 id="pagename">My Profile</h3>
-    <div class="user_join_login">
+    <h3 id="pagename_profile">My Profile</h3>
+    <div class="profile_info">
         <p>{{user.nickname}}님 반갑습니다.</p>
         <p>이름: {{user.username}}</p>
         <p>성별: {{user.gender}}</p>
@@ -23,7 +23,7 @@
         <p>핸드폰번호: 0{{user.mobile}}</p>        
     </div>
     <div class="button">
-        <button><a href="/">home</a></button>
+        <!-- <button><a href="/">home</a></button> -->
         <button><a href="/board/list/1">board</a></button>
         <button><a href="/user/profile/update">Edit</a></button>
         <form method="post" action="/user/profile">
