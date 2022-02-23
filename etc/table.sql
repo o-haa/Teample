@@ -27,7 +27,7 @@ CREATE TABLE user (
     gender VARCHAR(20) NOT NULL,
     phone VARCHAR(30) NULL,
     mobile VARCHAR(30) NOT NULL,
-    level INT NOT NULL DEFAULT 3
+    level INT NOT NULL DEFAULT 3,
     access VARCHAR(20) NOT NULL DEFAULT 'true'
 );
 
