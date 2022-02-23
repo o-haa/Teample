@@ -1,68 +1,70 @@
 *{
     margin:0;
     padding:0;
-    background-color:#000000;
-    color:whitesmoke
+    color:whitesmoke;
 }
 
 ul,li{list-style: none;}
 a{text-decoration: none;}
 
-h1{
-    margin-top:10px;
+
+#b_name{
+    margin-top:20px;
     text-align: center;
 }
 
-h1 > a{
+#welcome_m{
     text-align: center;
-}
-
-#pagename{
-    margin-top:10px;
+    margin-top: 20px;
+    color:aqua !important;
 }
 
 #content {
     width:960px;
     margin:0 auto;
+    font-size: 13px;
 }
 
 table {
     width:960px;
     margin:20px auto;
     font-size:13px;
+    table-layout: fixed;
 }
 
 #board_head {
     font-weight: bold;
-    color:#545861;
     text-align: center;
 }
 
 #board_head tr td {
     padding:10px 0;
     box-sizing: border-box;
-    border-bottom: 2px #f1f1f1 solid;
+    border-bottom: 2px rgb(6, 6, 138) solid;
 }
 
 .board_idx {
-    width:72px;
+    width:20px;
 }
 .board_title {
-    width:auto;
+    width:250px;
 }
-.board_username {
-    width:80px;
+.board_nickname {
+    width:50px;
 }
-.board_date {
-    width:75px;
+
+.board_date{
+    width:50px;
+}
+.board_likes {
+    width:20px;
 }
 .board_view {
-    width: 55px;
+    width: 20px;
 }
 
 #board_body{
     font-weight: bold;
-    color:#545861;
     text-align: center;
 }
 
@@ -72,27 +74,30 @@ table {
 }
 
 #box {
-    padding: 15px 0;
+    padding: 5px 0;
     width:100%;
     box-sizing: border-box;
 }
 .box1 {
     margin-left: 5px;
-    margin-top:20px;
-    height: 28px;
-    padding: 0 10px;
     border: none;
     float:right;
-    background: #00a8e7;
-    color: #fff;
+    background: rgb(6, 6, 138);
+    padding: 7px;
+    font-size: 12px;
 }
 
 .box1>a{
     color:#fff;
+    background: rgb(6, 6, 138);
 }
 
 .list_num{
     text-align: center;
     margin:0 auto;
+}
+
+.list_num > a{
+    color:lemonchiffon;
 }
 

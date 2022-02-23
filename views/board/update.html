@@ -9,23 +9,24 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h1 id="pagename">수정페이지</h1>
-    <form method="post" action="/board/update/?idx={{rows.idx}}">
-        <input type="hidden" name="userid" value="{{user.userid}}">
-        <ul>
-            <li>
-                <strong>글 제목</strong>
-                : <input type="text" name="title" value="{{rows.title}}">
-            </li>
-            <li>
-                <strong>내용</strong>
-                : <textarea type="text" name="content">{{rows.content}}</textarea>
-            </li>
-        </ul>
-        <input type="submit" value="수정하기">
-    </form>
-    <div class="left">
-        <button class="box1" type="button"><a href="/board/list/1">목록가기</a></button>
+    <h3 id="b_name">You can "Edit" if you want :)</h3>
+    <div id="write_content">
+        <div class="write">
+            <form method="post" action="/board/update/?idx={{rows.idx}}">
+                <input type="hidden" name="userid" value="{{user.userid}}">
+                <div class="title">
+                    <strong>제목</strong>
+                    <input class="write_input" type="text" name="title" value="{{rows.title}}">
+                </div>
+                <div class="content">
+                    <textarea type="text" name="content">{{rows.content}}</textarea>
+                </div>
+                <input type="submit" value="Edit">
+            </form>
+            <div class="box">
+                <button class="box1" type="button"><a href="/board/list/1">목록가기</a></button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
