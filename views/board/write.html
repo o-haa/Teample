@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/b_write.css" rel="stylesheet" type="text/css">
+    {% include "../nunjucks/bWrite_formCheck.html" %}
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
     <h3 id="b_name">You can "write" anything you want!</h3>
     <div id="write_content">
         <div class="write">
-            <form method="post" action="/board/write">
+            <form name="form" method="post" action="/board/write" onSubmit="return formCheck()">
                 <input type="hidden" name="userid" value="{{userid}}">
                 <div class="title">
                     <strong>제목</strong>

@@ -9,7 +9,7 @@ const getBoard = async (req, res) => {
         const {userid} = req.session.user
         const page = req.params.num
         const count = 10
-        let sql = 'SELECT idx, title, DATE_FORMAT(date, "%Y-%m-%d") AS date, view, likes FROM user LEFT JOIN board ON user.userid=board.userid WHERE user.userid=?'
+        let sql = 'SELECT idx, title, DATE_FORMAT(date, "%Y-%m-%d") AS date, view, likes FROM user LEFT JOIN board ON user.userid=board.userid WHERE board.userid=?'
         const [rows, fields] = await promisePool.query(sql, [userid])
         pageNum = []
         for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}
@@ -30,7 +30,7 @@ const getComment = async (req, res) => {
         const {userid} = req.session.user
         const page = req.params.num
         const count = 10
-        let sql = 'SELECT cid, comment, DATE_FORMAT(c_date, "%Y-%m-%d %r") AS date, bid FROM user LEFT JOIN comment ON user.userid=comment.c_userid WHERE user.userid=?'
+        let sql = 'SELECT cid, comment, DATE_FORMAT(c_date, "%Y-%m-%d %r") AS date, bid FROM user LEFT JOIN comment ON user.userid=comment.c_userid WHERE c_userid=?'
         const [rows, fields] = await promisePool.query(sql, [userid])
         pageNum = []
         for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}

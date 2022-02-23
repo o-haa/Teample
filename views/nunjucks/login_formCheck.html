@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    function formCheck() {
+        if(form.userid.value == '') {
+            alert('아이디를 입력해주세요')
+            location.href="/user/login"
+            return false
+        }
+        if(form.userpw.value == '') {
+            alert('비밀번호를 입력해주세요')
+            location.href="/user/login"
+            return false
+        }
+    }
+</script>

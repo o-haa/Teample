@@ -13,6 +13,7 @@
             <td>내용</td>
             <td>날짜</td>
         </tr>
+        {% if result %}
         {% for item in result %}
         <tr>
             <td>{{loop.index}}</td>
@@ -20,6 +21,7 @@
             <td>{{item.date}}</td>
         </tr>
         {% endfor %}
+        {% endif %}
     </table>
     <div>
         {% for num in pageNum %}  

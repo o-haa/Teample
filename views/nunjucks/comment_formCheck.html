@@ -1,0 +1,9 @@
+<script type="text/javascript">
+    function formCheck(idx) {
+        if(form.comment.value == '') {
+            alert('댓글을 입력해주세요')
+            location.href=`/board/view/?idx=${idx}`
+            return false
+        }
+    }
+</script>

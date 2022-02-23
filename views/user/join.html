@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/user.css" rel="stylesheet" type="text/css">
+    {% include "../nunjucks/join_formCheck.html" %}
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
     <div id="joinimg"></div>
     <h3 id="pagename_join">Welcome to "Join"</h3>
-    <form method="post" action="/user/join">
+    <form name="form" method="post" action="/user/join" onSubmit="return formCheck()">
         <div class="join_info">
             <p> !! *는 필수사항입니다. !!</p>
             <p>ID * : <input type="text" name="userid"></p>

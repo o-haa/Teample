@@ -8,7 +8,7 @@ const list = async (req, res)=>{
     try{
         const {user} = req.session
         const page = req.params.num
-        const count = 5
+        const count = 10
         let sql = 'SELECT idx, title, nickname, DATE_FORMAT(date, "%Y-%m-%d") AS date, likes, view FROM board ORDER BY idx DESC'
         const [rows, fields] = await promisePool.query(sql)
         const pageNum = []
@@ -95,7 +95,8 @@ const getUpdate = async (req, res) => {
         let sql = 'SELECT idx, title, content FROM board WHERE idx=?'
         const [rows, fields] = await promisePool.query(sql, [idx])
         res.render('./board/update.html', {
-            rows: rows[0]
+            rows: rows[0],
+            idx
         })
     } catch (err) {
         console.log(err)

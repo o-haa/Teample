@@ -4,7 +4,6 @@ const {alertMove} = require('../../util/alert.js')
 const {promisePool} = require('../../db2.js')
 const {Auth} = require('../../util/auth.js')
 const userController = require('./user.controller.js')
-const Connection = require('mysql/lib/Connection')
 
 router.get('/login', (req, res)=>{
     res.render('./user/login.html')
@@ -39,11 +38,10 @@ router.get('/join',(req,res)=>{
 router.post('/join', async (req,res)=>{
     try{
         let {userid, userpw, username, nickname, birth, gender, phone, mobile, level} = req.body
-        console.log(userid)
         let sql1 = "SELECT nickname FROM user WHERE nickname=?"
         const [rows, fields] = await promisePool.query(sql1, [nickname])
         if (rows[0] != undefined) {
-            res.send(alertMove('중복된 닉네임입니다.', '/user/join'))
+            res.send(alertMove('이미 존재하는 닉네임입니다.', '/user/join'))
         } else {
             let sql2 = "INSERT INTO user (userid, userpw, username, nickname, birth, gender, phone, mobile) VALUES (?,?,?,?,?,?,?,?)"
             let sqlArr = [userid, userpw, username, nickname, birth, gender, phone, mobile]
@@ -55,7 +53,7 @@ router.post('/join', async (req,res)=>{
     } catch(err){
         console.log(err)
         if (err.errno == 1062) {
-            res.send(alertMove('중복된 아이디입니다.', '/user/join'))
+            res.send(alertMove('이미 존재하는 아이디입니다.', '/user/join'))
         } else {
             res.status(500).send('<h1>Internal Server Error</h1>')
         }
@@ -96,8 +94,10 @@ router.post('/profile/update', async (req, res)=>{
     try {
         const {userid} = req.session.user
         const {userpw, nickname, phone, mobile} = req.body
-        let sql = "UPDATE user SET userpw=?,nickname=?,phone=?,mobile=? WHERE userid=?"
-        let sqlArr = [userpw, nickname, phone, mobile, userid]
+        let sql = `UPDATE user AS u, board AS b, comment AS c 
+        SET u.userpw=?, u.nickname=?, u.phone=?, u.mobile=?, b.nickname=?, c.c_nickname=? 
+        WHERE u.userid=? AND b.userid=? AND c.c_userid=?`
+        let sqlArr = [userpw, nickname, phone, mobile, nickname, nickname, userid, userid, userid]
         await promisePool.query(sql, sqlArr)
         req.session.destroy(()=>{
             req.session
