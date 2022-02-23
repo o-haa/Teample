@@ -9,29 +9,19 @@ a{text-decoration: none;}
 
 
 #b_name{
-    margin-top:20px;
+    margin-top:7%;
     text-align: center;
-    font-size:25px;
-}
-
-#welcome_m{
-    text-align: center;
-    margin-top: 20px;
-    
-}
-
-#welcome_m > span{
-    color:rgb(194, 55, 182) !important;
-}
-
-#content {
-    width:960px;
-    margin:0 auto;
-    font-size: 15px;
 }
 
 table {
-    width:960px;
+    width:910px;
+    margin:30px auto;
+    font-size:15px;
+    table-layout: fixed;
+}
+
+#scrap_table{
+    width:960px !important;
     margin:20px auto;
     font-size:15px;
     table-layout: fixed;
@@ -45,24 +35,35 @@ table {
 #board_head tr td {
     padding:10px 0;
     box-sizing: border-box;
-    border-bottom: 2px rgb(86, 8, 122) solid;
+    border-bottom: 2px rgb(194, 55, 182) solid;
+    margin:10px 0;
 }
 
 .board_idx {
     width:20px;
 }
-.board_title {
-    width:250px;
+
+.scrap_title{
+    width:190px;
 }
-.board_nickname {
+
+.board_title {
+    width:240px;
+}
+
+.scrap_nickname{
     width:50px;
 }
 
 .board_date{
-    width:50px;
+    width:60px;
 }
 .board_likes {
     width:20px;
+}
+
+.scrap_delete{
+    width:40px;
 }
 .board_view {
     width: 20px;
@@ -74,27 +75,35 @@ table {
 }
 
 #board_body tr td {
-    padding:20px 0;
+    padding:15px 0;
     box-sizing: border-box;
+    margin:15px 0;
+}
+
+#board_body tr td form button{
+    border: 0.7px rgb(194, 55, 182) solid;
+    padding: 7px;
+    font-size: 12px;
+
 }
 
 #box {
     padding: 5px 0;
     width:100%;
     box-sizing: border-box;
+    text-align: center;
+    margin-top: 30px;
 }
 .box1 {
-    margin-left: 5px;
     border: none;
-    float:right;
-    background: rgb(86, 8, 122);
+    background: rgb(194, 55, 182);
     padding: 7px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .box1>a{
     color:#fff;
-    background: rgb(86, 8, 122);
+    background: rgb(194, 55, 182);
 }
 
 .list_num{
@@ -104,6 +113,5 @@ table {
 
 .list_num > a{
     color:lemonchiffon;
-    font-size:12px;
 }
 

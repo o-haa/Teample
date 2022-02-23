@@ -1,0 +1,97 @@
+*{
+    margin:0;
+    padding:0;
+    background-color:#000000;
+    color:whitesmoke
+}
+
+ul,li{list-style: none;}
+a{text-decoration: none;}
+
+#update_img{
+    position: relative;
+    background-image: url("./img/p_up.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    opacity: 70%;
+    top:0;
+    z-index:0;
+    width: 100vw;
+    height: 100vh;
+    margin:0 auto;
+}
+
+#pagename{
+    width: auto;
+    height: fit-content;
+    text-align: center;
+    z-index: 1;
+    position:absolute;
+    left:42%;
+    top:20vh;
+    background-color: transparent;
+    font-size: 22px;
+}
+
+
+.join_info{
+    position:absolute;
+    top:30vh;
+    left:38%;
+    width: 300px;
+    background-color: transparent;
+}
+
+.join_info>p{
+    margin-bottom:10px;
+    background-color: transparent;
+    font-size: 18px;
+    text-align: right;
+}
+
+.id{margin-right:140px;}
+.name{margin-right:120px;}
+.birth{margin-right:108px;}
+.gender{margin-right: 138px;}
+
+.join_info>p>input{
+    border:none;
+    border-bottom: 0.5px red dotted;
+    background-color: transparent;
+    font-size: 16px;
+    text-align: left;
+    padding-bottom: 1px;
+    padding-left:3px;
+    box-sizing: border-box;
+    opacity: 50%;
+}
+
+.join_info>p>input:focus{
+    outline: none;
+}
+
+.join_info > p >input::placeholder{
+    padding-bottom: 1px;
+    padding-left:3px;
+    box-sizing: border-box;
+
+}
+
+.join_login{
+    position:absolute;
+    top:65vh;
+    left:50%;
+    width: 300px;
+    background-color: transparent;
+}
+
+.join_login > input {
+    font-size: 18px;
+    color:black;
+    padding: 5px 7px;
+    border:none;
+    background: #f1f1f1;
+}
+
+

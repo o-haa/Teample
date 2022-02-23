@@ -37,15 +37,20 @@ a{text-decoration: none;}
 
 .title>strong{
     display: inline;
+    width:9%;
 
 }
 
 .write_input {
-    width:95%;
+    width:90%;
     font-size: 17px;
-    margin-left: 4px;
+    margin-left: 2%;
     border:none !important;
     border-bottom: 1px dotted #dcdcdc !important;
+}
+
+.write_input:focus{
+    outline: none;
 }
 
 .write_input::placeholder{
@@ -59,7 +64,7 @@ a{text-decoration: none;}
 }
 
 .content > textarea {
-    background-color: rgb(6, 6, 138) !important;
+    background-color: rgb(86, 8, 122) !important;
     color: #fff !important;
     width:100%;
     height: 250px;
@@ -77,8 +82,8 @@ a{text-decoration: none;}
 }
 
 .write > form > input{
-    background: yellow;
-    color:#000;
+    background: rgb(184, 57, 7);
+    color:#fff;
     margin-top:20px;
     padding:0px 10px;
     box-sizing: border-box;
@@ -89,23 +94,24 @@ a{text-decoration: none;}
 
 .box {
     width:100%;
+    background: rgb(184, 57, 7);
 }
 .box1 {
     margin-left: 5px;
     margin-top:20px;
     height: 28px;
     float:left;
-    background: yellow;
+    background: rgb(184, 57, 7);
     border:none;
 }
 
 .box1> button {
-    background: yellow;
+    background: rgb(184, 57, 7);
     
 }
 
 .box1>a{
-    background: yellow !important;
-    color:#000 !important;
+    background: rgb(184, 57, 7);
+    color:#fff !important;
     padding:0 10px;
 }

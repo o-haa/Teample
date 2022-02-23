@@ -8,26 +8,26 @@
     <link href="/u_update.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1><a href="/">logo</a></h1>
-    <h1 id="pagename">회원 정보 수정 페이지</h1>
+    {% include "../nunjucks/header.html" %}
+    <div id="update_img"></div>
+    <h3 id="pagename">"You can edit your profile"</h3>
     <form method="post" action="/user/profile/update">
         <div class="join_info">
-            <h3>회원정보</h3>
-            <p>ID * : {{user.userid}}</p>
-            <p>PW * : <input type="text" name="userpw" value="{{user.userpw}}"></p>
-            <p>Name * : {{user.username}}</p>
-            <p>Nickname * : <input type="text" name="nickname" value="{{user.nickname}}"></p>
-            <p>Birth * : {{user.birth}}</p>
-            <p>Gender * : {{user.gender}}</p> 
-            <p>Phone : <input type="text" name="phone" value="{{user.phone}}"></p>
-            <p>H-Phone * : <input type="text" name="mobile" value="{{user.mobile}}"></p>
+            <p class="id"> * ID {{user.userid}}</p>
+            <p> * PW <input type="text" name="userpw" value="{{user.userpw}}"></p>
+            <p class="name"> * Name {{user.username}}</p>
+            <p> * Nickname <input type="text" name="nickname" value="{{user.nickname}}"></p>
+            <p class="birth"> * Birth {{user.birth}}</p>
+            <p class="gender"> * Gender  {{user.gender}}</p> 
+            <p> Phone <input type="text" name="phone" value="{{user.phone}}"></p>
+            <p> * H-Phone <input type="text" name="mobile" value="{{user.mobile}}"></p>
         </div>
         <div class="join_login">
-            <input type="submit" value="수정">
+            <input type="submit" value="Edit">
         </div>
     </form>
-    <div class = "home">
+    <!-- <div class = "home">
         <a  href="/">home</a>
-    </div>
+    </div> -->
 </body>
 </html>

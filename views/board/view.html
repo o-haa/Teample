@@ -9,7 +9,7 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h3 id="view_title">Let's see our story</h3>
+    <h3 id="view_title">Let's "See" our story</h3>
     <div class="view_content">
         <table class="v_c_head">
             <tr >
@@ -96,27 +96,27 @@
         </form>
     </div>
     <div class="button">
-        <button><a class="list" href="/board/list/1">List</a></button>
         {% if user.level == 1 %}
-        <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
         <form method="post" action="/board/delete">
             <input type="hidden" name='idx' value="{{rows[0].idx}}">
             <button class="delete" type="submit">Delete</button>
         </form>
+        <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
         {% elif user.level == 2 %}
-        <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
         <form method="post" action="/board/delete">
             <input type="hidden" name='idx' value="{{rows[0].idx}}">
             <button class="delete" type="submit">Delete</button>
         </form>
+        <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
         {% elif user.userid == rows[0].userid %}
-        <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
         <form method="post" action="/board/delete">
             <input type="hidden" name='idx' value="{{rows[0].idx}}">
             <button class="delete" type="submit">Delete</button>
         </form>
+        <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
         {% else %}
         {% endif %}
+        <button><a class="list" href="/board/list/1">List</a></button>
     </div>    
 </body>
 </html>
