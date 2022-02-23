@@ -9,7 +9,8 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h3 id="pagename">로그인페이지</h3>
+    <div id="loginimg"></div>
+    <h3 id="pagename">Welcome to "Login"</h3>
     <form method="post" action="/user/login">
         <div class="user_info">
             <p>ID : <input type="text" name="userid"></p>
@@ -19,8 +20,8 @@
             <input type="submit" value="login">
         </div>
     </form>
-    <div class = "home">
+    <!-- <div class = "home">
         <a  href="/">home</a>
-    </div>
+    </div> -->
 </body>
 </html>
