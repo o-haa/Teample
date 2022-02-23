@@ -14,7 +14,7 @@ const getBoard = async (req, res) => {
         pageNum = []
         for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}
         const result = paging(page, count, rows)
-        res.render('./user/user_board.html', {
+        res.render('./user/profile/user_board.html', {
             result,
             page,
             pageNum
@@ -35,7 +35,7 @@ const getComment = async (req, res) => {
         pageNum = []
         for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}
         const result = paging(page, count, rows)
-        res.render('./user/user_comment.html', {
+        res.render('./user/profile/user_comment.html', {
             result,
             page,
             pageNum
@@ -56,7 +56,7 @@ const getScrap = async (req, res) => {
         pageNum = []
         for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}
         const result = paging(page, count, rows)
-        res.render('./user/user_scrap.html', {
+        res.render('./user/profile/user_scrap.html', {
             user,
             result,
             page,
