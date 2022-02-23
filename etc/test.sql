@@ -1,4 +1,4 @@
-INSERT INTO user VALUES ('jjc', '1111', '장주찬', '찬', 999999, '남자', 12341234, 01012341234, 3);
+INSERT INTO user VALUES ('cjh5701', '1111', '지정환', 'wlwjdghks', '990911', '남자', '01012341234', '01012341234', 1);
 
 INSERT INTO board (title, content, nickname, date, userid) VALUES ('hi_b', 'gggg', 'bitkunst', CURRENT_TIMESTAMP, 'bitkunst');
 
