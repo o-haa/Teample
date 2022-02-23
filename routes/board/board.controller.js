@@ -121,7 +121,6 @@ const postScrap = async (req, res) => {
         const {idx, userid} = req.body
         let sql1 = "SELECT * from scrap WHERE s_userid=? AND bid=?"
         const [rows, fields] = await promisePool.query(sql1, [userid, idx])
-        console.log(rows)
         if (rows[0] == undefined) {
             let sql2 = "INSERT INTO scrap (s_userid, bid) VALUES (?, ?)"
             await promisePool.query(sql2, [userid, idx])
@@ -129,7 +128,27 @@ const postScrap = async (req, res) => {
         } else {
             res.send(alertMove('이미 스크랩된 게시글입니다.', `/board/view/?idx=${idx}`))
         }
-    } catch {
+    } catch (err) {
+        console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
+    }
+}
+
+const postLikes = async (req, res) => {
+    try {
+        const {idx, userid} = req.body
+        let sql1 = "SELECT * from likes WHERE likes_userid=? AND bid=?"
+        const [rows, fields] = await promisePool.query(sql1, [userid, idx])
+        if (rows[0] == undefined) {
+            let sql2 = "INSERT INTO likes (likes_userid, bid) VALUES (?, ?)"
+            let sql3 = "UPDATE board SET likes=board.likes+1 WHERE idx=?"
+            await promisePool.query(sql2, [userid, idx])
+            await promisePool.query(sql3, [idx])
+            res.send(alertMove('You like this page👍', `/board/view/?idx=${idx}`))
+        } else {
+            res.send(alertMove('You already like this page😃', `/board/view/?idx=${idx}`))
+        }
+    } catch (err) {
         console.log(err)
         res.status(500).send('<h1>Internal Server Error</h1>')
     }
@@ -159,5 +178,6 @@ module.exports = {
     getUpdate,
     postUpdate,
     postScrap,
+    postLikes,
     _delete
 }

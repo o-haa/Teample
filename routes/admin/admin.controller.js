@@ -87,17 +87,6 @@ const postAdminInfo = async (req, res) => {
     }
 }
 
-// const getUpdate = (req, res) => {
-
-// }
-
-// const postUpdate = (req, res) => {
-
-// }
-
-
-
-
 
 
 module.exports = {

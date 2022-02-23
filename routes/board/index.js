@@ -25,6 +25,8 @@ router.post('/update', boardController.postUpdate)
 
 router.post('/scrap', boardController.postScrap)
 
+router.post('/likes', boardController.postLikes)
+
 router.post('/delete', boardController._delete)
 
 module.exports = router

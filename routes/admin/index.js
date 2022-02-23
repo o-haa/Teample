@@ -19,9 +19,5 @@ router.get('/info', Auth, adminAuth, adminController.adminInfo)
 
 router.post('/info', adminController.postAdminInfo)
 
-// router.get('/update', adminController.getUpdate)
-
-// router.post('/update', adminController.postUpdate)
-
 
 module.exports = router
