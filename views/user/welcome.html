@@ -11,16 +11,16 @@
     {% include "../nunjucks/header.html" %}
     <h3 id="pagename">welcome</h3>
     <div>
-        <p>{{user.nickname}}님 반갑습니다.</p>
-        <p>아이디: {{user.userid}}</p>
-        <p>이름: {{user.username}}</p>
-        <p>성별: {{user.gender}}</p>
-        {% if user.phone %}
-        <p>전화번호: {{user.phone}}</p>
+        <p>{{info.nickname}}님 반갑습니다.</p>
+        <p>아이디: {{info.userid}}</p>
+        <p>이름: {{info.username}}</p>
+        <p>성별: {{info.gender}}</p>
+        {% if info.phone %}
+        <p>전화번호: {{info.phone}}</p>
         {% else %}
         <p>전화번호: 없음</p>
         {% endif %}
-        <p>핸드폰번호: {{user.mobile}}</p>        
+        <p>핸드폰번호: {{info.mobile}}</p>        
     </div>
     <div class="button">
         <a href="/">home</a>
