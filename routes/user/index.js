@@ -46,12 +46,7 @@ router.post('/join', async (req,res)=>{
             res.send(alertMove('중복된 닉네임입니다.', '/user/join'))
         } else {
             let sql2 = "INSERT INTO user (userid, userpw, username, nickname, birth, gender, phone, mobile) VALUES (?,?,?,?,?,?,?,?)"
-<<<<<<< HEAD
             let sqlArr = [userid, userpw, username, nickname, birth, gender, phone, mobile]
-=======
-            let sqlArr = [userid, userpw, username, nickname, birth, gender, phone, mobile
-            ]
->>>>>>> jungHwan
             const [rows,fields] = await promisePool.query(sql2,sqlArr)
             res.render('./user/welcome.html',{
                 user:req.body
