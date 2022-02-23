@@ -9,21 +9,21 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h1 id="pagename">글작성 페이지</h1>
+    <h3 id="b_name">You can "write" anything you want!</h3>
     <div id="write_content">
         <div class="write">
             <form method="post" action="/board/write">
                 <input type="hidden" name="userid" value="{{userid}}">
-                <div>
+                <div class="title">
                     <strong>제목</strong>
-                    <input class="write_input1" type="text" name="title" placeholder="제목입력">
+                    <input class="write_input" type="text" name="title" placeholder="제목입력">
                 </div>
-                <div class="text_1">
+                <div class="content">
                     <textarea type="text" name="content" placeholder="내용입력"></textarea>
                 </div>
                 <input type="submit" value="글등록">
             </form>
-            <div class="left">
+            <div class="box">
                 <button class="box1" type="button"><a href="/board/list/1">목록가기</a></button>
             </div>
         </div>
