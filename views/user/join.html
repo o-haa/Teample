@@ -9,10 +9,10 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <img src="/public/img/welcome.jpg">
-    <h3 id="pagename">Welcome to "Join"</h3>
+    <div id="joinimg"></div>
+    <h3 id="pagename_join">Welcome to "Join"</h3>
     <form method="post" action="/user/join">
-        <div class="user_info">
+        <div class="join_info">
             <p> !! *는 필수사항입니다. !!</p>
             <p>ID * : <input type="text" name="userid"></p>
             <p>PW * : <input type="password" name="userpw"></p>
@@ -28,12 +28,12 @@
             <p>Phone : <input type="text" name="phone" placeholder="숫자만입력"></p>
             <p>H-Phone * : <input type="text" name="mobile" placeholder="숫자만입력"></p>
         </div>
-        <div class="user_join_login">
+        <div class="user_join">
             <input type="submit" value="Join">
         </div>
     </form>
-    <div class = "home">
+    <!-- <div class = "home">
         <a  href="/">home</a>
-    </div>
+    </div> -->
 </body>
 </html>

@@ -8,9 +8,19 @@
 ul,li{list-style: none;}
 a{text-decoration: none;}
 
-#id{
-    background-image: url("Planet1.png");
+#slide{
+    background-image: url("./img/Planet1.png");
+    background-size: 700px 700px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    z-index:1;
+    height: 100vh;
+    margin:0 auto;
+
 }
+
+
 
 
 

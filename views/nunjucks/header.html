@@ -3,7 +3,8 @@
     margin:0;
     padding:0;
     background-color:#000000;
-    color:whitesmoke
+    color:whitesmoke;
+    
 }
 
 ul,li{list-style: none;}
@@ -14,17 +15,20 @@ a{text-decoration: none;}
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 5px;
+    margin: 0 20px;
+
 }
 
 h1{
    text-align: center;
+
 }
 
 
 .menu{
     width:30px;
     height: 20px;
+
 }
 
 
@@ -38,6 +42,8 @@ input[id="menu"]+label{
     width:30px;
     height: 20px;
     cursor: pointer;
+    z-index: 3;
+
 }
 
 input[id="menu"]+label>span{
@@ -48,7 +54,8 @@ input[id="menu"]+label>span{
     border-radius: 30px;
     background: #fff;
     transition: all 0.35s;
-    z-index: 2;
+    z-index: 3;
+
 }
 
 input[id="menu"] + label > span:nth-child(1){
@@ -67,6 +74,7 @@ input[id="menu"] + label > span:nth-child(3){
 input[id="menu"]:checked + label > span:nth-child(1){
     top:50%;
     transform: translateY(-50%) rotate(45deg);
+
 }
 
 input[id="menu"]:checked + label > span:nth-child(2){
@@ -76,18 +84,20 @@ input[id="menu"]:checked + label > span:nth-child(2){
 input[id="menu"]:checked + label > span:nth-child(3){
     bottom:50%;
     transform: translateY(50%) rotate(-45deg);
-    
+ 
 }
 
 
 #menu + label + .main_menu{
     position:fixed;
-    right:-40%;
+    right:-30%;
     top:0;
-    width:40%;
+    width:30%;
     height: 100%;
     box-sizing: border-box;
     transition: all 0.2s;
+    z-index: 2;
+    
 }
 
 #menu:checked + label + .main_menu {
