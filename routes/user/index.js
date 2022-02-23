@@ -4,6 +4,7 @@ const {alertMove} = require('../../util/alert.js')
 const {promisePool} = require('../../db2.js')
 const {Auth} = require('../../util/auth.js')
 const userController = require('./user.controller.js')
+const Connection = require('mysql/lib/Connection')
 
 router.get('/login', (req, res)=>{
     res.render('./user/login.html')
@@ -45,7 +46,12 @@ router.post('/join', async (req,res)=>{
             res.send(alertMove('중복된 닉네임입니다.', '/user/join'))
         } else {
             let sql2 = "INSERT INTO user (userid, userpw, username, nickname, birth, gender, phone, mobile) VALUES (?,?,?,?,?,?,?,?)"
+<<<<<<< HEAD
             let sqlArr = [userid, userpw, username, nickname, birth, gender, phone, mobile]
+=======
+            let sqlArr = [userid, userpw, username, nickname, birth, gender, phone, mobile
+            ]
+>>>>>>> jungHwan
             const [rows,fields] = await promisePool.query(sql2,sqlArr)
             res.render('./user/welcome.html',{
                 user:req.body
@@ -68,6 +74,46 @@ router.get('/profile', Auth, (req, res)=>{
         user
     })
 })
+
+router.post('/profile', async (req, res)=>{
+    try {
+        const {userid} = req.body
+        let sql = "DELETE FROM user WHERE userid=?"
+        await promisePool.query(sql, [userid])
+        req.session.destroy(()=>{
+            req.session
+        })
+        res.send(alertMove('탈퇴처리가 완료되었습니다. 이용해주셔서 감사합니다.', '/'))
+    } catch (err) {
+        console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
+    }
+})
+
+router.get('/profile/update', Auth, (req, res)=>{
+    const {user} = req.session
+    res.render('./user/profile_update.html', {
+        user
+    })
+})
+
+router.post('/profile/update', async (req, res)=>{
+    try {
+        const {userid} = req.session.user
+        const {userpw, nickname, phone, mobile} = req.body
+        let sql = "UPDATE user SET userpw=?,nickname=?,phone=?,mobile=? WHERE userid=?"
+        let sqlArr = [userpw, nickname, phone, mobile, userid]
+        await promisePool.query(sql, sqlArr)
+        req.session.destroy(()=>{
+            req.session
+        })
+        res.send(alertMove('회원정보가 수정되었습니다. 다시 로그인 해주세요', '/'))
+    } catch (err) {
+        console.log(err)
+        res.status(500).send('<h1>Internal Server Error</h1>')
+    }
+})
+
 
 router.get('/logout', (req, res)=>{
     req.session.destroy(()=>{
