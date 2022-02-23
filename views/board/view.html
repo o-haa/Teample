@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/b_view.css" rel="stylesheet" type="text/css">
+    {% include "../nunjucks/comment_formCheck.html" %}
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
@@ -47,7 +48,7 @@
             <form method ="post" action="/board/scrap">
                 <input type="hidden" name="idx" value="{{rows[0].idx}}">
                 <input type="hidden" name="userid" value="{{user.userid}}">
-                <button type="submit">scrap</button>
+                <button type="submit">👀</button>
             </form>
         </div>
     </div>
@@ -89,7 +90,7 @@
     <p></p>
     <p></p>
     <div class="comment_content">
-        <form method="post" action="/board/view">
+        <form name="form" method="post" action="/board/view" onSubmit="return formCheck({{rows[0].idx}})">
             <input type="hidden" name="bid" value="{{rows[0].idx}}">
             <input class="comment_style" type="text" name="comment" placeholder="댓글입력">
             <input type="submit" value="작성완료">

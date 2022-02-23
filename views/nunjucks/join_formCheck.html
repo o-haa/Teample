@@ -1,0 +1,34 @@
+<script type="text/javascript">
+    function formCheck() {
+        if(form.userid.value == '') {
+            alert('아이디를 입력해주세요')
+            location.href="/user/join"
+            return false
+        }
+        if(form.userpw.value == '') {
+            alert('비밀번호를 입력해주세요')
+            location.href="/user/join"
+            return false
+        }
+        if(form.username.value == '') {
+            alert('이름을 입력해주세요')
+            location.href="/user/join"
+            return false
+        }
+        if(form.nickname.value == '') {
+            alert('닉네임을 입력해주세요')
+            location.href="/user/join"
+            return false
+        }
+        if(form.birth.value == '') {
+            alert('생년월일을 입력해주세요')
+            location.href="/user/join"
+            return false
+        }
+        if(form.mobile.value == '') {
+            alert('휴대폰번호를 입력해주세요')
+            location.href="/user/join"
+            return false
+        }
+    }
+</script>

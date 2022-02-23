@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/b_update.css" rel="stylesheet" type="text/css">
+    {% include "../nunjucks/bUpdate_formCheck.html" %}
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
     <h3 id="b_name">You can "Edit" if you want :)</h3>
     <div id="write_content">
         <div class="write">
-            <form method="post" action="/board/update/?idx={{rows.idx}}">
+            <form name="form" method="post" action="/board/update/?idx={{rows.idx}}" onSubmit="return formCheck({{idx}})">
                 <input type="hidden" name="userid" value="{{user.userid}}">
                 <div class="title">
                     <strong>제목</strong>

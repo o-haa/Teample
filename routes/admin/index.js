@@ -7,9 +7,9 @@ const {adminAuth} = require('../../util/admin_auth.js')
 
 router.get('/', adminController.admin)
 
-router.get('/login', Auth, adminController.adminCheck)
+router.get('/home', Auth, adminController.adminCheck)
 
-router.post('/login', adminController.login)
+router.post('/home', adminController.login)
 
 router.get('/logout', Auth, adminController.logout)
 

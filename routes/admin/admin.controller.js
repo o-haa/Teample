@@ -12,7 +12,7 @@ const adminCheck = (req, res) => {
     if (user.level != 1) {
         res.send(alertMove('최고관리자로 접속해주세요.', '/'))
     } else {
-        res.render('./admin/admin_login.html', {
+        res.render('./admin/admin_home.html', {
             user
         })
     }
@@ -27,7 +27,7 @@ const login = async (req, res) => {
         if (rows[0] != undefined) {
             req.session.user = rows[0]
             const {user} = req.session
-            res.render('./admin/admin_login', {
+            res.render('./admin/admin_home', {
                 user
             })
         } else {

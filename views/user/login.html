@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/user.css" rel="stylesheet" type="text/css">
+    {% include "../nunjucks/login_formCheck.html" %}
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
     <div id="loginimg"></div>
     <h3 id="pagename">Welcome to "Login"</h3>
-    <form method="post" action="/user/login">
+    <form name="form" method="post" action="/user/login" onSubmit="return formCheck()">
         <div class="user_info">
             <p>ID <input type="text" name="userid"></p>
             <p>PW <input type="password" name="userpw"></p>

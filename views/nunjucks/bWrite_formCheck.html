@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    function formCheck() {
+        if(form.title.value == '') {
+            alert('제목을 입력해주세요')
+            location.href="/board/write"
+            return false
+        }
+        if(form.content.value == '') {
+            alert('내용을 입력해주세요')
+            location.href="/board/write"
+            return false
+        }
+    }
+</script>
