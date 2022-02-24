@@ -162,6 +162,8 @@ const _delete = async (req, res) => {
         await promisePool.query(sql1, [idx])
         let sql2 = "DELETE FROM comment WHERE bid=?"
         await promisePool.query(sql2, [idx])
+        let sql3 = "DELETE FROM scrap WHERE bid=?"
+        await promisePool.query(sql3, [idx])
         res.send(alertMove('게시글이 삭제되었습니다.', '/board/list/1'))
     } catch (err) {
         console.log(err)
