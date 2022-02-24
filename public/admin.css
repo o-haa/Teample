@@ -1,0 +1,225 @@
+*{
+    margin:0;
+    padding:0;
+    background: #000;
+}
+
+ul,li{list-style: none;}
+a{text-decoration: none;}
+
+
+#pagename{
+    text-align: center;
+    font-size: 27px;
+}
+
+.user_info{
+    position:absolute;
+    top:40vh;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+}
+
+.user_info>p {  
+    margin-bottom:10px;
+    background-color: transparent;
+    font-size: 21px;
+    text-align: right;
+}
+
+.user_info>p>input{
+    border:none;
+    border-bottom: 0.5px rgb(194, 55, 182) dotted;
+    background-color: transparent;
+    font-size: 21px;
+    padding-bottom: 1px;
+    padding-left:3px;
+    box-sizing: border-box;
+}
+
+.user_info>p>input:focus{
+    outline: none;
+}
+
+.user_join_login {
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    top:58%;
+
+}
+
+.user_join_login > input {
+    font-size: 18px;
+    padding: 5px 7px;
+    border:none;
+    background: #f1f1f1;
+    color:#000;
+}
+
+
+.home {
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    top:70%;
+}
+
+.home > button {
+    padding: 5px;
+    border: none;
+    font-size: 12px;
+    box-sizing: border-box;
+    border: 1px #f1f1f1 dashed;
+}
+
+
+.join_info{
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+}
+
+.join_info>p{
+    margin-bottom:10px;
+    background-color: transparent;
+    font-size: 22px;
+}
+
+.join_info>p>span{
+    color:rgb(194, 55, 182);
+}
+
+.join_info > h3{
+    margin-top:20%;
+    text-align: center; 
+    cursor: pointer;
+    font-size:22px;
+}
+
+.join_info>h3>a{
+    text-align: center;
+}
+
+.admin_list{
+    margin-top:10%;
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    height: auto;
+}
+
+.admin1{
+    text-align: center;
+}
+
+.admin1>ul{
+    width:400px;
+    border:1px rgb(194, 55, 182) dotted;
+    margin:5%;
+}
+
+.admin1>ul>li{
+    margin:5%;
+}
+
+
+.admin1>ul>li>a{
+    color:rgb(221, 83, 28);
+    font-size:18px;
+    margin:5% 0;
+}
+
+
+.button{
+    position:absolute;
+    top:55%;
+    left: 50%;
+    transform: translateX(-50%);
+    width:200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button > button {
+    padding: 5px;
+    border: none;
+    font-size: 12px;
+    box-sizing: border-box;
+    border: 1px #f1f1f1 dashed;
+}
+
+.list_button{
+    position:absolute;
+    top:75%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.list_button > button {
+    padding: 5px;
+    border: none;
+    font-size: 12px;
+    box-sizing: border-box;
+    border: 1px #f1f1f1 dashed;
+}
+
+.member_info{
+    text-align: center;
+    font-size:18px;
+    margin-top: 5%;
+}
+
+.member_info>p{
+    margin:1% 0;
+}
+
+.member_info>p>span{
+    color:rgb(194, 55, 182);
+}
+
+.level{
+    text-align: center;
+    font-size:18px;
+}
+
+.level>form>p{
+    margin:1% 0;
+}
+
+.level>form>p>select{
+    font-size: 18px;
+}
+
+.level>form>button{
+    padding: 5px;
+    border: none;
+    font-size: 12px;
+    box-sizing: border-box;
+    background: rgb(221, 83, 28);
+    color:#f1f1f1;
+}
+
+
+
+.level_button{
+    position:absolute;
+    top:80%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.level_button > button {
+    padding: 5px;
+    border: none;
+    font-size: 12px;
+    box-sizing: border-box;
+    border: 1px #f1f1f1 dashed;
+}
+

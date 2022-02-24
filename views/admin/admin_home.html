@@ -4,21 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="/u_join.css" rel="stylesheet" type="text/css">
+    <title>admin</title>
+    <link href="/admin.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1><a href="/">logo</a></h1>
-    <h1 id="pagename">관리자페이지</h1>
-    <div>
-        <p>{{user.nickname}}님 반갑습니다.</p>
-        <p></p>
-        <p></p>
-        <h3><a href="/admin/list">회원 리스트</a></h3>    
+    {% include "../nunjucks/header.html" %}
+    <h3 id="pagename">관리자페이지</h3>
+    <div class="join_info">
+        <p><span>"{{user.nickname}}"</span>님 반갑습니다.</p>
+        <h3><a href="/admin/list">회원 리스트보기</a></h3>    
     </div>
     <div class="button">
-        <a href="/">home</a>
-        <a href="/admin/logout">로그아웃</a>
+        <button><a href="/">home</a></button>
+        <button><a href="/admin/logout">로그아웃</a></button>
     </div>
 </body>
 </html>

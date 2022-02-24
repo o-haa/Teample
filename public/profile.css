@@ -66,7 +66,7 @@ a{text-decoration: none;}
 
 .button > button > a{
     color:rgb(194, 55, 182);
-    font-size: 14px;
+    font-size: 17px;
 }
 
 
@@ -74,7 +74,7 @@ a{text-decoration: none;}
     border:none;
     /* border: 1px #f1f1f1 dashed; */
     color:rgb(194, 55, 182);
-    font-size: 14px;
+    font-size: 17px;
     cursor: pointer;
 }
 
@@ -96,7 +96,7 @@ a{text-decoration: none;}
     width:300px;
     height: 70px;
     border:0.5px dotted rgb(194, 55, 182);
-    margin-top:25px;
+    margin-top:7%;
     font-size: 20px;
 }
 

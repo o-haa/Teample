@@ -16,7 +16,8 @@ a{text-decoration: none;}
     text-align: center;
     z-index: 1;
     position:absolute;
-    left:45%;
+    left:50%;
+    transform: translateX(-50%);
     top:30vh;
     background-color: transparent;
     font-size: 22px;
@@ -28,7 +29,8 @@ a{text-decoration: none;}
     text-align: center;
     z-index: 1;
     position:absolute;
-    left:44vw;
+    left:50%;
+    transform: translateX(-50%);
     top:20vh;
     background-color: transparent;
     font-size: 25px;
@@ -68,13 +70,13 @@ a{text-decoration: none;}
 .user_info{
     position:absolute;
     top:40vh;
-    left:25%;
-    width: 500px;
+    left:50%;
+    transform: translateX(-50%);
     background-color: transparent;
 }
 
 .user_info>p {  
-    margin-bottom:10px;
+    margin-bottom:7%;
     background-color: transparent;
     font-size: 21px;
     text-align: right;
@@ -82,7 +84,7 @@ a{text-decoration: none;}
 
 .user_info>p>input{
     border:none;
-    border-bottom: 0.5px red dotted;
+    border-bottom: 0.5px rgb(194, 55, 182) dotted;
     background-color: transparent;
     font-size: 21px;
     padding-bottom: 1px;
@@ -97,13 +99,14 @@ a{text-decoration: none;}
 .join_info{
     position:absolute;
     top:27vh;
-    left:37%;
+    left:45%;
+    transform: translateX(-40%);
     width: 300px;
     background-color: transparent;
 }
 
 .join_info>p{
-    margin-bottom:10px;
+    margin-bottom:6%;
     background-color: transparent;
     font-size: 22px;
     text-align: right;
@@ -115,7 +118,7 @@ a{text-decoration: none;}
 }
 
 .join_info>p>span{
-    color:red;
+    color:rgb(194, 55, 182);
     background-color: transparent;
 }
 
@@ -124,7 +127,7 @@ a{text-decoration: none;}
 }
 
 .gender>select{
-    border-color: red;
+    border-color: rgb(194, 55, 182);
     font-size: 20px;
     background-color: transparent;
     outline: none;
@@ -133,12 +136,12 @@ a{text-decoration: none;}
 
 .join_info>p>input{
     border:none;
-    border-bottom: 0.5px red dotted;
+    border-bottom: 0.5px rgb(194, 55, 182) dotted;
     background-color: transparent;
     font-size: 16px;
     text-align: left;
-    padding-bottom: 1px;
-    padding-left:3px;
+    padding-bottom: 0.5%;
+    padding-left:0.5%;
     box-sizing: border-box;
 }
 
@@ -148,7 +151,7 @@ a{text-decoration: none;}
 
 .join_info > p >input::placeholder{
     padding-bottom: 1px;
-    padding-left:3px;
+    padding-left:0.5%;
     box-sizing: border-box;
     font-size:15px;
 
@@ -157,6 +160,7 @@ a{text-decoration: none;}
 .user_join_login {
     position: absolute;
     left:50%;
+    transform: translateX(-50%);
     top:58%;
 
 }
@@ -165,8 +169,10 @@ a{text-decoration: none;}
     font-size: 18px;
     padding: 5px 7px;
     border:none;
-    background: #f1f1f1;
+    background: rgb(194, 55, 182);
     color:#000;
+    border-radius: 30%;
+
 }
 
 .user_join_login>p{
@@ -175,8 +181,9 @@ a{text-decoration: none;}
 
 .user_join {
     position: absolute;
-    left:48vw;
-    top: 68%;
+    left:50%;
+    transform: translateX(-50%);
+    top: 74%;
     height: auto;
 }
 
@@ -185,7 +192,9 @@ a{text-decoration: none;}
     color:black;
     padding: 5px 7px;
     border:none;
-    background: #f1f1f1;
+    border-radius: 30%;
+    overflow: hidden;
+    background-color: rgb(194, 55, 182);
 }
 
 

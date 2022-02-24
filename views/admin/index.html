@@ -5,23 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="/u_join.css" rel="stylesheet" type="text/css">
+    <link href="/admin.css" rel="stylesheet" type="text/css">
     {% include "../nunjucks/admin_formCheck.html" %}
 </head>
 <body>
-    <h1><a href="/">logo</a></h1>
-    <h1 id="pagename">관리자 로그인 페이지</h1>
+    {% include "../nunjucks/header.html" %}
+    <h3 id="pagename">관리자 로그인 페이지</h3>
     <form name="form" method="post" action="/admin/home" onSubmit="return formCheck()">
-        <div>
-            <p>ID : <input type="text" name="userid"></p>
-            <p>PW : <input type="password" name="userpw"></p>
+        <div class="user_info">
+            <p>ID <input type="text" name="userid"></p>
+            <p>PW <input type="password" name="userpw"></p>
         </div>
-        <div class="join_login">
+        <div class="user_join_login">
             <input type="submit" value="login">
         </div>
     </form>
     <div class = "home">
-        <a  href="/">home</a>
+        <button><a  href="/">home</a></button>
     </div>
 </body>
 </html>

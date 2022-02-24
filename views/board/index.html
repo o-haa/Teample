@@ -11,7 +11,7 @@
     {% include "../nunjucks/header.html" %}
     <h3 id="b_name">"Board"</h3> 
     {% if user %}
-    <h3 id="welcome_m"><span>{{user.nickname}}</span>님 환영합니다.</h3>
+    <h3 id="welcome_m"><span>"{{user.nickname}}"</span>님 환영합니다.</h3>
     {% endif %}
     <div id="content">
         <table>

@@ -58,6 +58,11 @@ table {
 .board_date{
     width:60px;
 }
+
+/* .comment_date{
+    width: 80px;
+} */
+
 .board_likes {
     width:20px;
 }
@@ -72,6 +77,11 @@ table {
 #board_body{
     font-weight: bold;
     text-align: center;
+}
+
+#board_body>tr{
+    height: 54px;
+    
 }
 
 #board_body tr td {

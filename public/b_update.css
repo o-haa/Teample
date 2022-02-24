@@ -11,6 +11,7 @@ a{text-decoration: none;}
 #b_name{
     margin-top:30px;
     text-align: center;
+    font-size: 25px;
 }
 
 #write_content{
@@ -47,6 +48,7 @@ a{text-decoration: none;}
     margin-left: 2%;
     border:none !important;
     border-bottom: 1px dotted #dcdcdc !important;
+    cursor: pointer;
 }
 
 .write_input:focus{
@@ -64,7 +66,7 @@ a{text-decoration: none;}
 }
 
 .content > textarea {
-    background-color: rgb(86, 8, 122) !important;
+    background-color: rgb(194, 55, 182) !important;
     color: #fff !important;
     width:100%;
     height: 250px;
@@ -82,7 +84,7 @@ a{text-decoration: none;}
 }
 
 .write > form > input{
-    background: rgb(184, 57, 7);
+    background: rgb(221, 83, 28);
     color:#fff;
     margin-top:20px;
     padding:0px 10px;
@@ -90,28 +92,29 @@ a{text-decoration: none;}
     height: 28px;
     float:right;
     border:none;
+    cursor: pointer;
 }
 
 .box {
     width:100%;
-    background: rgb(184, 57, 7);
+    background: rgb(221, 83, 28);
 }
 .box1 {
     margin-left: 5px;
     margin-top:20px;
     height: 28px;
     float:left;
-    background: rgb(184, 57, 7);
+    background: rgb(221, 83, 28);
     border:none;
 }
 
 .box1> button {
-    background: rgb(184, 57, 7)ow;
+    background: rgb(221, 83, 28);
     
 }
 
 .box1>a{
-    background: rgb(184, 57, 7) !important;
+    background: rgb(221, 83, 28) !important;
     color:#fff !important;
     padding:0 10px;
 }

@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welcome</title>
     <link href="/u_welcome.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h3 id="pagename">welcome</h3>
-    <div>
-        <p>{{info.nickname}}님 반갑습니다.</p>
-        <p>아이디: {{info.userid}}</p>
-        <p>이름: {{info.username}}</p>
-        <p>성별: {{info.gender}}</p>
+   
+    <h3 id="pagename">🌝 Welcome to our new members! 🌝</h3>
+    <div class="join_info">
+        <p>"<span>{{info.nickname}}</span>"님 반갑습니다.</p>
+        <p> ID <span>{{info.userid}}</span></p>
+        <p> NAME <span>{{info.username}}</span></p>
+        <p> GENDER <span>{{info.gender}}</span></p>
         {% if info.phone %}
-        <p>전화번호: {{info.phone}}</p>
+        <p> PHONE <span>{{info.phone}}</span></p>
         {% else %}
-        <p>전화번호: 없음</p>
+        <p> PHONE 없음</p>
         {% endif %}
-        <p>핸드폰번호: {{info.mobile}}</p>        
+        <p> H-PHONE <span>{{info.mobile}}</span></p>        
     </div>
     <div class="button">
-        <a href="/">home</a>
-        <a href="/user/login">login</a>
+        <button><a href="/">home</a></button>
+        <button><a href="/user/login">login</a></button>
     </div>
 </body>
 </html>

@@ -28,7 +28,8 @@ a{text-decoration: none;}
     text-align: center;
     z-index: 1;
     position:absolute;
-    left:42%;
+    left:50%;
+    transform: translateX(-50%);
     top:20vh;
     background-color: transparent;
     font-size: 22px;
@@ -57,7 +58,7 @@ a{text-decoration: none;}
 
 .join_info>p>input{
     border:none;
-    border-bottom: 0.5px red dotted;
+    border-bottom: 0.5px rgb(194, 55, 182) dotted;
     background-color: transparent;
     font-size: 16px;
     text-align: left;

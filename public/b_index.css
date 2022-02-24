@@ -45,7 +45,7 @@ table {
 #board_head tr td {
     padding:10px 0;
     box-sizing: border-box;
-    border-bottom: 2px rgb(86, 8, 122) solid;
+    border-bottom: 2px rgb(194, 55, 182) solid;
 }
 
 .board_idx {
@@ -87,14 +87,14 @@ table {
     margin-left: 5px;
     border: none;
     float:right;
-    background: rgb(86, 8, 122);
+    background: rgb(194, 55, 182);
     padding: 7px;
     font-size: 14px;
 }
 
 .box1>a{
     color:#fff;
-    background: rgb(86, 8, 122);
+    background: rgb(194, 55, 182);
 }
 
 .list_num{
