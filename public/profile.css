@@ -9,6 +9,9 @@
 ul,li{list-style: none;}
 a{text-decoration: none;}
 
+#wrap{
+    height: 100%;
+}
 
 #pagename_profile{
     width: auto;
@@ -32,7 +35,7 @@ a{text-decoration: none;}
 }
 
 .profile_info_view {
-    margin-top:8%;
+    margin-top:5%;
     margin-left: 12%;
     width:100%;
     text-align: center;

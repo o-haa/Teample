@@ -97,6 +97,7 @@ table {
     border: 0.7px rgb(194, 55, 182) solid;
     padding: 7px;
     font-size: 12px;
+    cursor: pointer;
 
 }
 

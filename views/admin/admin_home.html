@@ -9,15 +9,20 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h3 id="pagename">관리자페이지</h3>
-    <div class="join_info">
-        <p><span>"{{user.nickname}}"</span>님 반갑습니다.</p>
-        <h3><a href="/admin/list">회원 리스트보기</a></h3>    
+    <div id="wrap">
+        <h3 id="pagename">관리자페이지</h3>
+        <div class="join_info">
+            <p><span>"{{user.nickname}}"</span>님 반갑습니다.</p>
+            <div>
+                <h3><a href="/admin/list">회원 리스트보기</a></h3>
+            </div>    
+        </div>
+        <div class="button">
+            <button><a href="/">home</a></button>
+            <button><a href="/admin/logout">로그아웃</a></button>
+        </div>
     </div>
-    <div class="button">
-        <button><a href="/">home</a></button>
-        <button><a href="/admin/logout">로그아웃</a></button>
-    </div>
+   
     {% include "../nunjucks/footer.html" %}
 </body>
 </html>

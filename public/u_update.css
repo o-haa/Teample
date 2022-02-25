@@ -8,6 +8,10 @@
 ul,li{list-style: none;}
 a{text-decoration: none;}
 
+#wrap{
+    width:100%;
+}
+
 #update_img{
     position: relative;
     background-image: url("./img/p_up.png");
@@ -18,8 +22,9 @@ a{text-decoration: none;}
     top:0;
     z-index:0;
     width: 100vw;
-    height: 100vh;
+    height: 78vh;
     margin:0 auto;
+    overflow: hidden;
 }
 
 #pagename{
@@ -39,7 +44,8 @@ a{text-decoration: none;}
 .join_info{
     position:absolute;
     top:30vh;
-    left:38%;
+    left:47%;
+    transform: translateX(-47%);
     width: 300px;
     background-color: transparent;
 }
@@ -51,10 +57,10 @@ a{text-decoration: none;}
     text-align: right;
 }
 
-.id{margin-right:140px;}
-.name{margin-right:120px;}
-.birth{margin-right:108px;}
-.gender{margin-right: 138px;}
+.id{margin-right:40%;}
+.name{margin-right:40%;}
+.birth{margin-right:37%;}
+.gender{margin-right: 46%;}
 
 .join_info>p>input{
     border:none;
@@ -82,17 +88,39 @@ a{text-decoration: none;}
 .join_login{
     position:absolute;
     top:65vh;
-    left:50%;
+    left:62%;
+    transform: translateX(-62%);
     width: 300px;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .join_login > input {
-    font-size: 18px;
+    font-size: 16px;
     color:black;
     padding: 5px 7px;
     border:none;
     background: #f1f1f1;
+    cursor: pointer;
+}
+
+.button{
+    position:absolute;
+    top:75%;
+    left:50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width:200px;
+    margin:0 auto;
+    /* margin-top:1%; */
+}
+
+.button > button {
+    padding: 7px;
+    border: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px #f1f1f1 dashed;
 }
 
 

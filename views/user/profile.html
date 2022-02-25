@@ -10,45 +10,47 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <div id="profileimg"></div>
-    <h3 id="pagename_profile">My Profile</h3>
-    <div id="profile_wrap">
-        <div id="profile_left">
-            <div class="profile_info_view">
-                <p><span>" {{user.nickname}} " </span>님 반갑습니다.</p>
-                <p>이름: {{user.username}}</p>
-                <p>성별: {{user.gender}}</p>
-                {% if user.phone %}
-                <p>전화번호: {{user.phone}}</p>
-                {% else %}
-                <p>전화번호: 없음</p>
-                {% endif %}
-                <p>핸드폰번호: {{user.mobile}}</p>        
-            </div>
-            <div class="button">
-                <!-- <button><a href="/">home</a></button> -->
-                <button><a href="/board/list/1">board</a></button>
-                <button><a href="/user/profile/update">Edit</a></button>
-                <form method="post" action="/user/profile">
-                    <input type="hidden" name="userid" value="{{user.userid}}">
-                    <button class="delete" type="submit">탈퇴하기</button>
-                </form>
-            </div>
-        </div>
-        <div id="profile_right">
-            <div id="profile_my_history">
-                <div class="history1">
-                    <h5><a href="/user/board/1">작성한 글 보기</a></h5>
+    <div id="wrap">
+        <h3 id="pagename_profile">My Profile</h3>
+        <div id="profile_wrap">
+            <div id="profile_left">
+                <div class="profile_info_view">
+                    <p><span>" {{user.nickname}} " </span>님 반갑습니다.</p>
+                    <p>이름: {{user.username}}</p>
+                    <p>성별: {{user.gender}}</p>
+                    {% if user.phone %}
+                    <p>전화번호: {{user.phone}}</p>
+                    {% else %}
+                    <p>전화번호: 없음</p>
+                    {% endif %}
+                    <p>핸드폰번호: {{user.mobile}}</p>        
                 </div>
-                <div class="history2">
-                    <h5><a href="/user/comment/1">작성 댓글 보기</a></h5>
+                <div class="button">
+                    <!-- <button><a href="/">home</a></button> -->
+                    <button><a href="/board/list/1">Board</a></button>
+                    <button><a href="/user/profile/update">Edit</a></button>
+                    <form method="post" action="/user/profile">
+                        <input type="hidden" name="userid" value="{{user.userid}}">
+                        <button class="delete" type="submit">탈퇴하기</button>
+                    </form>
                 </div>
-                <div class="history3">
-                    <h5><a href="/user/scrap/1">스크랩 보기</a></h5>
+            </div>
+            <div id="profile_right">
+                <div id="profile_my_history">
+                    <div class="history1">
+                        <h5><a href="/user/board/1">작성한 글 보기</a></h5>
+                    </div>
+                    <div class="history2">
+                        <h5><a href="/user/comment/1">작성 댓글 보기</a></h5>
+                    </div>
+                    <div class="history3">
+                        <h5><a href="/user/scrap/1">스크랩 보기</a></h5>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     {% include "../nunjucks/footer.html" %}
     
 </body>

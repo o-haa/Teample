@@ -10,115 +10,121 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h3 id="view_title">Let's "See" our story</h3>
-    <div class="view_content">
-        <table class="v_c_head">
-            <tr >
-                <td class="board_idx">Num</td>
-                <td class="board_title">Title</td>
-                <td class="board_nickname">Writer</td>
-                <td class="board_date">Date</td>
-                <td class="board_likes">Likes</td>
-                <td class="board_view">Views</td>
-            </tr>
-        </table>
-        <table class="v_c_body">
-            <tr>
-                <td class="board_idx">"{{rows[0].idx}}"</td>
-                <td class="board_title">"{{rows[0].title}}"</td>
-                <td class="board_nickname">"{{rows[0].nickname}}"</td>
-                <td class="board_date">"{{rows[0].date}}"</td>
-                <td class="board_likes">"{{rows[0].likes}}"</td>
-                <td class="board_view">"{{rows[0].view}}"</td>
-            </tr>
-        </table>
-        <div class="content_table">
-            <div class="content">{{rows[0].content}}</div>
+    <div id="wrap">
+        <h3 id="view_title">Let's "See" our story</h3>
+        <div class="view_content">
+            <table class="v_c_head">
+                <tr >
+                    <td class="board_idx">Num</td>
+                    <td class="board_title">Title</td>
+                    <td class="board_nickname">Writer</td>
+                    <td class="board_date">Date</td>
+                    <td class="board_likes">Likes</td>
+                    <td class="board_view">Views</td>
+                </tr>
+            </table>
+            <table class="v_c_body">
+                <tr>
+                    <td class="board_idx">"{{rows[0].idx}}"</td>
+                    <td class="board_title">"{{rows[0].title}}"</td>
+                    <td class="board_nickname">"{{rows[0].nickname}}"</td>
+                    <td class="board_date">"{{rows[0].date}}"</td>
+                    <td class="board_likes">"{{rows[0].likes}}"</td>
+                    <td class="board_view">"{{rows[0].view}}"</td>
+                </tr>
+            </table>
+            <div class="content_table">
+                <div class="content">{{rows[0].content}}</div>
+            </div>
         </div>
-    </div>
-    <div class="l_s">
-        <div class="likes">
-            <form method ="post" action="/board/likes">
-                <input type="hidden" name="idx" value="{{rows[0].idx}}">
-                <input type="hidden" name="userid" value="{{user.userid}}">
-                <button type="submit">👍</button>
+        <div class="l_s">
+            <div class="likes">
+                <form method ="post" action="/board/likes">
+                    <input type="hidden" name="idx" value="{{rows[0].idx}}">
+                    <input type="hidden" name="userid" value="{{user.userid}}">
+                    <button type="submit">👍</button>
+                </form>
+            </div>
+            <div class="scrap">
+                <form method ="post" action="/board/scrap">
+                    <input type="hidden" name="idx" value="{{rows[0].idx}}">
+                    <input type="hidden" name="userid" value="{{user.userid}}">
+                    <button type="submit">👀</button>
+                </form>
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+        <div class="comment_content">
+        {% if rows[0].c_userid %}
+        {% for data in rows %}
+        <div>
+            <div class="comment_view">
+                <p class="view_comment">{{data.comment}}</p>
+                <span class="view_end">작성자: {{data.c_nickname}}</span>
+                <span class="view_date">작성일: {{data.c_date}}</span>
+                {% if user.level == 1 %}
+                <form method="post" action="/board/comment" style="display: inline-block;">
+                    <input type="hidden" name="bid" value="{{data.idx}}">
+                    <input type="hidden" name='cid' value="{{data.cid}}">
+                    <button class="comment_delete" type="submit">삭제</button>
+                </form>
+                {% elif user.level == 2 %}
+                <form method="post" action="/board/comment" style="display: inline-block;">
+                    <input type="hidden" name="bid" value="{{data.idx}}">
+                    <input type="hidden" name='cid' value="{{data.cid}}">
+                    <button class="comment_delete" type="submit">삭제</button>
+                </form>
+                {% elif user.userid == data.c_userid %}
+                <form method="post" action="/board/comment" style="display: inline-block;">
+                    <input type="hidden" name="bid" value="{{data.idx}}">
+                    <input type="hidden" name='cid' value="{{data.cid}}">
+                    <button class="comment_delete" type="submit">삭제</button>
+                </form>
+                {% else %}
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        </div>
+        <p></p>
+        <p></p>
+        <div class="comment_content">
+            <form name="form" method="post" action="/board/view" onSubmit="return formCheck({{rows[0].idx}})">
+                <input type="hidden" name="bid" value="{{rows[0].idx}}">
+                <input class="comment_style" type="text" name="comment" placeholder="댓글입력">
+                <input type="submit" value="write">
             </form>
         </div>
-        <div class="scrap">
-            <form method ="post" action="/board/scrap">
-                <input type="hidden" name="idx" value="{{rows[0].idx}}">
-                <input type="hidden" name="userid" value="{{user.userid}}">
-                <button type="submit">👀</button>
-            </form>
-        </div>
-    </div>
-    <p></p>
-    <p></p>
-    <div class="comment_content">
-    {% if rows[0].c_userid %}
-    {% for data in rows %}
-    <div>
-        <div class="comment_view">
-            <p class="view_comment">{{data.comment}}</p>
-            <span class="view_end">작성자: {{data.c_nickname}}</span>
-            <span class="view_date">작성일: {{data.c_date}}</span>
+        <div class="button">
             {% if user.level == 1 %}
-            <form method="post" action="/board/comment" style="display: inline-block;">
-                <input type="hidden" name="bid" value="{{data.idx}}">
-                <input type="hidden" name='cid' value="{{data.cid}}">
-                <button class="comment_delete" type="submit">삭제</button>
+            <form method="post" action="/board/delete">
+                <input type="hidden" name='idx' value="{{rows[0].idx}}">
+                <button class="delete" type="submit">Delete</button>
             </form>
+            <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
             {% elif user.level == 2 %}
-            <form method="post" action="/board/comment" style="display: inline-block;">
-                <input type="hidden" name="bid" value="{{data.idx}}">
-                <input type="hidden" name='cid' value="{{data.cid}}">
-                <button class="comment_delete" type="submit">삭제</button>
+            <form method="post" action="/board/delete">
+                <input type="hidden" name='idx' value="{{rows[0].idx}}">
+                <button class="delete" type="submit">Delete</button>
             </form>
-            {% elif user.userid == data.c_userid %}
-            <form method="post" action="/board/comment" style="display: inline-block;">
-                <input type="hidden" name="bid" value="{{data.idx}}">
-                <input type="hidden" name='cid' value="{{data.cid}}">
-                <button class="comment_delete" type="submit">삭제</button>
+            <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
+            {% elif user.userid == rows[0].userid %}
+            <form method="post" action="/board/delete">
+                <input type="hidden" name='idx' value="{{rows[0].idx}}">
+                <button class="delete" type="submit">Delete</button>
             </form>
+            <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
             {% else %}
             {% endif %}
-        </div>
+            <div class="list">
+                <button><a  href="/board/list/1">List</a></button>
+            </div>
+            
+        </div>    
     </div>
-    {% endfor %}
-    {% endif %}
-    </div>
-    <p></p>
-    <p></p>
-    <div class="comment_content">
-        <form name="form" method="post" action="/board/view" onSubmit="return formCheck({{rows[0].idx}})">
-            <input type="hidden" name="bid" value="{{rows[0].idx}}">
-            <input class="comment_style" type="text" name="comment" placeholder="댓글입력">
-            <input type="submit" value="작성완료">
-        </form>
-    </div>
-    <div class="button">
-        {% if user.level == 1 %}
-        <form method="post" action="/board/delete">
-            <input type="hidden" name='idx' value="{{rows[0].idx}}">
-            <button class="delete" type="submit">Delete</button>
-        </form>
-        <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
-        {% elif user.level == 2 %}
-        <form method="post" action="/board/delete">
-            <input type="hidden" name='idx' value="{{rows[0].idx}}">
-            <button class="delete" type="submit">Delete</button>
-        </form>
-        <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
-        {% elif user.userid == rows[0].userid %}
-        <form method="post" action="/board/delete">
-            <input type="hidden" name='idx' value="{{rows[0].idx}}">
-            <button class="delete" type="submit">Delete</button>
-        </form>
-        <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
-        {% else %}
-        {% endif %}
-        <button><a class="list" href="/board/list/1">List</a></button>
-    </div>    
+    
     {% include "../nunjucks/footer.html" %}
 </body>
 </html>

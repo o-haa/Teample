@@ -8,8 +8,8 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 
-body{
-    height: 100%;
+#wrap{
+    height: 77vh;
 }
 
 
@@ -95,14 +95,25 @@ body{
     color:rgb(194, 55, 182);
 }
 
-.join_info > h3{
-    margin-top:5%;
+.join_info>div{
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform: translateX(-50%);
     text-align: center; 
     cursor: pointer;
-    font-size:22px;
+    padding:1%;
+    box-sizing: border-box;
+    width:300px;
+    border:1px solid rgb(194, 55, 182);
 }
 
-.join_info>h3>a{
+.join_info > div > h3{
+    font-size:22px;
+    text-align: center;
+}
+
+.join_info>div>h3>a{
     text-align: center;
 }
 
@@ -154,7 +165,7 @@ body{
     display: flex;
     justify-content: space-between;
     margin:0 auto;
-    margin-top:5%;
+    margin-top:10%;
 }
 
 .button > button {

@@ -10,16 +10,19 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h3 id="pagename">관리자 로그인 페이지</h3>
-    <form name="form" method="post" action="/admin/home" onSubmit="return formCheck()">
-        <div class="user_info">
-            <p>ID <input type="text" name="userid"></p>
-            <p>PW <input type="password" name="userpw"></p>
-        </div>
-        <div class="user_join_login">
-            <input type="submit" value="login">
-        </div>
-    </form>
+    <div id="wrap">
+        <h3 id="pagename">관리자 로그인 페이지</h3>
+        <form name="form" method="post" action="/admin/home" onSubmit="return formCheck()">
+            <div class="user_info">
+                <p>ID <input type="text" name="userid"></p>
+                <p>PW <input type="password" name="userpw"></p>
+            </div>
+            <div class="user_join_login">
+                <input type="submit" value="login">
+            </div>
+        </form>
+    </div>
+    
     {% include "../nunjucks/footer.html" %}
 </body>
 </html>

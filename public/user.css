@@ -76,7 +76,7 @@ a{text-decoration: none;}
 }
 
 .user_info>p {  
-    margin-bottom:7%;
+    margin-bottom:9%;
     background-color: transparent;
     font-size: 21px;
     text-align: right;
@@ -99,9 +99,9 @@ a{text-decoration: none;}
 .join_info{
     position:absolute;
     top:27vh;
-    left:45%;
+    left:40%;
     transform: translateX(-40%);
-    width: 300px;
+    width: 400px;
     background-color: transparent;
 }
 
@@ -183,7 +183,7 @@ a{text-decoration: none;}
     position: absolute;
     left:50%;
     transform: translateX(-50%);
-    top: 80%;
+    top: 88%;
     height: auto;
 }
 

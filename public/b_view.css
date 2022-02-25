@@ -7,6 +7,10 @@
 ul,li{list-style: none;}
 a{text-decoration: none;}
 
+#wrap{
+    height: 100vh;
+}
+
 #view_title{
     margin-top:20px;
     text-align: center;
@@ -227,3 +231,17 @@ table{
 }
 
 
+
+.list{
+    display: block !important;
+    text-align: right !important;
+}
+
+.list>button{
+    padding: 7px;
+    border: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 1px #f1f1f1 dashed;
+    cursor: pointer;
+}
