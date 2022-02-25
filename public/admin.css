@@ -1,7 +1,16 @@
+@font-face {
+    font-family: 'LAB디지털';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 *{
     margin:0;
     padding:0;
     background: #000;
+    font-family : 'LAB디지털'!important;
 }
 
 ul,li{list-style: none;}
@@ -19,19 +28,23 @@ a{text-decoration: none;}
 }
 
 .user_info{
+    position: absolute;
     margin:0 auto;
-    margin-top: 15%;
-    width:400px;
+    top: 35%;
+    left:47%;
+    transform: translateX(-47%);
+    width:350px;
     background-color: transparent;
+    
 }
 
 .user_info>p {  
-    position: relative;
-    right: 20%;
+    /* position: relative;
+    right: 20%; */
     background-color: transparent;
     font-size: 21px;
     text-align: right;
-    margin-top:2%;
+    margin-top:3%;
 }
 
 .user_info>p>input{
@@ -50,7 +63,11 @@ a{text-decoration: none;}
 }
 
 .user_join_login {
+    position: absolute;
     text-align: center;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%);
 
 }
 
