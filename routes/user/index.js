@@ -132,6 +132,5 @@ router.post('/scrap', userController.postScrap)
 
 
 
-sad
 module.exports = router;
 
