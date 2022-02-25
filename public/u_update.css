@@ -51,11 +51,11 @@ a{text-decoration: none;}
 .join_info{
     position:absolute;
     top:30vh;
-    left:46%;
-    transform: translateX(-47%);
-    width: 400px;
+    left:40%;
+    transform: translateX(-40%);
+    width: 500px;
     background-color: transparent;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .join_info>p{
@@ -65,19 +65,19 @@ a{text-decoration: none;}
     text-align: right;
 }
 
-.id{margin-right:37%;}
-.name{margin-right:36%;}
-.birth{margin-right:32%;}
-.gender{margin-right: 41%;}
+.id{margin-right:42%;}
+.name{margin-right:42%;}
+.birth{margin-right:38%;}
+.gender{margin-right: 46%;}
 
 .join_info>p>input{
     border:none;
     border-bottom: 0.5px rgb(194, 55, 182) dotted;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 22px;
     text-align: left;
-    padding-bottom: 1px;
-    padding-left:3px;
+    padding-bottom: 0.5%;
+    padding-left:0.5%;
     box-sizing: border-box;
     opacity: 50%;
 }
@@ -88,17 +88,16 @@ a{text-decoration: none;}
 
 .join_info > p >input::placeholder{
     padding-bottom: 1px;
-    padding-left:3px;
+    padding-left:0.5%;
     box-sizing: border-box;
 
 }
 
 .join_login{
     position:absolute;
-    top:73%;
-    left:62%;
-    transform: translateX(-62%);
-    width: 300px;
+    top:79%;
+    left:50%;
+    transform: translateX(-50%);
     background-color: transparent;
     cursor: pointer;
 }
@@ -114,7 +113,7 @@ a{text-decoration: none;}
 
 .button{
     position:absolute;
-    top:79%;
+    top:85%;
     left:50%;
     transform: translateX(-50%);
     text-align: center;
