@@ -18,7 +18,9 @@ a{text-decoration: none;}
 #wrap{
     padding-top:80px;
     width: 100%;
+    height: 100vh;
     background-color: transparent;
+    box-sizing: border-box;
     
 }
 

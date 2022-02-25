@@ -34,6 +34,7 @@ body {
     width: 100%;
     min-height: 100vh;
     background-color: transparent;
+    box-sizing: border-box;
 }
 
 #b_name{
@@ -110,9 +111,11 @@ table {
 }
 
 #box {
+    margin:4% auto;
     padding: 5px 0;
-    width:100%;
+    width:960px;
     box-sizing: border-box;
+    background-color: transparent;
 }
 .box1 {
     margin-left: 5px;

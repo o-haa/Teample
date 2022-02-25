@@ -9,47 +9,48 @@
 </head>
 <body id="admin_info">
     {% include "../nunjucks/header.html" %}
-    <h3 id="pagename">회원 정보 페이지</h3>
-    <div class="member_info">
-        <p>아이디: <span>{{rows.userid}}</span></p>
-        <p>비밀번호: <span>{{rows.userpw}}</span></p>
-        <p>이름: <span>{{rows.username}}</span></p>
-        <p>닉네임: <span>{{rows.nickname}}</span></p>
-        <p>생년월일: <span>{{rows.birth}}</span></p>
-        <p>성별: <span>{{rows.gender}}</span></p>
-        {% if user.phone %}
-        <p>전화번호: <span>0{{rows.phone}}</span></p>
-        {% else %}
-        <p>전화번호: <span>없음</span></p>
-        {% endif %}
-        <p>핸드폰번호: <span>+82) {{rows.mobile}}</span></p>
-        <p>등급: <span>{{rows.level}}</span></p>
-        <p>이용가능: <span>{{rows.access}}</span></p>        
+    <div id="wrap">
+        <h3 id="list_pagename">회원 정보 페이지</h3>
+        <div class="member_info">
+            <p>아이디: <span>{{rows.userid}}</span></p>
+            <p>비밀번호: <span>{{rows.userpw}}</span></p>
+            <p>이름: <span>{{rows.username}}</span></p>
+            <p>닉네임: <span>{{rows.nickname}}</span></p>
+            <p>생년월일: <span>{{rows.birth}}</span></p>
+            <p>성별: <span>{{rows.gender}}</span></p>
+            {% if user.phone %}
+            <p>전화번호: <span>0{{rows.phone}}</span></p>
+            {% else %}
+            <p>전화번호: <span>없음</span></p>
+            {% endif %}
+            <p>핸드폰번호: <span>+82) {{rows.mobile}}</span></p>
+            <p>등급: <span>{{rows.level}}</span></p>
+            <p>이용가능: <span>{{rows.access}}</span></p> 
+            {% if rows.level != 1 %}
+            <form method="post" action="/admin/info">
+                <p>등급변경 : 
+                    <select name="level">
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </p>
+                <p>이용가능여부변경 : 
+                    <select name="access">
+                        <option>true</option>
+                        <option>false</option>
+                    </select>
+                </p>
+                <input type="hidden" name="userid" value="{{rows.userid}}">
+                <button type="submit">변경하기</button>
+            </form>
+            {% endif %}       
+        </div>
+        <div class="level_button">
+            <button><a href="/admin/list">회원 리스트 페이지</a></button>
+            <button><a href="/admin/home">관리자 페이지</a></button>
+        </div>
     </div>
-    <div class="level">
-    {% if rows.level != 1 %}
-    <form method="post" action="/admin/info">
-        <p>등급변경 : 
-            <select name="level">
-                <option>2</option>
-                <option>3</option>
-            </select>
-        </p>
-        <p>이용가능여부변경 : 
-            <select name="access">
-                <option>true</option>
-                <option>false</option>
-            </select>
-        </p>
-        <input type="hidden" name="userid" value="{{rows.userid}}">
-        <button type="submit">변경하기</button>
-    </form>
-    {% endif %}
-    </div>
-    <div class="level_button">
-        <button><a href="/admin/list">회원 리스트 페이지</a></button>
-        <button><a href="/admin/home">관리자 페이지</a></button>
-    </div>
+    
     {% include "../nunjucks/footer.html" %}
 </body>
 </html>

@@ -8,33 +8,32 @@
     <link href="/user.css" rel="stylesheet" type="text/css">
     {% include "../nunjucks/join_formCheck.html" %}
 </head>
-<body>
+<body class="joinimg">
     {% include "../nunjucks/header.html" %}
-    <div id="joinimg"></div>
-    <h3 id="pagename_join">Welcome to "Join"</h3>
-    <form name="form" method="post" action="/user/join" onSubmit="return formCheck()">
-        <div class="join_info">
-            <p> !! <span>*</span>는 필수사항입니다. !!</p>
-            <p> * ID  <input type="text" name="userid"></p>
-            <p> * PW  <input type="password" name="userpw"></p>
-            <p> * Name  <input type="text" name="username"></p>
-            <p> * Nickname  <input type="text" name="nickname"></p>
-            <p> * Birth  <input type="text" name="birth" placeholder="6자리입력"></p>
-            <p class="gender"> * Gender 
-                 <select name="gender">
-                    <option>남성</option>
-                    <option>여성</option>
-                 </select></p>
-            <p> Phone  <input type="text" name="phone" placeholder="숫자만입력"></p>
-            <p> * H-Phone  <input type="text" name="mobile" placeholder="숫자만입력"></p>
-        </div>
-        <div class="user_join">
-            <input type="submit" value="Join">
-        </div>
-    </form>
-    <!-- <div class = "home">
-        <a  href="/">home</a>
-    </div> -->
+    <div id="wrap">
+        <h3 id="join_pagename">Welcome to "Join"</h3>
+        <form name="form" method="post" action="/user/join" onSubmit="return formCheck()">
+            <div class="jjoin_info">
+                <p> !! <span>*</span>는 필수사항입니다. !!</p>
+                <p> * ID  <input type="text" name="userid"></p>
+                <p> * PW  <input type="password" name="userpw"></p>
+                <p> * Name  <input type="text" name="username"></p>
+                <p> * Nickname  <input type="text" name="nickname"></p>
+                <p> * Birth  <input type="text" name="birth" placeholder="6자리입력"></p>
+                <p class="gender"> * Gender 
+                     <select name="gender">
+                        <option>남성</option>
+                        <option>여성</option>
+                     </select></p>
+                <p> Phone  <input type="text" name="phone" placeholder="숫자만입력"></p>
+                <p> * H-Phone  <input type="text" name="mobile" placeholder="숫자만입력"></p>
+            </div>
+            <div class="user_join">
+                <input type="submit" value="Join">
+            </div>
+        </form>
+    </div>
+
     {% include "../nunjucks/footer.html" %}
 </body>
 </html>

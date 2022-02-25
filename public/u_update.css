@@ -8,7 +8,6 @@
 *{
     margin:0;
     padding:0;
-    background-color:#000000;
     color:whitesmoke
 }
 
@@ -16,46 +15,39 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 #wrap{
-    height:100vh;
+    padding-top:70px;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: transparent;
 }
 
-#update_img{
-    position: relative;
+body{
     background-image: url("./img/p_up.png");
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
-    opacity: 70%;
-    top:0;
-    z-index:0;
-    width: 100vw;
-    height: 78vh;
-    margin:0 auto;
-    overflow: hidden;
+    background-size: 100% 100%;
+
 }
 
 #pagename{
-    width: auto;
-    height: fit-content;
     text-align: center;
-    z-index: 1;
-    position:absolute;
-    left:50%;
-    transform: translateX(-50%);
-    top:20vh;
+    font-size:25px;
     background-color: transparent;
-    font-size: 22px;
+    margin-top:5%;
 }
 
+form{
+    margin-top:6%;
+    background-color: transparent;
+}
 
 .join_info{
-    position:absolute;
-    top:30vh;
-    left:43%;
-    transform: translateX(-43%);
+    margin:0 auto;
     width: 500px;
     background-color: transparent;
-    font-size: 22px;
+    font-size: 25px;
 }
 
 .join_info>p{
@@ -94,12 +86,10 @@ a{text-decoration: none;}
 }
 
 .join_login{
-    position:absolute;
-    top:79%;
-    left:50%;
-    transform: translateX(-50%);
     background-color: transparent;
     cursor: pointer;
+
+    text-align: center;
 }
 
 .join_login > input {
@@ -112,14 +102,10 @@ a{text-decoration: none;}
 }
 
 .button{
-    position:absolute;
-    top:85%;
-    left:50%;
-    transform: translateX(-50%);
     text-align: center;
     width:200px;
     margin:0 auto;
-    /* margin-top:1%; */
+    margin-top:2%;
 }
 
 .button > button {

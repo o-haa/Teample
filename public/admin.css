@@ -16,15 +16,20 @@
 ul,li{list-style: none;}
 a{text-decoration: none;}
 
-
-#wrap{
-    position:relative;
-    /* width: 100%; */
-    height: 100vh;
+#admin_home_wrap{
     background-image: url('./img/planets.png');
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+}
+
+#wrap{
+    padding-top:70px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+    box-sizing: border-box;
+    
 }
 
 #wrap > h3 {
@@ -123,29 +128,32 @@ div.admin1 > ul > li > a {
 
 
 #pagename{
-    position: absolute;
-    /* width:100%; */
-    left: 45%;
-    top:12%;
-    font-size: 27px;
-    color: #fff;
+    margin-top:14%;
+    text-align: center;
+    font-size:28px;
+    background-color: transparent;
+}
+
+#list_pagename{
+    margin-top:3%;
+    text-align: center;
+    font-size:28px;
+    background-color: transparent;
+}
+
+form{
+    background-color: transparent;
 }
 
 .user_info{
-    position: absolute;
-    top: 35%;
-    left:47%;
-    transform: translateX(-47%);
-    width:350px;
+    width:318px;
     background-color: transparent;
-    
+    margin:5% auto;
 }
 
 .user_info>p {  
-    /* position: relative;
-    right: 20%; */
     background-color: transparent;
-    font-size: 24px;
+    font-size: 26px;
     text-align: right;
     margin-top:3%;
 }
@@ -166,22 +174,19 @@ div.admin1 > ul > li > a {
 }
 
 .user_join_login {
-    position: absolute;
     text-align: center;
-    top:55%;
-    left:50%;
-    transform: translateX(-50%);
+    background-color: transparent;
 
 }
 
 .user_join_login > input {
-    margin-top: 5%;
-    font-size: 18px;
+    font-size: 20px;
     padding: 5px 7px;
     border:none;
     background: #f1f1f1;
     color:#000;
     border-radius: 30%;
+    box-sizing: border-box;
 }
 
 
@@ -202,17 +207,14 @@ div.admin1 > ul > li > a {
 
 
 .join_info{
-    position: relative;
-    top: 35%;
-    left:50%;
+    margin-top: 4%;
     text-align: center;
-    transform: translateX(-50%);
     background-color: transparent;
     /* margin-top:10%; */
 }
 
 .join_info>p{
-    margin-bottom:5%;
+    margin-bottom:3%;
     font-size: 22px;
 }
 
@@ -221,11 +223,7 @@ div.admin1 > ul > li > a {
 }
 
 .join_info>div{
-    position:relative;
-    top:70%;
-    left:50%;
-    transform: translateX(-50%);
-    text-align: center; 
+    margin:0 auto;
     cursor: pointer;
     padding:1%;
     box-sizing: border-box;
@@ -243,16 +241,13 @@ div.admin1 > ul > li > a {
 }
 
 .admin_list{
-    position: relative;
     width: 100%;
     height: auto;
-    padding-top:10%;
+    margin-top:3%;
     box-sizing: border-box;
 }
 
 .text{
-    position: relative;
-    top:18%;
     width: 100%;;
     display: flex;
     justify-content: space-around;
@@ -265,8 +260,6 @@ div.admin1 > ul > li > a {
 }
 
 .admin1{
-    position: relative;
-    top:20%;
     display: flex;
     justify-content: space-around;
 }
@@ -279,6 +272,7 @@ div.admin1 > ul > li > a {
 
 .admin1>ul>li{
     margin:5%;
+    text-align: center;
 }
 
 
@@ -286,6 +280,7 @@ div.admin1 > ul > li > a {
     color:rgb(221, 83, 28);
     font-size:18px;
     margin:5% 0;
+    
 }
 
 
@@ -295,66 +290,68 @@ div.admin1 > ul > li > a {
     display: flex;
     justify-content: space-between;
     margin:0 auto;
-    margin-top:25%;
+    margin-top:4%;
 }
 
 .button > button {
     padding: 7px;
     border: none;
-    font-size: 14px;
+    font-size: 16px;
     box-sizing: border-box;
     border: 1px #f1f1f1 dashed;
 }
 
 .list_button{
-    margin-top: 2%;
+    margin:3% 0;
+
     text-align: center;
 }
 
 .list_button > button {
     padding: 7px;
     border: none;
-    font-size: 14px;
+    font-size: 16px;
     box-sizing: border-box;
     border: 1px #f1f1f1 dashed;
 }
 
 .member_info{
-    position: relative;
-    padding-top: 10%;
-    box-sizing: border-box;
+    margin:0 auto;
+    margin-top:3%;
+    width:300px;
+    background-color: #000;
     text-align: center;
     font-size:18px;
+    padding:1% 0;
+    box-sizing: border-box;
+    border-radius: 50px;
 
 }
 
 .member_info>p{
-    margin:1% 0;
+    margin:5% 0;
+    background-color: transparent;
 }
 
 .member_info>p>span{
     color:rgb(194, 55, 182);
+    background-color: transparent;
 }
 
-.level{
-    position: relative;
-    text-align: center;
-    font-size:18px;
+.member_info>form>p{
+    margin:5% 0;
 }
 
-.level>form>p{
-    margin:1% 0;
-}
 
-.level>form>p>select{
+.member_info>form>p>select{
     font-size: 18px;
 }
 
-.level>form>button{
-    margin-top:3%;
+.member_info>form>button{
+    margin-bottom:5%;
     padding: 7px;
     border: none;
-    font-size: 14px;
+    font-size: 16px;
     box-sizing: border-box;
     background: rgb(221, 83, 28);
     color:#f1f1f1;
@@ -367,13 +364,14 @@ div.admin1 > ul > li > a {
     display: flex;
     justify-content: space-between;
     width: 300px;
-    margin:5% auto;
+    margin:3% auto;
+    background-color: transparent;
 }
 
 .level_button > button {
     padding: 7px;
     border: none;
-    font-size: 14px;
+    font-size: 16px;
     box-sizing: border-box;
     border: 1px #f1f1f1 dashed;
 }

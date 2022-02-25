@@ -16,77 +16,66 @@
 ul,li{list-style: none;}
 a{text-decoration: none;}
 
+#wrap{
+    padding-top:70px;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    box-sizing: border-box;
+}
 
 #pagename{
-    width: auto;
-    height: fit-content;
     text-align: center;
-    z-index: 1;
-    position:absolute;
-    left:50%;
-    transform: translateX(-50%);
-    top:30vh;
+    font-size:25px;
     background-color: transparent;
-    font-size: 22px;
+    margin-top:10%;
 }
 
-#pagename_join{
-    width: auto;
-    height: fit-content;
+#join_pagename{
     text-align: center;
-    z-index: 1;
-    position:absolute;
-    left:50%;
-    transform: translateX(-50%);
-    top:20vh;
+    font-size:25px;
     background-color: transparent;
-    font-size: 25px;
+    margin-top:6%;
 }
+
+
 
 
 #loginimg{
-    position: relative;
     background-image: url("./img/login.png");
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
-    opacity: 50%;
-    top:0;
-    z-index:0;
     width: 100vw;
     height: 100vh;
-    margin:0 auto;
 }
 
-#joinimg{
-    position: relative;
-    background-image: url("./img/join.png");
+.joinimg{
+    background: rgba(0, 0, 0, 0.7) url("./img/join.png");
+    height: 100vh;
+    width:100%;
+    background-position: center;
     background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    opacity: 50%;
-    top:0;
-    z-index:0;
-    width: 100vw;
-    height: 100vh;
-    margin:0 auto;
+    background-blend-mode: darken;
 }
 
 
+form{
+    background-color: transparent;
+}
 
 .user_info{
-    position:absolute;
-    top:40vh;
-    left:50%;
-    transform: translateX(-50%);
+    width:313px;
     background-color: transparent;
+    margin:6% auto;
 }
 
+
 .user_info>p {  
-    margin-bottom:9%;
     background-color: transparent;
-    font-size: 21px;
+    font-size: 26px;
     text-align: right;
+    margin-top:3%;
 }
 
 .user_info>p>input{
@@ -94,8 +83,9 @@ a{text-decoration: none;}
     border-bottom: 0.5px rgb(194, 55, 182) dotted;
     background-color: transparent;
     font-size: 21px;
-    padding-bottom: 1px;
-    padding-left:3px;
+    margin-left:1%;
+    padding-bottom:1px;
+    padding-left:1%;
     box-sizing: border-box;
 }
 
@@ -104,12 +94,9 @@ a{text-decoration: none;}
 }
 
 .join_info{
-    position:absolute;
-    top:27%;
-    left:45%;
-    transform: translateX(-45%);
     width: 400px;
     background-color: transparent;
+    margin:0 auto;
 }
 
 .join_info>p{
@@ -164,22 +151,81 @@ a{text-decoration: none;}
 
 }
 
+.jjoin_info{
+    width: 390px;
+    margin:0 auto;
+    margin-top:3%;
+    background-color: transparent;
+
+}
+
+.jjoin_info>p{
+    margin-bottom:6%;
+    background-color: transparent;
+    font-size: 22px;
+    text-align: right;
+}
+
+.jjoin_info>p:nth-child(1){
+    font-size: 18px;
+    text-align: center;
+
+}
+
+.jjoin_info>p>span{
+    color:rgb(194, 55, 182);
+    background-color: transparent;
+}
+
+.gender{
+    margin-right: 56%;;
+}
+
+.gender>select{
+    border-color: rgb(194, 55, 182);
+    font-size: 20px;
+    background-color: transparent;
+    outline: none;
+
+}
+
+.jjoin_info>p>input{
+    border:none;
+    border-bottom: 0.5px rgb(194, 55, 182) dotted;
+    background-color: transparent;
+    font-size: 22px;
+    text-align: left;
+    padding-bottom: 0.5%;
+    padding-left:0.5%;
+    box-sizing: border-box;
+}
+
+.jjoin_info>p>input:focus{
+    outline: none;
+}
+
+.jjoin_info > p >input::placeholder{
+    padding-bottom: 1px;
+    padding-left:0.5%;
+    box-sizing: border-box;
+    font-size:15px;
+
+}
+
 .user_join_login {
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
-    top:58%;
+    text-align: center;
+    background-color: transparent;
 
 }
 
 .user_join_login > input {
-    font-size: 18px;
+    font-size: 20px;
     padding: 5px 7px;
     border:none;
-    background: rgb(194, 55, 182);
+    background: #fff;
     color:#000;
     border-radius: 30%;
-
+    box-sizing: border-box;
 }
 
 .user_join_login>p{
@@ -187,20 +233,16 @@ a{text-decoration: none;}
 }
 
 .user_join {
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
-    top: 84%;
-    height: auto;
+    background-color: transparent;
+    text-align: center;
 }
 
 .user_join > input {
-    font-size: 18px;
+    font-size: 20px;
     color:black;
     padding: 5px 7px;
     border:none;
     border-radius: 30%;
-    overflow: hidden;
     background-color: rgb(194, 55, 182);
 }
 

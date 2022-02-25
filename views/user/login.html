@@ -8,22 +8,20 @@
     <link href="/user.css" rel="stylesheet" type="text/css">
     {% include "../nunjucks/login_formCheck.html" %}
 </head>
-<body>
+<body id="loginimg">
     {% include "../nunjucks/header.html" %}
-    <div id="loginimg"></div>
-    <h3 id="pagename">Welcome to "Login"</h3>
-    <form name="form" method="post" action="/user/login" onSubmit="return formCheck()">
-        <div class="user_info">
-            <p>ID <input type="text" name="userid"></p>
-            <p>PW <input type="password" name="userpw"></p>
-        </div>
-        <div class="user_join_login">
-            <input type="submit" value="login">
-        </div>
-    </form>
-    <!-- <div class = "home">
-        <a  href="/">home</a>
-    </div> -->
+    <div id="wrap">
+        <h3 id="pagename">Welcome to "Login"</h3>
+        <form name="form" method="post" action="/user/login" onSubmit="return formCheck()">
+            <div class="user_info">
+                <p>ID <input type="text" name="userid"></p>
+                <p>PW <input type="password" name="userpw"></p>
+            </div>
+            <div class="user_join_login">
+                <input type="submit" value="login">
+            </div>
+        </form>
+    </div>
     {% include "../nunjucks/footer.html" %}
 </body>
 </html>

@@ -33,12 +33,14 @@
                 </tr>
                 {% endfor %}
             </tbody>
+            
         </table>
         <div class="list_num">
             {% for num in pageNum %}  
             [<a href="/user/board/{{num+1}}">{{num+1}}</a>]
             {% endfor %}
         </div>
+        
         <div id="box">
             <button class="box1"><a href="/user/profile">Profile</a></button>
         </div>

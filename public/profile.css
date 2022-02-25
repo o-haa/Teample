@@ -8,8 +8,8 @@
 *{
     margin:0;
     padding:0;
-    background-color:#000000;
-    color:whitesmoke
+    /* background-color:#000000; */
+    color:whitesmoke;
 }
 
 
@@ -17,18 +17,20 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 #wrap{
-    height: 90vh;
+    padding-top:80px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+    box-sizing: border-box;
 }
 
+
+
 #pagename_profile{
-    position:absolute;
-    top:13%;
-    left:50%;
-    transform: translateX(-50%);
-    width:100%;
+    margin-top:4%;
     text-align: center;
+    font-size:25px;
     background-color: transparent;
-    font-size: 25px;
 }
 
 #profile_wrap{
@@ -37,9 +39,7 @@ a{text-decoration: none;}
     align-items: center;
     width:100%;
     height: 500px;
-    position: absolute;
- 
-    top:18%;
+
 }
 
 #profile_left{
@@ -68,11 +68,12 @@ a{text-decoration: none;}
     margin-top:7%;
     margin-left:12%;
     justify-content: center;
+    background:none;
 }
 
 .button > button {
     border: none;
-    /* border: 1px #f1f1f1 dashed; */
+    background:none;
 }
 
 .button > button:nth-child(2){
@@ -81,7 +82,12 @@ a{text-decoration: none;}
 
 .button > button > a{
     color:rgb(194, 55, 182);
-    font-size: 17px;
+    font-size: 18px;
+    background:none;
+}
+
+form{
+    background:none;
 }
 
 
@@ -89,8 +95,9 @@ a{text-decoration: none;}
     border:none;
     /* border: 1px #f1f1f1 dashed; */
     color:rgb(194, 55, 182);
-    font-size: 17px;
-    cursor: pointer;
+    font-size: 18px;
+    /* cursor: pointer; */
+    background:none;
 }
 
 #profile_right{

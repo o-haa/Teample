@@ -15,27 +15,33 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 #wrap{
-    height: 100vh;
+    padding-top:100px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+    box-sizing: border-box;
 }
 
 #b_name{
-    margin-top:1%;
     text-align: center;
-    font-size: 22px;
+    font-size:25px;
+    background-color: transparent;
 }
 
 table {
-    width:910px;
-    margin:30px auto;
-    font-size:15px;
+    width:916.5px;
+    font-size:18px;
     table-layout: fixed;
+    margin:0 auto;
+    margin-top:5%;
 }
 
 #scrap_table{
-    width:960px !important;
-    margin:20px auto;
-    font-size:15px;
+    width:916.5px;
+    font-size:18px;
     table-layout: fixed;
+    margin:0 auto;
+    margin-top:5%;
 }
 
 #board_head {
@@ -51,38 +57,38 @@ table {
 }
 
 .board_idx {
-    width:20px;
+    width:46px;
 }
 
 .scrap_title{
-    width:190px;
+    width:450px;
 }
 
 .board_title {
-    width:240px;
+    width:500px;
 }
 
 .scrap_nickname{
-    width:50px;
+    width:120px;
 }
 
 .board_date{
-    width:60px;
+    width:120px;
 }
 
-/* .comment_date{
-    width: 80px;
-} */
+.comment_date{
+    width: 170px;
+}
 
 .board_likes {
-    width:20px;
+    width:50px;
 }
 
 .scrap_delete{
-    width:40px;
+    width:50px;
 }
 .board_view {
-    width: 20px;
+    width: 50px;
 }
 
 #board_body{
@@ -104,7 +110,7 @@ table {
 #board_body tr td form button{
     border: 0.7px rgb(194, 55, 182) solid;
     padding: 7px;
-    font-size: 12px;
+    font-size: 16px;
     cursor: pointer;
 
 }
@@ -112,13 +118,13 @@ table {
 #box {
     width:100%;
     text-align: center;
-    margin-top: 30px;
+    margin:4% auto;
 }
 .box1 {
     border: none;
     background: rgb(194, 55, 182);
     padding: 7px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .box1>a{
@@ -129,11 +135,12 @@ table {
 .list_num{
     text-align: center;
     margin:0 auto;
+    padding-bottom: 1%;
 }
 
 .list_num > a{
     color:lemonchiffon;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 #wrap {

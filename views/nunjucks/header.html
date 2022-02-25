@@ -9,7 +9,6 @@
 *{
     margin:0;
     padding:0;
-    background-color:#000000;
     color:whitesmoke;
     font-family : 'LAB디지털'!important;
 }
@@ -48,11 +47,11 @@ a{text-decoration: none;}
 
 #main_header{
     height: 70px;
-    width: 96vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 20px;
+    padding:0 0.1%;
     background: transparent !important;
     position: fixed;
     z-index:1;
@@ -85,8 +84,8 @@ h1>a{
 
 
 .menu{
-    width:30px;
-    height: 20px;
+    width:50px;
+    height: 30px;
 
 }
 
@@ -98,17 +97,20 @@ input[id="menu"]{
 input[id="menu"]+label{
     position: relative;
     display: block;
-    width:30px;
-    height: 20px;
+    width:50px;
+    height: 30px;
     cursor: pointer;
     z-index: 3;
+    padding-right:1%;
+    box-sizing: border-box;
+    margin-right: 3px;
 
 }
 
 input[id="menu"]+label>span{
     position: absolute;
     display: block;
-    width: 100%;
+    width: 90%;
     height: 2px;
     border-radius: 30px;
     background: #fff;
@@ -151,7 +153,7 @@ input[id="menu"]:checked + label > span:nth-child(3){
     position:fixed;
     right:-30%;
     top:0;
-    width:30%;
+    width:28%;
     height: 100%;
     box-sizing: border-box;
     transition: all 0.2s;
@@ -160,23 +162,23 @@ input[id="menu"]:checked + label > span:nth-child(3){
 }
 
 #menu:checked + label + .main_menu {
-    right:0;
+    right: -2px;;
 }
 
 
 
 #main_page{
-    margin-top:200px;
+    margin-top:60%;
     text-align: center;
 }
 
 #main_page > li {
-    margin-top: 30px;
+    margin-top: 15%;
 }
 
 #main_page > li > a{
     color: white;
-    font-size: 20px;
+    font-size: 25px;
 }
 </style>
 
