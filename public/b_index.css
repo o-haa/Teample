@@ -15,15 +15,30 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 
+#wrap{
+    position: relative;
+    height: 120vh;
+    background-image: url('./img/board.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
 #b_name{
-    margin-top:20px;
-    text-align: center;
+    position:absolute;
+    top:10%;
+    left:50%;
+    transform: translateX(-50%);
     font-size:25px;
 }
 
 #welcome_m{
+    position:absolute;
+    top:17%;
+    left:50%;
+    transform: translateX(-50%);
     text-align: center;
-    margin-top: 20px;
     
 }
 
@@ -32,7 +47,13 @@ a{text-decoration: none;}
 }
 
 #content {
+    position:absolute;
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+    text-align: center;
     width:960px;
+    height: 100vh;
     margin:0 auto;
     font-size: 15px;
 }
@@ -86,6 +107,8 @@ table {
 }
 
 #box {
+    position: absolute;
+    top:86%;
     padding: 5px 0;
     width:100%;
     box-sizing: border-box;
