@@ -10,7 +10,7 @@ const admin = (req, res) => {
 const adminCheck = (req, res) => {
     const {user} = req.session
     if (user.level != 1) {
-        res.send(alertMove('최고관리자로 접속해주세요.', '/'))
+        res.send(alertMove('최고관리자로 접속후 이용해주세요.', '/'))
     } else {
         res.render('./admin/admin_home.html', {
             user
@@ -63,11 +63,13 @@ const adminList = async (req, res) => {
 
 const adminInfo = async (req, res) => {
     try {
+        const {user} = req.session
         const {id} = req.query
         let sql = "SELECT * FROM user WHERE userid=?"
         const [rows, fields] = await promisePool.query(sql, [id])
         res.render('./admin/admin_info.html', {
-            rows: rows[0]
+            rows: rows[0],
+            user
         })
     } catch {
         console.log(err)

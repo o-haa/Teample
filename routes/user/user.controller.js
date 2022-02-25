@@ -6,18 +6,19 @@ const {paging} = require('../../util/paging.js')
 
 const getBoard = async (req, res) => {
     try {
-        const {userid} = req.session.user
+        const {user} = req.session
         const page = req.params.num
         const count = 10
         let sql = 'SELECT idx, title, DATE_FORMAT(date, "%Y-%m-%d") AS date, view, likes FROM user LEFT JOIN board ON user.userid=board.userid WHERE board.userid=?'
-        const [rows, fields] = await promisePool.query(sql, [userid])
+        const [rows, fields] = await promisePool.query(sql, [user.userid])
         pageNum = []
         for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}
         const result = paging(page, count, rows)
         res.render('./user/profile/user_board.html', {
             result,
             page,
-            pageNum
+            pageNum,
+            user
         })
     } catch (err) {
         console.log(err)
@@ -27,18 +28,19 @@ const getBoard = async (req, res) => {
 
 const getComment = async (req, res) => {
     try {
-        const {userid} = req.session.user
+        const {user} = req.session
         const page = req.params.num
         const count = 10
         let sql = 'SELECT cid, comment, DATE_FORMAT(c_date, "%Y-%m-%d %r") AS date, bid FROM user LEFT JOIN comment ON user.userid=comment.c_userid WHERE c_userid=?'
-        const [rows, fields] = await promisePool.query(sql, [userid])
+        const [rows, fields] = await promisePool.query(sql, [user.userid])
         pageNum = []
         for (let i=0; i<rows.length/count; i++) {pageNum.push(i)}
         const result = paging(page, count, rows)
         res.render('./user/profile/user_comment.html', {
             result,
             page,
-            pageNum
+            pageNum,
+            user
         })
     } catch {
         console.log(err)

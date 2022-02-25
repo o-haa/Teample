@@ -1,0 +1,19 @@
+<script type="text/javascript">
+    function formCheck() {
+        if(form.userpw.value == '') {
+            alert('비밀번호를 입력해주세요')
+            location.href="/user/profile/update"
+            return false
+        }
+        if(form.nickname.value == '') {
+            alert('닉네임을 입력해주세요')
+            location.href="/user/profile/update"
+            return false
+        }
+        if(form.mobile.value == '') {
+            alert('휴대폰번호를 입력해주세요')
+            location.href="/user/profile/update"
+            return false
+        }
+    }
+</script>
