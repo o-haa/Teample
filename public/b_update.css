@@ -16,17 +16,26 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 #wrap{
-    height: 75vh;
+    position: relative;
+    height: 100vh;
+    
 }
 
 
 #b_name{
-    margin-top:30px;
-    text-align: center;
+    position:absolute;
+    top:15%;
+    left:50%;
+    transform: translateX(-50%);
     font-size: 25px;
 }
 
 #write_content{
+    position:absolute;
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+    text-align: center;
     width:960px;
     margin: 0 auto;
     padding: 100px 20px 0 20px;
@@ -34,6 +43,7 @@ a{text-decoration: none;}
 
 }
 .write{
+    
     width:960px;
     margin: 0 auto;
 }
@@ -42,7 +52,7 @@ a{text-decoration: none;}
     width: 100%;
     padding:10px 0;
     box-sizing: border-box;
-    font-size:17px;
+    font-size:22px;
     font-weight: 500;
     border:none;
     
@@ -56,11 +66,12 @@ a{text-decoration: none;}
 
 .write_input {
     width:90%;
-    font-size: 17px;
+    font-size: 22px;
     margin-left: 2%;
     border:none !important;
     border-bottom: 1px dotted #dcdcdc !important;
-    cursor: pointer;
+    padding:0.5% 0;
+    box-sizing: border-box;
 }
 
 .write_input:focus{
@@ -68,7 +79,7 @@ a{text-decoration: none;}
 }
 
 .write_input::placeholder{
-    font-size: 15px;
+    font-size: 22px;
 }
 
 .content{
@@ -83,7 +94,7 @@ a{text-decoration: none;}
     width:100%;
     height: 300px;
     border:none !important;
-    font-size: 15px;
+    font-size: 22px;
     padding:10px;
     box-sizing: border-box;
 }
@@ -99,12 +110,12 @@ a{text-decoration: none;}
     background: rgb(221, 83, 28);
     color:#fff;
     margin-top:20px;
-    padding:0px 10px;
+    padding:8px;
     box-sizing: border-box;
-    height: 28px;
     float:right;
     border:none;
     cursor: pointer;
+    font-size:17px;
 }
 
 .box {
@@ -112,10 +123,9 @@ a{text-decoration: none;}
     background: rgb(221, 83, 28);
 }
 .box1 {
-    padding:7px;
+    padding:8px;
     box-sizing: border-box;
     margin-top:20px;
-    height: 28px;
     float:left;
     background: rgb(221, 83, 28);
     border:none;
@@ -123,14 +133,14 @@ a{text-decoration: none;}
 
 .box1> button {
     background: rgb(221, 83, 28);
-    
+    cursor: pointer;
 }
 
 .box1>a{
     background: rgb(221, 83, 28) !important;
     color:#fff !important;
-    padding:5px;
-    font-size:14px;
+    font-size:17px;
+    cursor: pointer;
 }
 
 body {

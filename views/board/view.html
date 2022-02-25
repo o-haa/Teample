@@ -53,12 +53,9 @@
                 </form>
             </div>
         </div>
-        <p></p>
-        <p></p>
         <div class="comment_content">
-        {% if rows[0].c_userid %}
-        {% for data in rows %}
-        <div>
+            {% if rows[0].c_userid %}
+            {% for data in rows %}
             <div class="comment_view">
                 <p class="view_comment">{{data.comment}}</p>
                 <span class="view_end">작성자: {{data.c_nickname}}</span>
@@ -84,47 +81,44 @@
                 {% else %}
                 {% endif %}
             </div>
-        </div>
-        {% endfor %}
-        {% endif %}
-        </div>
-        <p></p>
-        <p></p>
-        <div class="comment_content">
+
+            {% endfor %}
+            {% endif %}
             <form name="form" method="post" action="/board/view" onSubmit="return formCheck({{rows[0].idx}})">
                 <input type="hidden" name="bid" value="{{rows[0].idx}}">
                 <input class="comment_style" type="text" name="comment" placeholder="댓글입력">
                 <input type="submit" value="write">
             </form>
-        </div>
-        <div class="button">
-            {% if user.level == 1 %}
-            <form method="post" action="/board/delete">
-                <input type="hidden" name='idx' value="{{rows[0].idx}}">
-                <button class="delete" type="submit">Delete</button>
-            </form>
-            <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
-            {% elif user.level == 2 %}
-            <form method="post" action="/board/delete">
-                <input type="hidden" name='idx' value="{{rows[0].idx}}">
-                <button class="delete" type="submit">Delete</button>
-            </form>
-            <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
-            {% elif user.userid == rows[0].userid %}
-            <form method="post" action="/board/delete">
-                <input type="hidden" name='idx' value="{{rows[0].idx}}">
-                <button class="delete" type="submit">Delete</button>
-            </form>
-            <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
-            {% else %}
-            {% endif %}
-            <div class="list">
-                <button><a  href="/board/list/1">List</a></button>
-            </div>
             
-        </div>    
+        </div>
+        <div class="relative">
+            <div class="button">
+                {% if user.level == 1 %}
+                <form method="post" action="/board/delete">
+                    <input type="hidden" name='idx' value="{{rows[0].idx}}">
+                    <button class="delete" type="submit">Delete</button>
+                </form>
+                <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
+                {% elif user.level == 2 %}
+                <form method="post" action="/board/delete">
+                    <input type="hidden" name='idx' value="{{rows[0].idx}}">
+                    <button class="delete" type="submit">Delete</button>
+                </form>
+                <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
+                {% elif user.userid == rows[0].userid %}
+                <form method="post" action="/board/delete">
+                    <input type="hidden" name='idx' value="{{rows[0].idx}}">
+                    <button class="delete" type="submit">Delete</button>
+                </form>
+                <button><a href="/board/update/?idx={{rows[0].idx}}">Edit</a></button>
+                {% else %}
+                {% endif %}
+                <div class="list">
+                    <button><a  href="/board/list/1">List</a></button>
+                </div>
+            </div>    
+        </div>
     </div>
-    
     {% include "../nunjucks/footer.html" %}
 </body>
 </html>

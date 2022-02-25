@@ -15,19 +15,28 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 #wrap{
-    height: 100%;
+    width: 100%;
+    height: 100vh;
 }
 
 #view_title{
-    margin-top:20px;
-    text-align: center;
+    /* position:relative; */
+    top:10%;
+    left:50%;
+    transform: translateX(-50%);
     font-size: 25px;
 }
 
 .view_content {
+    position:absolute;
+    top:15%;
+    left:50%;
+    transform: translateX(-50%);
+    text-align: center;
     width:960px;
-    margin:0 auto;
-    margin-top: 5%;
+    margin: 0 auto;
+    padding-top:30px;
+    box-sizing: border-box;
 }
 
 table{
@@ -37,21 +46,19 @@ table{
 
 .v_c_head{
     width:100%;
-    height: 30px;
-    /* border-bottom: 0.5px rgb(6, 6, 138) solid; */
-    color: grey !important;
+    height: 32px;
     text-align: center;
     border-bottom:0.5px rgb(194, 55, 182) solid;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .v_c_body{
     width:100%;
-    height: 30px;
+    height: 32px;
     color: grey !important;
     text-align: center;
     border-bottom: 0.5px rgb(194, 55, 182) solid;
-    font-size: 12px;
+    font-size: 14px;
     margin-top:3px;
 }
 
@@ -87,12 +94,16 @@ table{
     vertical-align: middle;
     text-align: center;
     border:none;
-    width:100%;
+    width:960px;
     height: 100%;
     background: rgb(194, 55, 182) ;
 }
 
 .l_s{
+    position: absolute;
+    top:70%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -129,6 +140,10 @@ table{
 
 
 .comment_content{
+    position:absolute;
+    top: 80%;
+    left:50%;
+    transform: translateX(-50%);
     width: 960px;
     margin: 0 auto;
     border: none;
@@ -202,9 +217,13 @@ table{
     padding-bottom:2px;
 }
 
+.relative{
+    position:relative;
+}
 
 
 .button{
+    position:relative;
     width:960px;
     margin: 0 auto;
     margin-top:30px;

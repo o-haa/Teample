@@ -9,44 +9,47 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h3 id="b_name">"Board"</h3> 
-    {% if user %}
-    <h3 id="welcome_m"><span>"{{user.nickname}}"</span>님 환영합니다.</h3>
-    {% endif %}
-    <div id="content">
-        <table>
-            <thead id="board_head">
-                <tr>
-                    <td class="board_idx">Num</td>
-                    <td class="board_title">Title</td>
-                    <td class="board_nickname">Writer</td>
-                    <td class="board_date">Date</td>
-                    <td class="board_likes">Likes</td>
-                    <td class="board_view">Views</td>
-                </tr>
-            </thead>
-            <tbody id="board_body">
-                {% for item in result %}
-                <tr>
-                    <td>{{item.idx}}</td>
-                    <td><a href='/board/view/?idx={{item.idx}}''>{{item.title}}</a></td>
-                    <td>{{item.nickname}}</td>
-                    <td>{{item.date}}</td>
-                    <td>{{item.likes}}</td>
-                    <td>{{item.view}}</td>
-                </tr>
+    <div id="wrap">
+        <h3 id="b_name">"Board"</h3> 
+        {% if user %}
+        <h3 id="welcome_m"><span>"{{user.nickname}}"</span>님 환영합니다.</h3>
+        {% endif %}
+        <div id="content">
+            <table>
+                <thead id="board_head">
+                    <tr>
+                        <td class="board_idx">Num</td>
+                        <td class="board_title">Title</td>
+                        <td class="board_nickname">Writer</td>
+                        <td class="board_date">Date</td>
+                        <td class="board_likes">Likes</td>
+                        <td class="board_view">Views</td>
+                    </tr>
+                </thead>
+                <tbody id="board_body">
+                    {% for item in result %}
+                    <tr>
+                        <td>{{item.idx}}</td>
+                        <td><a href='/board/view/?idx={{item.idx}}''>{{item.title}}</a></td>
+                        <td>{{item.nickname}}</td>
+                        <td>{{item.date}}</td>
+                        <td>{{item.likes}}</td>
+                        <td>{{item.view}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="list_num">
+                {% for num in pageNum %}  
+                <a href="/board/list/{{num+1}}">[{{num+1}}]</a>
                 {% endfor %}
-            </tbody>
-        </table>
-        <div class="list_num">
-            {% for num in pageNum %}  
-            <a href="/board/list/{{num+1}}">[{{num+1}}]</a>
-            {% endfor %}
-        </div>
-        <div id="box">
-            <button class="box1"><a href="/board/write">write</a></button>
-        </div>    
-    </div> 
+            </div>
+            <div id="box">
+                <button class="box1"><a href="/board/write">write</a></button>
+            </div>    
+        </div> 
+    </div>
+    
     {% include "../nunjucks/footer.html" %}
 </body>
 </html>
