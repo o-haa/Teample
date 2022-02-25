@@ -10,24 +10,28 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h3 id="b_name">You can "Edit" if you want :)</h3>
-    <div id="write_content">
-        <div class="write">
-            <form name="form" method="post" action="/board/update/?idx={{rows.idx}}" onSubmit="return formCheck({{idx}})">
-                <input type="hidden" name="userid" value="{{user.userid}}">
-                <div class="title">
-                    <strong>제목</strong>
-                    <input class="write_input" type="text" name="title" value="{{rows.title}}">
+    <div id="wrap">
+        <h3 id="b_name">You can "Edit" if you want :)</h3>
+        <div id="write_content">
+            <div class="write">
+                <form name="form" method="post" action="/board/update/?idx={{rows.idx}}" onSubmit="return formCheck({{idx}})">
+                    <input type="hidden" name="userid" value="{{user.userid}}">
+                    <div class="title">
+                        <strong>제목</strong>
+                        <input class="write_input" type="text" name="title" value="{{rows.title}}">
+                    </div>
+                    <div class="content">
+                        <textarea type="text" name="content">{{rows.content}}</textarea>
+                    </div>
+                    <input type="submit" value="Edit">
+                </form>
+                <div class="box">
+                    <button class="box1" type="button"><a href="/board/list/1">list</a></button>
                 </div>
-                <div class="content">
-                    <textarea type="text" name="content">{{rows.content}}</textarea>
-                </div>
-                <input type="submit" value="Edit">
-            </form>
-            <div class="box">
-                <button class="box1" type="button"><a href="/board/list/1">목록가기</a></button>
             </div>
         </div>
     </div>
+    
+    {% include "../nunjucks/footer.html" %}
 </body>
 </html>

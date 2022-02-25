@@ -9,41 +9,45 @@
 </head>
 <body>
     {% include "../../nunjucks/header.html" %}
-    <h3 id="b_name">"SCRAP"</h3>
-    <table id="scrap_table">
-        <thead id="board_head">
-            <tr>
-                <td class="board_idx">Num</td>
-                <td class="scrap_title">Title</td>
-                <td class="scrap_nickname">Nickname</td>
-                <td class="board_date">Date</td>
-                <td class="scrap_delete">Delete</td>
-            </tr>
-        </thead>
-        <tbody id="board_body">
-            {% for item in result %}
-            <tr>
-                <td>{{loop.index}}</td>
-                <td><a href="/board/view/?idx={{item.idx}}">{{item.title}}</a></td>
-                <td>{{item.nickname}}</td>
-                <td>{{item.date}}</td>
-                <td>
-                    <form method="post" action="/user/scrap">
-                        <input type="hidden" name="idx" value="{{item.idx}}">
-                        <button type="submit">삭제</button>
-                    </form>
-                </td>
-            </tr>
+    <div id="wrap">
+        <h3 id="b_name">"SCRAP"</h3>
+        <table id="scrap_table">
+            <thead id="board_head">
+                <tr>
+                    <td class="board_idx">Num</td>
+                    <td class="scrap_title">Title</td>
+                    <td class="scrap_nickname">Nickname</td>
+                    <td class="board_date">Date</td>
+                    <td class="scrap_delete">Delete</td>
+                </tr>
+            </thead>
+            <tbody id="board_body">
+                {% for item in result %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td><a href="/board/view/?idx={{item.idx}}">{{item.title}}</a></td>
+                    <td>{{item.nickname}}</td>
+                    <td>{{item.date}}</td>
+                    <td>
+                        <form method="post" action="/user/scrap">
+                            <input type="hidden" name="idx" value="{{item.idx}}">
+                            <button type="submit">삭제</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="list_num">
+            {% for num in pageNum %}  
+            [<a href="/user/scrap/{{num+1}}">{{num+1}}</a>]
             {% endfor %}
-        </tbody>
-    </table>
-    <div class="list_num">
-        {% for num in pageNum %}  
-        [<a href="/user/scrap/{{num+1}}">{{num+1}}</a>]
-        {% endfor %}
+        </div>
+        <div id="box">
+            <button class="box1"><a href="/user/profile">Profile</a></button>
+        </div>
     </div>
-    <div id="box">
-        <button class="box1"><a href="/user/profile">Profile</a></button>
-    </div>
+    
+    {% include "../../nunjucks/footer.html" %}
 </body>
 </html>

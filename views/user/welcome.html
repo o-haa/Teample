@@ -9,24 +9,27 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-   
-    <h3 id="pagename">🌝 Welcome to our new members! 🌝</h3>
-    <div class="join_info">
-        <p>"<span>{{info.nickname}}</span>"님 반갑습니다.</p>
-        <p> ID <span>{{info.userid}}</span></p>
-        <p> NAME <span>{{info.username}}</span></p>
-        <p> GENDER <span>{{info.gender}}</span></p>
-        {% if info.phone %}
-        <p> PHONE <span>{{info.phone}}</span></p>
-        {% else %}
-        <p> PHONE 없음</p>
-        {% endif %}
-        <p> H-PHONE <span>{{info.mobile}}</span></p>        
+    <div id="welcome_wrap">
+        <h3 id="pagename">🌝 Welcome to our New members! 🌝</h3>
+        <div class="join_info">
+            <p>"<span>{{info.nickname}}</span>"님 반갑습니다.</p>
+            <p> ID <span>{{info.userid}}</span></p>
+            <p> NAME <span>{{info.username}}</span></p>
+            <p> GENDER <span>{{info.gender}}</span></p>
+            {% if info.phone %}
+            <p> PHONE <span>{{info.phone}}</span></p>
+            {% else %}
+            <p> PHONE 없음</p>
+            {% endif %}
+            <p> H-PHONE <span>{{info.mobile}}</span></p>        
+        </div>
+        <div class="button">
+            <button><a href="/">home</a></button>
+            <button><a href="/user/login">login</a></button>
+        </div>
     </div>
-    <div class="button">
-        <button><a href="/">home</a></button>
-        <button><a href="/user/login">login</a></button>
-    </div>
+    
+    {% include "../nunjucks/footer.html" %}
 </body>
 </html>
     

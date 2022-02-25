@@ -8,24 +8,30 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 
+body{
+    height: 100%;
+}
+
+
 #pagename{
     text-align: center;
     font-size: 27px;
 }
 
 .user_info{
-    position:absolute;
-    top:40vh;
-    left:50%;
-    transform: translateX(-50%);
+    margin:0 auto;
+    margin-top: 15%;
+    width:400px;
     background-color: transparent;
 }
 
 .user_info>p {  
-    margin-bottom:10px;
+    position: relative;
+    right: 20%;
     background-color: transparent;
     font-size: 21px;
     text-align: right;
+    margin-top:2%;
 }
 
 .user_info>p>input{
@@ -33,8 +39,9 @@ a{text-decoration: none;}
     border-bottom: 0.5px rgb(194, 55, 182) dotted;
     background-color: transparent;
     font-size: 21px;
-    padding-bottom: 1px;
-    padding-left:3px;
+    margin-left:1%;
+    padding-bottom:1px;
+    padding-left:1%;
     box-sizing: border-box;
 }
 
@@ -43,19 +50,18 @@ a{text-decoration: none;}
 }
 
 .user_join_login {
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
-    top:58%;
+    text-align: center;
 
 }
 
 .user_join_login > input {
+    margin-top: 5%;
     font-size: 18px;
     padding: 5px 7px;
     border:none;
     background: #f1f1f1;
     color:#000;
+    border-radius: 30%;
 }
 
 
@@ -76,16 +82,12 @@ a{text-decoration: none;}
 
 
 .join_info{
-    position:absolute;
-    top:40%;
-    left:50%;
-    transform: translateX(-50%);
-    background-color: transparent;
+    margin-top:10%;
+    text-align: center;
 }
 
 .join_info>p{
-    margin-bottom:10px;
-    background-color: transparent;
+    margin-bottom:5%;
     font-size: 22px;
 }
 
@@ -94,7 +96,7 @@ a{text-decoration: none;}
 }
 
 .join_info > h3{
-    margin-top:20%;
+    margin-top:5%;
     text-align: center; 
     cursor: pointer;
     font-size:22px;
@@ -105,21 +107,33 @@ a{text-decoration: none;}
 }
 
 .admin_list{
-    margin-top:10%;
-    display: flex;
-    justify-content: space-around;
-    width:100%;
+    width: 100%;
+    margin-top:5%;
     height: auto;
 }
 
-.admin1{
+.text{
+    width: 100%;;
+    display: flex;
+    justify-content: space-around;
     text-align: center;
+    margin-left:-1%;
+}
+
+.text>h2>p{
+    margin-top:2%;
+}
+
+.admin1{
+    /* margin-top:2%; */
+    display: flex;
+    justify-content: space-around;
 }
 
 .admin1>ul{
+    margin-top:2%;
     width:400px;
     border:1px rgb(194, 55, 182) dotted;
-    margin:5%;
 }
 
 .admin1>ul>li{
@@ -135,34 +149,31 @@ a{text-decoration: none;}
 
 
 .button{
-    position:absolute;
-    top:55%;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
     width:200px;
     display: flex;
     justify-content: space-between;
+    margin:0 auto;
+    margin-top:5%;
 }
 
 .button > button {
-    padding: 5px;
+    padding: 7px;
     border: none;
-    font-size: 12px;
+    font-size: 14px;
     box-sizing: border-box;
     border: 1px #f1f1f1 dashed;
 }
 
 .list_button{
-    position:absolute;
-    top:75%;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 2%;
+    text-align: center;
 }
 
 .list_button > button {
-    padding: 5px;
+    padding: 7px;
     border: none;
-    font-size: 12px;
+    font-size: 14px;
     box-sizing: border-box;
     border: 1px #f1f1f1 dashed;
 }
@@ -195,9 +206,10 @@ a{text-decoration: none;}
 }
 
 .level>form>button{
-    padding: 5px;
+    margin-top:3%;
+    padding: 7px;
     border: none;
-    font-size: 12px;
+    font-size: 14px;
     box-sizing: border-box;
     background: rgb(221, 83, 28);
     color:#f1f1f1;
@@ -206,19 +218,17 @@ a{text-decoration: none;}
 
 
 .level_button{
-    position:absolute;
-    top:80%;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
     display: flex;
     justify-content: space-between;
-    width: 200px;
+    width: 300px;
+    margin:5% auto;
 }
 
 .level_button > button {
-    padding: 5px;
+    padding: 7px;
     border: none;
-    font-size: 12px;
+    font-size: 14px;
     box-sizing: border-box;
     border: 1px #f1f1f1 dashed;
 }

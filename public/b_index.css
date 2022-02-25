@@ -100,10 +100,12 @@ table {
 .list_num{
     text-align: center;
     margin:0 auto;
+
 }
 
 .list_num > a{
     color:lemonchiffon;
-    font-size:12px;
+    font-size:14px;
+    margin-left: 2px;
 }
 

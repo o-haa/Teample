@@ -7,6 +7,9 @@
 ul,li{list-style: none;}
 a{text-decoration: none;}
 
+#wrap{
+    height: 90vh;
+}
 
 #b_name{
     margin-top:7%;
@@ -98,9 +101,7 @@ table {
 }
 
 #box {
-    padding: 5px 0;
     width:100%;
-    box-sizing: border-box;
     text-align: center;
     margin-top: 30px;
 }
@@ -108,7 +109,7 @@ table {
     border: none;
     background: rgb(194, 55, 182);
     padding: 7px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .box1>a{
@@ -123,5 +124,6 @@ table {
 
 .list_num > a{
     color:lemonchiffon;
+    font-size: 14px;
 }
 

@@ -40,13 +40,14 @@
         </table>
         <div class="list_num">
             {% for num in pageNum %}  
-            [<a href="/board/list/{{num+1}}">{{num+1}}</a>]
+            <a href="/board/list/{{num+1}}">[{{num+1}}]</a>
             {% endfor %}
         </div>
         <div id="box">
-            <button class="box1"><a href="/board/write">글쓰기</a></button>
+            <button class="box1"><a href="/board/write">write</a></button>
         </div>    
     </div> 
+    {% include "../nunjucks/footer.html" %}
 </body>
 </html>
 

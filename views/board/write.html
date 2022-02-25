@@ -10,24 +10,28 @@
 </head>
 <body>
     {% include "../nunjucks/header.html" %}
-    <h3 id="b_name">You can "write" anything you want!</h3>
-    <div id="write_content">
-        <div class="write">
-            <form name="form" method="post" action="/board/write" onSubmit="return formCheck()">
-                <input type="hidden" name="userid" value="{{userid}}">
-                <div class="title">
-                    <strong>제목</strong>
-                    <input class="write_input" type="text" name="title" placeholder="제목입력">
+    <div id="wrap">
+        <h3 id="b_name">You can "write" anything you want!</h3>
+        <div id="write_content">
+            <div class="write">
+                <form name="form" method="post" action="/board/write" onSubmit="return formCheck()">
+                    <input type="hidden" name="userid" value="{{userid}}">
+                    <div class="title">
+                        <strong>제목</strong>
+                        <input class="write_input" type="text" name="title" placeholder="제목입력">
+                    </div>
+                    <div class="content">
+                        <textarea type="text" name="content" placeholder="내용입력"></textarea>
+                    </div>
+                    <input type="submit" value="submit">
+                </form>
+                <div class="box">
+                    <button class="box1" type="button"><a href="/board/list/1">list</a></button>
                 </div>
-                <div class="content">
-                    <textarea type="text" name="content" placeholder="내용입력"></textarea>
-                </div>
-                <input type="submit" value="글등록">
-            </form>
-            <div class="box">
-                <button class="box1" type="button"><a href="/board/list/1">목록가기</a></button>
             </div>
         </div>
     </div>
+    
+    {% include "../nunjucks/footer.html" %}
 </body>
 </html>

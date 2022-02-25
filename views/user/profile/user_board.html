@@ -10,36 +10,39 @@
 </head>
 <body>
     {% include "../../nunjucks/header.html" %}
-    <h3 id="b_name">"작성글"</h3>
-    <table>
-        <thead id="board_head">
-            <tr>
-                <td class="board_idx">Num</td>
-                <td class="board_title">Title</td>
-                <td class="board_date">Date</td>
-                <td class="board_likes">Likes</td>
-                <td class="board_view">Views</td>
-            </tr>
-        </thead>
-        <tbody id="board_body">
-            {% for item in result %}
-            <tr>
-                <td>{{loop.index}}</td>
-                <td><a href="/board/view/?idx={{item.idx}}">{{item.title}}</a></td>
-                <td>{{item.date}}</td>
-                <td>{{item.likes}}</td>
-                <td>{{item.view}}</td>
-            </tr>
+    <div id="wrap">
+        <h3 id="b_name">"작성글"</h3>
+        <table>
+            <thead id="board_head">
+                <tr>
+                    <td class="board_idx">Num</td>
+                    <td class="board_title">Title</td>
+                    <td class="board_date">Date</td>
+                    <td class="board_likes">Likes</td>
+                    <td class="board_view">Views</td>
+                </tr>
+            </thead>
+            <tbody id="board_body">
+                {% for item in result %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td><a href="/board/view/?idx={{item.idx}}">{{item.title}}</a></td>
+                    <td>{{item.date}}</td>
+                    <td>{{item.likes}}</td>
+                    <td>{{item.view}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="list_num">
+            {% for num in pageNum %}  
+            [<a href="/user/board/{{num+1}}">{{num+1}}</a>]
             {% endfor %}
-        </tbody>
-    </table>
-    <div class="list_num">
-        {% for num in pageNum %}  
-        [<a href="/user/board/{{num+1}}">{{num+1}}</a>]
-        {% endfor %}
+        </div>
+        <div id="box">
+            <button class="box1"><a href="/user/profile">Profile</a></button>
+        </div>
     </div>
-    <div id="box">
-        <button class="box1"><a href="/user/profile">Profile</a></button>
-    </div>
+    {% include "../../nunjucks/footer.html" %}
 </body>
 </html>

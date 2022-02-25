@@ -7,6 +7,9 @@
 ul,li{list-style: none;}
 a{text-decoration: none;}
 
+#welcome_wrap{
+    height: 100vh;
+}
 
 #pagename{
     width: auto;
@@ -51,7 +54,7 @@ a{text-decoration: none;}
     margin-bottom:10px;
     background-color: transparent;
     font-size: 22px;
-    text-align: right;
+    text-align: center;
 }
 
 .join_info>p>span{
@@ -71,9 +74,9 @@ a{text-decoration: none;}
 }
 
 .button > button {
-    padding: 5px;
+    padding: 7px;
     border: none;
-    font-size: 12px;
+    font-size: 14px;
     box-sizing: border-box;
     border: 1px #f1f1f1 dashed;
 }
