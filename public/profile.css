@@ -186,3 +186,14 @@ a{text-decoration: none;}
     width:300px;
 }
 
+#rocket {
+    display: inline-block;
+    font-size: 100px;
+    float: right;
+    background: transparent !important;
+    margin-right: -50px;
+}
+
+#profile_my_history > div > h5 > a {
+    margin-left: 10px;
+}
