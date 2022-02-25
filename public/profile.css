@@ -119,6 +119,81 @@ a{text-decoration: none;}
 #profile_my_history > div > h5{
     padding: 8%;
     box-sizing: border-box;
+    background: transparent !important;
+    
 }
 
+.history1{
+    position: relative;
+    padding-left : 0px;
+    line-height: 20px;
+    z-index: 1;
+    background: transparent !important;
+}
 
+.history1::after{
+    content: '';
+    position: absolute;
+    z-index : -1;
+    top:0;left:0;
+    width:0;
+    height: 100%;
+    background-color: rgb(194, 55, 182);
+    opacity: 0.25;
+    transition :all 0.9s;
+}
+.history1:hover::after{width:300px;}
+
+.history2{
+    position: relative;
+    padding-left : 0px;
+    line-height: 20px;
+    background: transparent !important;
+    z-index: 1;
+}
+.history2::after{
+    content: '';
+    position: absolute;
+    z-index : -1;
+    top:0;left:0;
+    width:0;
+    height: 100%;
+    background-color: rgb(194, 55, 182);
+    opacity: 0.25;
+    transition :all 0.9s;
+}
+.history2:hover::after{width:300px;}
+
+.history3{
+    position: relative;
+    padding-left : 0px;
+    line-height: 20px;
+    background: transparent !important;
+    z-index: 1;
+}
+.history3::after{
+    content: '';
+    position: absolute;
+    z-index : -1;
+    top:0;left:0; 
+    width:0;
+    height: 100%;    
+    background-color: rgb(194, 55, 182);
+    opacity: 0.25;
+    transition :all 0.9s;
+}
+.history3:hover::after{
+    width:300px;
+}
+
+#rocket {
+    display: inline-block;
+    font-size: 100px;
+    float: right;
+    background: transparent !important;
+    margin-right: -50px;
+}
+
+#profile_my_history > div > h5 > a {
+    margin-left: 10px;
+}
