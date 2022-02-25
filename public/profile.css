@@ -201,10 +201,11 @@ a{text-decoration: none;}
 }
 
 #wrap {
-    background-image: url("./img/asteroid.png");
-    background-repeat: no-repeat;
+    background-image: url("./img/nebula.png");
+    background-repeat: repeat-x;
     background-position-x: center;
     background-position-y: center;
+    /* background-size: 110% 100%; */
 }
 
 #profile_wrap {
@@ -222,11 +223,3 @@ a{text-decoration: none;}
 #profile_wrap > div > div > p {
     background: transparent !important;
 }
-
-/* #profile_left {
-    background: transparent !important;
-}
-
-#profile_right {
-    background: transparent !important;
-} */

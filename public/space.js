@@ -90,6 +90,9 @@ background.src = "./img/Planet1.png";
 const satellite = new Image();
 satellite.src = "./img/satellite.png";
 
+const moon = new Image();
+moon.src = "./img/moon.png";
+
 function animation() {
     ctx.globalCompositeOperation = 'source-over';
     ctx.globalAlpha = 0.8;
@@ -97,7 +100,8 @@ function animation() {
     ctx.fillRect(0, 0, w, h)
 
     ctx.drawImage(background,150,0,750,750);  
-    ctx.drawImage(satellite,980,30,280,210)
+    ctx.drawImage(satellite,980,30,280,210);
+    ctx.drawImage(moon,1400,500, 300, 300);
 
     ctx.globalCompositeOperation = 'lighter';
     for (var i = 1, l = stars.length; i < l; i++) {

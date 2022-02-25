@@ -84,11 +84,10 @@ div.admin1 > ul > li > a {
 }
 
 #admin_info {
-    background-image: url('./img/cloud.png');
-    background-repeat: no-repeat;
-    /* background-position-x: center;
-    background-position-y: center; */
-    background-size: 100% 100%;
+    background-image: url('./img/bluegalaxy.png');
+    background-repeat: repeat-x;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 #admin_info > .member_info {
@@ -97,6 +96,7 @@ div.admin1 > ul > li > a {
 
 #admin_info > .member_info > p {
     background: transparent !important;
+    font-weight: bold;
 }
 
 #admin_info > .member_info > p > span {
@@ -114,6 +114,7 @@ div.admin1 > ul > li > a {
 
 #admin_info > .level > form > p {
     background: transparent !important;
+    font-weight: bold;
 }
 
 #admin_info > .level_button {

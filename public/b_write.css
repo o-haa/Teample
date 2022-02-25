@@ -135,3 +135,18 @@ a{text-decoration: none;}
     padding:5px;
     cursor: pointer;
 }
+
+body {
+    background-image: url('./img/stardust.png');
+    background-repeat: repeat-x;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+#wrap {
+    background: transparent !important;
+}
+
+#write_content {
+    background: transparent !important;
+}
