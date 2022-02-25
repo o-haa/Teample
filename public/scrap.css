@@ -15,12 +15,13 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 #wrap{
-    height: 90vh;
+    height: 100vh;
 }
 
 #b_name{
-    margin-top:7%;
+    margin-top:1%;
     text-align: center;
+    font-size: 22px;
 }
 
 table {
