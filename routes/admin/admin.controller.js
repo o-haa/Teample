@@ -63,11 +63,13 @@ const adminList = async (req, res) => {
 
 const adminInfo = async (req, res) => {
     try {
+        const {user} = req.session
         const {id} = req.query
         let sql = "SELECT * FROM user WHERE userid=?"
         const [rows, fields] = await promisePool.query(sql, [id])
         res.render('./admin/admin_info.html', {
-            rows: rows[0]
+            rows: rows[0],
+            user
         })
     } catch {
         console.log(err)
