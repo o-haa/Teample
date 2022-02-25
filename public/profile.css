@@ -139,7 +139,7 @@ a{text-decoration: none;}
     width:0;
     height: 100%;
     background-color: rgb(194, 55, 182);
-    opacity: 0.25;
+    opacity: 0.5;
     transition :all 0.9s;
 }
 .history1:hover::after{width:300px;}
@@ -159,7 +159,7 @@ a{text-decoration: none;}
     width:0;
     height: 100%;
     background-color: rgb(194, 55, 182);
-    opacity: 0.25;
+    opacity: 0.5;
     transition :all 0.9s;
 }
 .history2:hover::after{width:300px;}
@@ -179,7 +179,7 @@ a{text-decoration: none;}
     width:0;
     height: 100%;    
     background-color: rgb(194, 55, 182);
-    opacity: 0.25;
+    opacity: 0.5;
     transition :all 0.9s;
 }
 .history3:hover::after{
@@ -196,4 +196,37 @@ a{text-decoration: none;}
 
 #profile_my_history > div > h5 > a {
     margin-left: 10px;
+    font-size: 25px !important;
+    background: transparent !important;
 }
+
+#wrap {
+    background-image: url("./img/asteroid.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+#profile_wrap {
+    background: transparent !important;
+}
+
+#profile_wrap > div {
+    background: transparent !important;
+}
+
+#profile_wrap > div > div {
+    background: transparent !important;
+}
+
+#profile_wrap > div > div > p {
+    background: transparent !important;
+}
+
+/* #profile_left {
+    background: transparent !important;
+}
+
+#profile_right {
+    background: transparent !important;
+} */

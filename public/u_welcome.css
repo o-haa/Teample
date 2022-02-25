@@ -88,4 +88,13 @@ a{text-decoration: none;}
     border: 1px #f1f1f1 dashed;
 }
 
+#welcome_wrap {
+    background-image: url("./img/asteroids_m.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
 
+#welcome_wrap > .button {
+    background: transparent !important;
+}
