@@ -1,4 +1,4 @@
-INSERT INTO user VALUES ('admin', 'admin', '관리자', '관리자', '999999', '남자', '01012341234', '01012341234', 1);
+INSERT INTO user VALUES ('admin', 'admin', '관리자', '관리자', '999999', '남자', '01012341234', '01012341234', 1, 'true');
 
 INSERT INTO board (title, content, nickname, date, userid) VALUES ('hi_b', 'gggg', 'bitkunst', CURRENT_TIMESTAMP, 'bitkunst');
 
