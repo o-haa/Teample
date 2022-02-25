@@ -105,7 +105,7 @@ a{text-decoration: none;}
 
 .join_info{
     position:absolute;
-    top:27vh;
+    top:27%;
     left:40%;
     transform: translateX(-40%);
     width: 400px;
@@ -121,7 +121,7 @@ a{text-decoration: none;}
 
 .join_info>p:nth-child(1){
     font-size: 15px;
-    margin-right: 22px;
+    margin-right: 10%;
 }
 
 .join_info>p>span{
