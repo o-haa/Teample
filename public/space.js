@@ -84,14 +84,27 @@ for (var i = 0; i < maxStars; i++) {
   new Star();
 }
 
-const background = new Image();
-background.src = "./img/Planet1.png";
+const earth = new Image();
+earth.src = "./img/earth.png";
 
-const satellite = new Image();
-satellite.src = "./img/satellite.png";
+const jupiter = new Image();
+jupiter.src = "./img/jupiter.png";
 
-const moon = new Image();
-moon.src = "./img/moon.png";
+const sun = new Image();
+sun.src = "./img/sun.png";
+
+const mars = new Image()
+mars.src = "./img/mars.png"
+
+const asteroid = new Image()
+asteroid.src = "./img/asteroid.png"
+
+const planet1 = new Image()
+planet1.src = "./img/planet1.png"
+
+const planet2 = new Image()
+planet2.src = "./img/planet2.png"
+
 
 function animation() {
     ctx.globalCompositeOperation = 'source-over';
@@ -99,9 +112,11 @@ function animation() {
     ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 1)';
     ctx.fillRect(0, 0, w, h)
 
-    ctx.drawImage(background,150,0,750,750);  
-    ctx.drawImage(satellite,980,30,280,210);
-    ctx.drawImage(moon,1400,500, 300, 300);
+    ctx.drawImage(earth,100, 100, 500, 500);  
+    ctx.drawImage(planet2, 650, 400, 300, 300);
+    ctx.drawImage(jupiter, 1000, 600, 300, 300);
+    ctx.drawImage(planet1, 1400, 800)
+    ctx.drawImage(sun, 1200, 0)
 
     ctx.globalCompositeOperation = 'lighter';
     for (var i = 1, l = stars.length; i < l; i++) {
