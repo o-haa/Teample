@@ -16,35 +16,29 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 #wrap{
-    position: relative;
-    height: 100vh;
+    padding-top:80px;
+    width: 100%;
+    background-color: transparent;
     
 }
 
 
 #b_name{
-    position:absolute;
-    top:15%;
-    left:50%;
-    transform: translateX(-50%);
-    font-size: 25px;
+    text-align: center;
+    font-size:25px;
+    background-color: transparent;
 }
 
 #write_content{
-    position:absolute;
-    top:20%;
-    left:50%;
-    transform: translateX(-50%);
     text-align: center;
     width:960px;
-    margin: 0 auto;
-    padding: 100px 20px 0 20px;
-    box-sizing: border-box;
+    margin: 7% auto;
+    background-color: transparent !important;
 
 }
 .write{
     
-    width:960px;
+    width:916.5px;
     margin: 0 auto;
 }
 
@@ -70,7 +64,7 @@ a{text-decoration: none;}
     margin-left: 2%;
     border:none !important;
     border-bottom: 1px dotted #dcdcdc !important;
-    padding:0.5% 0;
+    margin-left:3%;
     box-sizing: border-box;
 }
 
@@ -83,19 +77,21 @@ a{text-decoration: none;}
 }
 
 .content{
-    margin-top: 10px;
+    padding-top: 2%;
     height: 300px;
     width: 100%;
+    background-color: transparent !important;
+    box-sizing: border-box;
 }
 
 .content > textarea {
     background-color: rgb(194, 55, 182) !important;
     color: #fff !important;
-    width:100%;
+    width:916.5px;
     height: 300px;
     border:none !important;
     font-size: 22px;
-    padding:10px;
+    padding:0.4%;
     box-sizing: border-box;
 }
 
@@ -109,23 +105,22 @@ a{text-decoration: none;}
 .write > form > input{
     background: rgb(221, 83, 28);
     color:#fff;
-    margin-top:20px;
+    margin:8% 0;
     padding:8px;
     box-sizing: border-box;
     float:right;
     border:none;
     cursor: pointer;
-    font-size:17px;
+    font-size: 17px;
 }
 
 .box {
+    margin:8% 0;
     width:100%;
     background: rgb(221, 83, 28);
 }
 .box1 {
     padding:8px;
-    box-sizing: border-box;
-    margin-top:20px;
     float:left;
     background: rgb(221, 83, 28);
     border:none;

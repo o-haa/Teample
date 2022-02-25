@@ -9,7 +9,7 @@
 *{
     margin:0;
     padding:0;
-    background-color:#000000;
+    background-color:transparent;
     color:whitesmoke
 }
 
@@ -17,59 +17,54 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 #wrap{
-    position: relative;
-    height: 100vh;
+    padding-top:80px;
+    width: 100%;
+    background-color: transparent;
 }
 
 #b_name{
-    position:absolute;
-    top:15%;
-    left:50%;
-    transform: translateX(-50%);
-    font-size: 25px;
+    text-align: center;
+    font-size:25px;
+    background-color: transparent;
 }
 
 #write_content{
-    position:absolute;
-    top:20%;
-    left:50%;
-    transform: translateX(-50%);
     text-align: center;
     width:960px;
-    margin: 0 auto;
-    padding: 100px 20px 0 20px;
-    box-sizing: border-box;
+    margin: 7% auto;
+    background-color: transparent !important;
 
 }
 .write{
-    width:960px;
+    width:916.5px;
     margin: 0 auto;
 }
 
 .title {
     width: 100%;
-    padding:10px 0;
+    padding-top:10px;
     box-sizing: border-box;
     font-size:22px;
     font-weight: 500;
     border:none;
+    background-color: #000;
     
 }
 
 .title>strong{
     display: inline;
     width:9%;
+    background-color: transparent;
 
 }
 
 .write_input {
     width:90%;
     font-size: 22px;
-    margin-left: 2%;
     border:none !important;
     border-bottom: 1px dotted #dcdcdc !important;
-    padding:0.5% 0;
-    box-sizing: border-box;
+    margin-left:3%;
+    background-color: transparent;
 }
 
 .write_input:focus{
@@ -81,19 +76,21 @@ a{text-decoration: none;}
 }
 
 .content{
-    margin-top: 10px;
+    padding-top: 2%;
     height: 300px;
     width: 100%;
+    background-color: transparent !important;
+    box-sizing: border-box;
 }
 
 .content > textarea {
     background-color: rgb(194, 55, 182) !important;
     color: #fff !important;
-    width:100%;
+    width:916.5px;
     height: 300px;
     border:none !important;
     font-size: 22px;
-    padding:10px;
+    padding:0.4%;
     box-sizing: border-box;
 }
 
@@ -102,12 +99,13 @@ a{text-decoration: none;}
     color: #fff;
     box-sizing: border-box;
     opacity: 50%;
+
 }
 
 .write > form > input{
     background: rgb(221, 83, 28);
     color:#fff;
-    margin-top:20px;
+    margin:8% 0;
     padding:8px;
     box-sizing: border-box;
     float:right;
@@ -117,12 +115,12 @@ a{text-decoration: none;}
 }
 
 .box {
+    margin:8% 0;
     width:100%;
     background: rgb(221, 83, 28);
 }
 .box1 {
     padding:8px;
-    margin-top:20px;
     float:left;
     background: rgb(221, 83, 28);
     border:none;

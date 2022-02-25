@@ -15,27 +15,23 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 #wrap{
+    padding-top:70px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 #view_title{
-    /* position:relative; */
-    top:10%;
-    left:50%;
-    transform: translateX(-50%);
+    text-align: center;
     font-size: 25px;
+    background-color: transparent;
 }
 
 .view_content {
-    position:absolute;
-    top:15%;
-    left:50%;
-    transform: translateX(-50%);
     text-align: center;
     width:960px;
     margin: 0 auto;
-    padding-top:30px;
+    margin-top:3%;
+    /* padding-top: 1%; */
     box-sizing: border-box;
 }
 
@@ -50,6 +46,7 @@ table{
     text-align: center;
     border-bottom:0.5px rgb(194, 55, 182) solid;
     font-size: 14px;
+
 }
 
 .v_c_body{
@@ -100,10 +97,7 @@ table{
 }
 
 .l_s{
-    position: absolute;
-    top:70%;
-    left: 50%;
-    transform: translateX(-50%);
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -140,11 +134,8 @@ table{
 
 
 .comment_content{
-    position:absolute;
-    top: 80%;
-    left:50%;
-    transform: translateX(-50%);
     width: 960px;
+    height: auto;
     margin: 0 auto;
     border: none;
 }
@@ -217,18 +208,13 @@ table{
     padding-bottom:2px;
 }
 
-.relative{
-    position:relative;
-}
-
-
 .button{
-    position:relative;
     width:960px;
     margin: 0 auto;
     margin-top:30px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .button > button {

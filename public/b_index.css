@@ -30,30 +30,22 @@ body {
 }
 
 #wrap{
-    position: relative;
-    height: 120vh;
-    background-image: url('./img/board.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
+    padding-top:70px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
 }
 
 #b_name{
-    position:absolute;
-    top:10%;
-    left:50%;
-    transform: translateX(-50%);
+    text-align: center;
     font-size:25px;
+    background-color: transparent;
 }
 
 #welcome_m{
-    position:absolute;
-    top:17%;
-    left:50%;
-    transform: translateX(-50%);
     text-align: center;
-    
+    margin-top: 4%;
+    font-size: 20px;
 }
 
 #welcome_m > span{
@@ -61,20 +53,17 @@ body {
 }
 
 #content {
-    position:absolute;
-    top:20%;
-    left:50%;
-    transform: translateX(-50%);
     text-align: center;
     width:960px;
-    height: 100vh;
-    margin:0 auto;
+    /* height: 100vh; */
+    margin:1.7% auto;
     font-size: 15px;
+    padding: 0.5% 2%;
+    box-sizing: border-box;
 }
 
 table {
-    width:960px;
-    margin:20px auto;
+    width:916.5px;
     font-size:15px;
     table-layout: fixed;
 }
@@ -91,23 +80,23 @@ table {
 }
 
 .board_idx {
-    width:20px;
+    width:46px;
 }
 .board_title {
-    width:250px;
+    width:500px;
 }
 .board_nickname {
-    width:50px;
+    width:120px;
 }
 
 .board_date{
-    width:50px;
+    width:120px;
 }
 .board_likes {
-    width:20px;
+    width:50px;
 }
 .board_view {
-    width: 20px;
+    width:50px;
 }
 
 #board_body{
@@ -121,8 +110,6 @@ table {
 }
 
 #box {
-    position: absolute;
-    top:86%;
     padding: 5px 0;
     width:100%;
     box-sizing: border-box;
