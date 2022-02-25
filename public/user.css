@@ -106,8 +106,8 @@ a{text-decoration: none;}
 .join_info{
     position:absolute;
     top:27%;
-    left:40%;
-    transform: translateX(-40%);
+    left:45%;
+    transform: translateX(-45%);
     width: 400px;
     background-color: transparent;
 }
@@ -121,7 +121,7 @@ a{text-decoration: none;}
 
 .join_info>p:nth-child(1){
     font-size: 15px;
-    margin-right: 10%;
+    margin-right: 15%;
 }
 
 .join_info>p>span{
@@ -190,7 +190,7 @@ a{text-decoration: none;}
     position: absolute;
     left:50%;
     transform: translateX(-50%);
-    top: 88%;
+    top: 80%;
     height: auto;
 }
 

@@ -18,18 +18,21 @@ a{text-decoration: none;}
 
 
 #wrap{
-    height: 77vh;
+    position:relative;
+    width: 100%;
+    height: 100vh;
 }
 
 
 #pagename{
-    text-align: center;
+    position: absolute;
+    width:100%;
+
     font-size: 27px;
 }
 
 .user_info{
     position: absolute;
-    margin:0 auto;
     top: 35%;
     left:47%;
     transform: translateX(-47%);
