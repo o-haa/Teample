@@ -19,16 +19,18 @@ a{text-decoration: none;}
 
 #wrap{
     position:relative;
-    width: 100%;
+    /* width: 100%; */
     height: 100vh;
 }
 
 
 #pagename{
     position: absolute;
-    width:100%;
-
+    /* width:100%; */
+    left: 45%;
+    top:12%;
     font-size: 27px;
+    color: #fff;
 }
 
 .user_info{
@@ -102,8 +104,13 @@ a{text-decoration: none;}
 
 
 .join_info{
-    margin-top:10%;
+    position: relative;
+    top: 35%;
+    left:50%;
     text-align: center;
+    transform: translateX(-50%);
+    background-color: transparent;
+    /* margin-top:10%; */
 }
 
 .join_info>p{
@@ -116,8 +123,8 @@ a{text-decoration: none;}
 }
 
 .join_info>div{
-    position:absolute;
-    top:40%;
+    position:relative;
+    top:70%;
     left:50%;
     transform: translateX(-50%);
     text-align: center; 
@@ -138,12 +145,16 @@ a{text-decoration: none;}
 }
 
 .admin_list{
+    position: relative;
     width: 100%;
-    margin-top:5%;
     height: auto;
+    padding-top:10%;
+    box-sizing: border-box;
 }
 
 .text{
+    position: relative;
+    top:18%;
     width: 100%;;
     display: flex;
     justify-content: space-around;
@@ -156,7 +167,8 @@ a{text-decoration: none;}
 }
 
 .admin1{
-    /* margin-top:2%; */
+    position: relative;
+    top:20%;
     display: flex;
     justify-content: space-around;
 }
@@ -185,7 +197,7 @@ a{text-decoration: none;}
     display: flex;
     justify-content: space-between;
     margin:0 auto;
-    margin-top:10%;
+    margin-top:25%;
 }
 
 .button > button {
@@ -210,9 +222,12 @@ a{text-decoration: none;}
 }
 
 .member_info{
+    position: relative;
+    padding-top: 10%;
+    box-sizing: border-box;
     text-align: center;
     font-size:18px;
-    margin-top: 5%;
+
 }
 
 .member_info>p{
@@ -224,6 +239,7 @@ a{text-decoration: none;}
 }
 
 .level{
+    position: relative;
     text-align: center;
     font-size:18px;
 }
