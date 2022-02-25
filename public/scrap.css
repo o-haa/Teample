@@ -136,3 +136,26 @@ table {
     font-size: 14px;
 }
 
+#wrap {
+    background-image: url('./img/stardust.png');
+    background-repeat: repeat-x;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+#wrap > .list_num {
+    /* background: transparent !important; */
+    font-weight: bold;
+    font-size: 18px;
+    width: 910px;
+}
+
+#wrap > .list_num > a {
+    background: transparent !important;
+    /* font-weight: bold; */
+    font-size: 18px;
+}
+
+#wrap > #box {
+    background: transparent !important;
+}
