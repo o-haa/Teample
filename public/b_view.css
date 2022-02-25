@@ -15,7 +15,7 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 
 #wrap{
-    height: 100vh;
+    height: 100%;
 }
 
 #view_title{
@@ -27,7 +27,7 @@ a{text-decoration: none;}
 .view_content {
     width:960px;
     margin:0 auto;
-    margin-top: 40px;
+    margin-top: 5%;
 }
 
 table{
@@ -78,7 +78,7 @@ table{
     display: table;
     margin-top: 30px;
     width:960px;
-    height: 200px;
+    height: 300px;
     border:none;
 }
 
