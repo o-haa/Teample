@@ -20,7 +20,7 @@ router.post('/login', async (req,res)=>{
                 req.session.user = rows[0]
                 res.redirect('/')
             } else {
-                res.send(alertMove('관리자로부터 이용 정지된 계정입니다.', '/'))
+                res.send(alertMove('관리자로부터 이용 정지된 계정입니다.', '/user/login'))
             }
         } else {
             res.send(alertMove('회원정보가 일치하지 않습니다.', '/user/login'))
@@ -94,11 +94,15 @@ router.post('/profile/update', async (req, res)=>{
     try {
         const {userid} = req.session.user
         const {userpw, nickname, phone, mobile} = req.body
-        let sql = `UPDATE user AS u, board AS b, comment AS c 
-        SET u.userpw=?, u.nickname=?, u.phone=?, u.mobile=?, b.nickname=?, c.c_nickname=? 
-        WHERE u.userid=? AND b.userid=? AND c.c_userid=?`
-        let sqlArr = [userpw, nickname, phone, mobile, nickname, nickname, userid, userid, userid]
+        let sql = "UPDATE user SET userpw=?, nickname=?, phone=?, mobile=? WHERE userid=?"
+        let sqlArr = [userpw, nickname, phone, mobile, userid]
         await promisePool.query(sql, sqlArr)
+        let sql2 = "UPDATE board SET nickname=? WHERE userid=?"
+        let sqlArr2 = [nickname, userid]
+        await promisePool.query(sql2, sqlArr2)
+        let sql3 = "UPDATE comment SET c_nickname=? WHERE c_userid=?"
+        let sqlArr3 = [nickname, userid]
+        await promisePool.query(sql3, sqlArr3)
         req.session.destroy(()=>{
             req.session
         })
