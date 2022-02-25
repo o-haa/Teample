@@ -127,5 +127,7 @@ router.get('/scrap/:num', Auth, userController.getScrap)
 router.post('/scrap', userController.postScrap)
 
 
+
+sad
 module.exports = router;
 
