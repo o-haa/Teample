@@ -46,7 +46,7 @@ table{
     height: 32px;
     text-align: center;
     border-bottom:0.5px rgb(194, 55, 182) solid;
-    font-size: 14px;
+    font-size: 20px;
 
 }
 
@@ -56,27 +56,27 @@ table{
     color: grey !important;
     text-align: center;
     border-bottom: 0.5px rgb(194, 55, 182) solid;
-    font-size: 14px;
+    font-size: 20px;
     margin-top:3px;
 }
 
 .board_idx {
-    width:20px;
+    width:47px;
 }
 .board_title {
-    width:250px;
+    width:500px;
 }
 .board_nickname {
-    width:50px;
+    width:130px;
 }
 .board_date{
-    width:50px;
+    width:130px;
 }
 .board_likes {
-    width:20px;
+    width:47px;
 }
 .board_view {
-    width: 20px;
+    width: 47px;
 }
 
 .content_table{
@@ -95,6 +95,7 @@ table{
     width:960px;
     height: 100%;
     background: rgb(194, 55, 182) ;
+    font-size: 22px;
 }
 
 .l_s{
@@ -154,7 +155,7 @@ table{
     margin-bottom: 5px;
     border:none;
     border-bottom: 0.5px rgb(221, 83, 28) dashed;
-    font-size: 15px;
+    font-size: 18px;
     padding:5px;
     box-sizing: border-box;
 
@@ -173,7 +174,7 @@ table{
     padding: 8px;
     box-sizing: border-box;
     border:none;
-    font-size: 13px;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -185,7 +186,7 @@ table{
 
 .view_comment{
     color:whitesmoke;
-    font-size:15px;
+    font-size:18px;
     padding:3px;
     box-sizing: border-box;
 
@@ -221,7 +222,7 @@ table{
 .button > button {
     padding: 7px;
     border: none;
-    font-size: 14px;
+    font-size: 18px;
     box-sizing: border-box;
     border: 1px #f1f1f1 dashed;
     cursor: pointer;
@@ -229,7 +230,7 @@ table{
 
 .comment_delete{
     background: none;
-    font-size: 12px;
+    font-size: 15px;
     /* border:0.5px darkblue dotted; */
     cursor: pointer;
     border:none;
@@ -238,7 +239,7 @@ table{
 .delete{
     padding: 7px;
     border: 1px #f1f1f1 dashed;
-    font-size: 14px;
+    font-size: 18px;
     box-sizing: border-box;
     cursor: pointer;
 }
@@ -253,7 +254,7 @@ table{
 .list>button{
     padding: 7px;
     border: none;
-    font-size: 14px;
+    font-size: 18px;
     box-sizing: border-box;
     border: 1px #f1f1f1 dashed;
     cursor: pointer;
