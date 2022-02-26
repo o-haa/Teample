@@ -173,13 +173,30 @@ input[id="menu"]:checked + label > span:nth-child(3){
 }
 
 #main_page > li {
-    margin-top: 15%;
+    margin:0 auto;
+    margin-top:10%;
+    width: 150px;
+    height: 50px;
+
 }
 
 #main_page > li > a{
+    background-color: transparent;
     color: white;
     font-size: 25px;
+    line-height: 50px;
+    text-align: center;
 }
+
+#main_page > li:hover {
+    background-color:rgb(194, 55, 182);
+}
+
+#madin_page >li >a:hover{
+    background-color:rgb(194, 55, 182)
+}
+
+
 </style>
 
 
@@ -197,27 +214,27 @@ input[id="menu"]:checked + label > span:nth-child(3){
         <div class="main_menu">
             <ul id="main_page">
                 <li>
-                    <a href="/">HOME .</a>
+                    <a href="/">HOME.</a>
                 </li>
                 {% if user %}
                 <li>
-                    <a href="/user/profile">PROFILE .</a>
+                    <a href="/user/profile">PROFILE.</a>
                 </li>
                 <li>
-                    <a href="/user/logout">LOGOUT .</a>
+                    <a href="/user/logout">LOGOUT.</a>
                 </li>
                 <li>
-                    <a href="/board/list/1">BOARD .</a>
+                    <a href="/board/list/1">BOARD.</a>
                 </li>
                 {% else %}
                 <li>
-                    <a href="/user/join">JOIN .</a>
+                    <a href="/user/join">JOIN.</a>
                 </li>
                 <li>
-                    <a href="/user/login">LOGIN .</a>
+                    <a href="/user/login">LOGIN.</a>
                 </li>
                 <li>
-                    <a href="/board/list/1">BOARD .</a>
+                    <a href="/board/list/1">BOARD.</a>
                 </li>
                 {% endif %}
             </ul>

@@ -14,14 +14,41 @@
         <h3 id="pagename">"You can edit your profile"</h3>
         <form name="form" method="post" action="/user/profile/update" onSubmit="return formCheck()">
             <div class="join_info">
-                <p class="id"> * ID {{user.userid}}</p>
-                <p> * PW <input type="text" name="userpw" value="{{user.userpw}}"></p>
-                <p class="name"> * Name {{user.username}}</p>
-                <p> * Nickname <input type="text" name="nickname" value="{{user.nickname}}"></p>
-                <p class="birth"> * Birth {{user.birth}}</p>
-                <p class="gender"> * Gender  {{user.gender}}</p> 
-                <p> Phone <input type="text" name="phone" value="{{user.phone}}"></p>
-                <p> * H-Phone <input type="text" name="mobile" value="{{user.mobile}}"></p>
+                <div class="info_title">
+                    <table>
+                        <tbody class="tbody">
+                            <tr>
+                                <td> * ID </td>
+                                <td> {{user.userid}} </td>
+                            </tr>
+                            <tr>
+                                <td> * PW </td>
+                                <td> <input type="password" name="userpw" value="{{user.userpw}}"> </td>
+                            </tr>
+                            <tr>
+                                <td> * Nickname </td>
+                                <td> <input type="text" name="nickname" value="{{user.nickname}}"> </td>
+                            </tr>
+                            <tr>
+                                <td> * Birth </td>
+                                <td> {{user.birth}} </td>
+                            </tr>
+                            <tr>
+                                <td> * Gender </td>
+                                <td> {{user.gender}} </td>
+                            </tr>
+                            <tr>
+                                <td> Phone </td>
+                                <td> <input type="text" name="phone" value="{{user.phone}}"> </td>
+                            </tr>
+                            <tr>
+                                <td> * H-Phone </td>
+                                <td> <input type="text" name="mobile" value="{{user.mobile}}"> </td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
             </div>
             <div class="join_login">
                 <input type="submit" value="Edit">
@@ -31,10 +58,6 @@
             <button><a href="/user/profile">Profile</a></button>
         </div>
     </div>
-    
-    <!-- <div class = "home">
-        <a  href="/">home</a>
-    </div> -->
     {% include "../nunjucks/footer.html" %}
 </body>
 </html>

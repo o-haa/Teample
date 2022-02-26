@@ -48,44 +48,75 @@ form{
 }
 
 .join_info{
+    /* width: 400px; */
+    height: auto;
     margin:0 auto;
-    width: 500px;
+    margin-top:2%;
     background-color: transparent;
-    font-size: 25px;
 }
 
-.join_info>p{
-    margin-bottom:4%;
+.info_title{
     background-color: transparent;
-    font-size: 25px;
-    text-align: right;
 }
 
-.id{margin-right:42%;}
-.name{margin-right:42%;}
-.birth{margin-right:38%;}
-.gender{margin-right: 46%;}
+.info_title>table{
+    width:500px;
+    background-color: transparent;
+    margin:0 auto;
+    border-collapse: separate;
+    border-spacing: 10px 20px;
+    text-align: center;
+    
+}
 
-.join_info>p>input{
-    border:none;
-    border-bottom: 0.5px rgb(194, 55, 182) dotted;
+.tbody{
+    background-color: transparent;
+}
+
+.tbody>tr{
     background-color: transparent;
     font-size: 22px;
+    text-align: center;
+    margin-bottom:8%;
+    padding-bottom: 8%;
+
+}
+
+.tbody>tr>td:nth-child(1){
+    text-align: right;
+    font-size: 22px;
+    background-color: transparent;
+    margin-bottom:8%;
+}
+
+.tbody>tr>td:nth-child(2){
+    width:70%;
     text-align: left;
+    font-size: 22px;
+    background-color: transparent;
+    margin-left:5%;
+}
+
+.tbody>tr>td>input{
+    width: 60%;
+    background-color: transparent;
+    border:none;
+    border-bottom: 0.5px rgb(194, 55, 182) dotted;
+    font-size: 22px;
     padding-bottom: 0.5%;
     padding-left:0.5%;
     box-sizing: border-box;
-    opacity: 50%;
 }
 
-.join_info>p>input:focus{
+.tbody>tr>td>input:focus{
     outline: none;
 }
 
-.join_info > p >input::placeholder{
+.tbody>tr>td>input::placeholder{
     padding-bottom: 1px;
     padding-left:0.5%;
     box-sizing: border-box;
+    font-size:18px;
 
 }
 

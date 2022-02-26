@@ -38,8 +38,16 @@ a{text-decoration: none;}
     margin-top:6%;
 }
 
+#join_pagename+h5{
+    text-align: center;
+    font-size:18px;
+    background-color: transparent;
+    margin-top:5%;
+}
 
-
+#join_pagename+h5>span{
+    color:rgb(194, 55, 182)
+}
 
 #loginimg{
     background-image: url("./img/login.png");
@@ -151,37 +159,82 @@ form{
 
 }
 
-.jjoin_info{
-    width: 390px;
-    margin:0 auto;
-    margin-top:3%;
-    background-color: transparent;
 
+
+.jjoin_info{
+    /* width: 400px; */
+    height: auto;
+    margin:0 auto;
+    margin-top:2%;
+    background-color: transparent;
 }
 
-.jjoin_info>p{
-    margin-bottom:6%;
+.info_title{
+    background-color: transparent;
+}
+
+.info_title>table{
+    width:500px;
+    background-color: transparent;
+    margin:0 auto;
+    border-collapse: separate;
+    border-spacing: 10px 20px;
+    text-align: center;
+    
+}
+
+.tbody{
+    background-color: transparent;
+}
+
+.tbody>tr{
     background-color: transparent;
     font-size: 22px;
-    text-align: right;
-}
-
-.jjoin_info>p:nth-child(1){
-    font-size: 18px;
     text-align: center;
+    margin-bottom:8%;
+    padding-bottom: 8%;
 
 }
 
-.jjoin_info>p>span{
-    color:rgb(194, 55, 182);
+.tbody>tr>td:nth-child(1){
+    text-align: right;
+    font-size: 22px;
     background-color: transparent;
+    margin-bottom:8%;
 }
 
-.gender{
-    margin-right: 56%;;
+.tbody>tr>td:nth-child(2){
+    width:70%;
+    text-align: left;
+    font-size: 22px;
+    background-color: transparent;
+    margin-left:5%;
 }
 
-.gender>select{
+.tbody>tr>td>input{
+    width: 60%;
+    background-color: transparent;
+    border:none;
+    border-bottom: 0.5px rgb(194, 55, 182) dotted;
+    font-size: 22px;
+    padding-bottom: 0.5%;
+    padding-left:0.5%;
+    box-sizing: border-box;
+}
+
+.tbody>tr>td>input:focus{
+    outline: none;
+}
+
+.tbody>tr>td>input::placeholder{
+    padding-bottom: 1px;
+    padding-left:0.5%;
+    box-sizing: border-box;
+    font-size:18px;
+
+}
+
+select{
     border-color: rgb(194, 55, 182);
     font-size: 20px;
     background-color: transparent;
@@ -189,28 +242,10 @@ form{
 
 }
 
-.jjoin_info>p>input{
-    border:none;
-    border-bottom: 0.5px rgb(194, 55, 182) dotted;
-    background-color: transparent;
-    font-size: 22px;
-    text-align: left;
-    padding-bottom: 0.5%;
-    padding-left:0.5%;
-    box-sizing: border-box;
-}
 
-.jjoin_info>p>input:focus{
-    outline: none;
-}
 
-.jjoin_info > p >input::placeholder{
-    padding-bottom: 1px;
-    padding-left:0.5%;
-    box-sizing: border-box;
-    font-size:15px;
 
-}
+
 
 .user_join_login {
     text-align: center;

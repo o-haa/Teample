@@ -46,7 +46,7 @@ a{text-decoration: none;}
 #welcome_m{
     text-align: center;
     margin-top: 4%;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 #welcome_m > span{
@@ -58,14 +58,14 @@ a{text-decoration: none;}
     width:960px;
     /* height: 100vh; */
     margin:1.7% auto;
-    font-size: 15px;
+    font-size: 18px;
     padding: 0.5% 2%;
     box-sizing: border-box;
 }
 
 table {
     width:916.5px;
-    font-size:15px;
+    font-size:18px;
     table-layout: fixed;
 }
 
@@ -123,7 +123,7 @@ table {
     float:right;
     background: rgb(194, 55, 182);
     padding: 7px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .box1>a{
@@ -139,7 +139,7 @@ table {
 
 .list_num > a{
     color:lemonchiffon;
-    font-size:14px;
+    font-size:18px;
     margin-left: 2px;
 }
 

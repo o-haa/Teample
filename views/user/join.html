@@ -12,21 +12,53 @@
     {% include "../nunjucks/header.html" %}
     <div id="wrap">
         <h3 id="join_pagename">Welcome to "Join"</h3>
+        <h5> !! <span>*</span>는 필수사항입니다. !!</h5>
         <form name="form" method="post" action="/user/join" onSubmit="return formCheck()">
             <div class="jjoin_info">
-                <p> !! <span>*</span>는 필수사항입니다. !!</p>
-                <p> * ID  <input type="text" name="userid"></p>
-                <p> * PW  <input type="password" name="userpw"></p>
-                <p> * Name  <input type="text" name="username"></p>
-                <p> * Nickname  <input type="text" name="nickname"></p>
-                <p> * Birth  <input type="text" name="birth" placeholder="6자리입력"></p>
-                <p class="gender"> * Gender 
-                     <select name="gender">
-                        <option>남성</option>
-                        <option>여성</option>
-                     </select></p>
-                <p> Phone  <input type="text" name="phone" placeholder="숫자만입력"></p>
-                <p> * H-Phone  <input type="text" name="mobile" placeholder="숫자만입력"></p>
+                <div class="info_title">
+                    <table>
+                        <tbody class="tbody">
+                            <tr>
+                                <td> * ID </td>
+                                <td> <input type="text" name="userid"> </td>
+                            </tr>
+                            <tr>
+                                <td> * PW </td>
+                                <td> <input type="password" name="userpw"> </td>
+                            </tr>
+                            <tr>
+                                <td> * Name </td>
+                                <td> <input type="text" name="username"> </td>
+                            </tr>
+                            <tr>
+                                <td> * Nickname </td>
+                                <td> <input type="text" name="nickname"> </td>
+                            </tr>
+                            <tr>
+                                <td> * Birth </td>
+                                <td> <input type="text" name="birth" placeholder="6자리입력"> </td>
+                            </tr>
+                            <tr>
+                                <td> * Gender </td>
+                                <td> 
+                                    <select name="gender">
+                                    <option>남성</option>
+                                    <option>여성</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Phone </td>
+                                <td> <input type="text" name="phone" placeholder="숫자만입력"> </td>
+                            </tr>
+                            <tr>
+                                <td> * H-Phone </td>
+                                <td> <input type="text" name="mobile" placeholder="숫자만입력"> </td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
             </div>
             <div class="user_join">
                 <input type="submit" value="Join">
