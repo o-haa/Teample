@@ -259,17 +259,18 @@ table{
     cursor: pointer;
 }
 
-body {
+#wrap {
     background-image: url('./img/stardust.png');
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-position-x: center;
     background-position-y: center;
 }
 
-#wrap {
+
+#wrap > .l_s {
     background: transparent !important;
 }
 
-#wrap > .l_s {
+div.button {
     background: transparent !important;
 }

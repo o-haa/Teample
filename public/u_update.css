@@ -22,13 +22,17 @@ a{text-decoration: none;}
     background-color: transparent;
 }
 
-body{
-    background-image: url("./img/p_up.png");
+#wrap{
+    background-image: url("./img/nebula2.png");
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
-    background-size: 100% 100%;
+    /* background-size: 100% 100%; */
 
+}
+
+div.button {
+    background: transparent !important;
 }
 
 #pagename{

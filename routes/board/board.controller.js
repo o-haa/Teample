@@ -27,7 +27,10 @@ const list = async (req, res)=>{
 }
 
 const getWrite = (req, res) => {
-    res.render('./board/write.html')
+    const {user} = req.session
+    res.render('./board/write.html', {
+        user
+    })
 }
 
 const postWrite = async (req, res) => {
@@ -91,12 +94,14 @@ const deleteComment = async (req, res) => {
 
 const getUpdate = async (req, res) => {
     try {
+        const {user} = req.session
         const {idx} = req.query
         let sql = 'SELECT idx, title, content FROM board WHERE idx=?'
         const [rows, fields] = await promisePool.query(sql, [idx])
         res.render('./board/update.html', {
             rows: rows[0],
-            idx
+            idx,
+            user
         })
     } catch (err) {
         console.log(err)

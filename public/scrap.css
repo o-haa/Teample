@@ -145,7 +145,7 @@ table {
 
 #wrap {
     background-image: url('./img/stardust.png');
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-position-x: center;
     background-position-y: center;
 }

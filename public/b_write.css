@@ -141,16 +141,13 @@ a{text-decoration: none;}
     font-size:17px;
 }
 
-body {
+#wrap {
     background-image: url('./img/stardust.png');
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-position-x: center;
     background-position-y: center;
 }
 
-#wrap {
-    background: transparent !important;
-}
 
 #write_content {
     background: transparent !important;
