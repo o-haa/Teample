@@ -19,11 +19,11 @@
             <p>생년월일: <span>{{rows.birth}}</span></p>
             <p>성별: <span>{{rows.gender}}</span></p>
             {% if user.phone %}
-            <p>전화번호: <span>0{{rows.phone}}</span></p>
+            <p>전화번호: <span>{{rows.phone}}</span></p>
             {% else %}
             <p>전화번호: <span>없음</span></p>
             {% endif %}
-            <p>핸드폰번호: <span>+82) {{rows.mobile}}</span></p>
+            <p>핸드폰번호: <span>{{rows.mobile}}</span></p>
             <p>등급: <span>{{rows.level}}</span></p>
             <p>이용가능: <span>{{rows.access}}</span></p> 
             {% if rows.level != 1 %}
