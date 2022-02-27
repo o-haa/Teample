@@ -29,7 +29,7 @@ a{text-decoration: none;}
 #pagename_profile{
     margin-top:4%;
     text-align: center;
-    font-size:25px;
+    font-size:28px;
     background-color: transparent;
 }
 
@@ -82,7 +82,7 @@ a{text-decoration: none;}
 
 .button > button > a{
     color:rgb(194, 55, 182);
-    font-size: 18px;
+    font-size: 22px;
     background:none;
 }
 
@@ -95,7 +95,7 @@ form{
     border:none;
     /* border: 1px #f1f1f1 dashed; */
     color:rgb(194, 55, 182);
-    font-size: 18px;
+    font-size: 22px;
     /* cursor: pointer; */
     background:none;
 }

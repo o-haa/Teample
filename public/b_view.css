@@ -46,7 +46,7 @@ table{
     height: 32px;
     text-align: center;
     border-bottom:0.5px rgb(194, 55, 182) solid;
-    font-size: 20px;
+    font-size: 18px;
 
 }
 
@@ -186,7 +186,7 @@ table{
 
 .view_comment{
     color:whitesmoke;
-    font-size:18px;
+    font-size:20px;
     padding:3px;
     box-sizing: border-box;
 
@@ -194,7 +194,7 @@ table{
 
 .view_end{
     color:grey;
-    font-size:12px;
+    font-size:15px;
     font-weight: 400;
     padding-left:3px;
     padding-bottom:2px;
@@ -203,7 +203,7 @@ table{
 
 .view_date{
     color:grey;
-    font-size:12px;
+    font-size:15px;
     font-weight: 400;
     text-align: end;
     padding-left:3px;
