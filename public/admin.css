@@ -50,11 +50,20 @@ div.button {
     background: transparent !important;
 }
 
-div.admin_list {
+#admin_list {
     background-image: url('./img/earth2.png');
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+}
+
+
+#wrap > .admin_list {
+    background: transparent !important;
+}
+
+#wrap > .list_button {
+    background: transparent !important;
 }
 
 div.text {
