@@ -115,7 +115,7 @@ const postUpdate = async (req, res) => {
         const {title, content} = req.body
         let sql = 'UPDATE board SET title=?, content=? WHERE idx=?'
         await promisePool.query(sql, [title, content, idx])
-        res.send(alertMove('글이 수정되었습니다.', '/board/list/1'))
+        res.send(alertMove('글이 수정되었습니다.', `/board/view/?idx=${idx}`))
     } catch (err) {
         console.log(err)
         res.status(500).send('<h1>Internal Server Error</h1>')

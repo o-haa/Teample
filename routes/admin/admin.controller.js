@@ -4,7 +4,10 @@ const {promisePool} = require('../../db2.js')
 const {alertMove} = require('../../util/alert.js')
 
 const admin = (req, res) => {
-    res.render('./admin/index.html')
+    const {user} = req.session
+    res.render('./admin/index.html', {
+        user
+    })
 }
 
 const adminCheck = (req, res) => {

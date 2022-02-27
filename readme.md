@@ -30,9 +30,11 @@ ___
 
 # Browser support [브라우저 환경]
  - Chrome 과 IE
+
 <img src="./readmeimg/chrome.png" > 
 <img src="./readmeimg/MicrosoftEdge.png" >
- 각 최신버전 98에서 구동 확인
+
+ 각 최신버전 98에서 구동 확인  
  ___
 
 # How to use[사용법]  
@@ -52,9 +54,8 @@ Visual Studio Code 내 terminal에서 *node server* 입력
  
 ![node.png](./readmeimg/nodeserver.png)
 
- ### Internet url : localhost:3000 로 접속
-
-
+### Internet url : localhost:3000 로 접속  
+#
 # 목차
 ## 1. Main Page
 ![Animation.gif](./readmeimg/MAIN.gif)
@@ -63,10 +64,10 @@ Visual Studio Code 내 terminal에서 *node server* 입력
   
   <img src="./readmeimg/join.png" width ="200">   <img src="./readmeimg/LOGIN.png" width ="200">
 
-- ID,PW,NAME,NICKNAME,GENDER,NUMBER,PHONENUMBER을 입력
-- ID는 중복확인기능이 포함 
+- ID, PW, NAME, NICKNAME, GENDER, NUMBER, PHONENUMBER을 입력
+- ID, NICKNAME은 중복확인기능 포함 
   
-___
+
 ## 3. Board 
 
  <img src="./readmeimg/board.png" >
@@ -75,50 +76,54 @@ ___
  - 회원가입한 회원만 이용 가능
 
 <img src ="./readmeimg/write.png" >
- - 댓글 작성 ,조회수 ,좋아요(왼쪽 하단) , 삭제 , 스크랩 기능(오른쪽 하단)  포함
+
+ - 일반회원은 글보기 페이지에서 자신이 작성한 글만 수정 및 삭제 가능
+ - 관리자 회원 및 최고관리자는 모든 회원의 글을 수정 및 삭제 가능
+ - 댓글 작성 및 삭제, 조회수, 좋아요(왼쪽 하단), 스크랩 기능(오른쪽 하단) 포함
 
   
 ## 4. PROFILE
 
-
 <img src ="./readmeimg/profile.png" >
  
--  프로필 수정,회원탈퇴 기능 포함 
--  작성글 , 작성댓글 , 스크랩 열람 기능
+-  프로필 수정, 회원탈퇴 기능 포함 
+-  작성글, 작성댓글, 스크랩 열람 기능
 
 ## 5. ADMIN
+
  <img src ="./readmeimg/ADMIN.png" >
  
- -  localhost:3000/admin 으로 접속
- -  회원정보수정 권한
+ -  localhost:3000/admin 으로 최고관리자 계정 접속
+ -  최고관리자는 회원리스트 보기 가능
+ -  최고관리자에게는 회원등급, 회원이용가능여부 변경 권한 부여
 
 ___
 ## 역할 분담
-팀명 : SPACE-OJ3
-팀장 : 오하은
-팀원 : 장재원, 장주찬, 지정환
+- 팀명 : SPACE-OJ3
+- 팀장 : 오하은
+- 팀원 : 장재원, 장주찬, 지정환
 
 ### 오하은(프론트엔드) - haeun9627@hanmail.net
-- 전체 일정 조율, 
+- 전체 일정 조율 
 - 전체 웹페이지 디자인 구상
-- 모든 페이지 html, css 총괄,
-- nunjucks 활용해서 html, css 작업
+- 모든 페이지 html, css 총괄
+- nunjucks를 활용해서 html, css 작업
 - 오류 및 점검사항 체크
 ### 장재원(백엔드) - bitkunst23@gmail.com
 - 커넥션 풀과 프로미스를 활용해서 데이터베이스와 연결 및 작업 진행
 - 데이터베이스 테이블 스키마 제작
-- 게시판 페이지 CRUD 작업,
-- 미들웨어 활용해서 게시판 및 관리자 페이지 접근권한 체크 기능 제작
+- 게시판 페이지 CRUD 작업
+- 미들웨어를 활용해서 게시판 및 관리자 페이지 접근권한 체크 기능 제작
 - 좋아요, 댓글, 스크랩, 조회수 기능 작업
-- 관리자 페이지 CRUD 작업,
-- 회원등급변경, 회원이용권한 기능 작업
+- 관리자 페이지 CRUD 작업
+- 회원등급변경, 회원이용가능여부 변경 기능 작업
 - 프로필 페이지에서 작성글보기, 작성댓글보기, 스크랩보기 기능 작업
-- 프론트엔드 서포트 (메인페이지 애니메이션 작업 , html5 canvas 활용)
+- 프론트엔드 서포트 (메인페이지 애니메이션 작업 -> **html5 canvas 활용**, 백그라운드 이미지 작업)
 
 ### 장주찬(백엔드) - jucham96@gmail.com
 - 커넥션 풀과 프로미스를 활용해서 데이터베이스와 연결 및 작업 진행
-- 사용자 로그인 기능 작업, 
-- 사용자 회원가입 기능 작업,
+- 사용자 로그인 기능 작업
+- 사용자 회원가입 기능 작업
 - 프론트엔드 서포트 (마우스 커서 디자인 및 백그라운드 이미지 작업) 
 
 ### 지정환(백엔드) - cjh5701@hanmail.net
