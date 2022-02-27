@@ -31,6 +31,14 @@ a{text-decoration: none;}
     margin-top:10%;
 }
 
+#login_pagename{
+    text-align: center;
+    font-size:25px;
+    background-color: transparent;
+    margin-top:15%;
+}
+
+
 #join_pagename{
     text-align: center;
     font-size:25px;
@@ -245,7 +253,7 @@ select{
 
 .login_info_title{
     background-color: transparent;
-    margin-top:5%;
+    margin-top:2%;
 }
 
 .login_info_title>table{
@@ -308,6 +316,7 @@ select{
 .user_join_login {
     text-align: center;
     background-color: transparent;
+    margin-top:3%;
 
 }
 
