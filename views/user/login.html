@@ -13,9 +13,19 @@
     <div id="wrap">
         <h3 id="pagename">Welcome to "Login"</h3>
         <form name="form" method="post" action="/user/login" onSubmit="return formCheck()">
-            <div class="user_info">
-                <p>ID <input type="text" name="userid"></p>
-                <p>PW <input type="password" name="userpw"></p>
+            <div class="login_info_title">
+                <table>
+                    <tbody class="login_tbody">
+                        <tr>
+                            <td> * ID </td>
+                            <td> <input type="text" name="userid"> </td>
+                        </tr>
+                        <tr>
+                            <td> * PW </td>
+                            <td> <input type="password" name="userpw"> </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="user_join_login">
                 <input type="submit" value="login">
